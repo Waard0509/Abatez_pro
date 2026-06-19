@@ -70,3 +70,62 @@ button,input,select,textarea{font:inherit;}
 #navbar .abatez-floating-logo-img{object-fit:contain!important;object-position:center!important;}
 @media(min-width:768px){#navbar .nav-desktop,#navbar .hidden.md\:flex{margin-left:auto!important;margin-right:0!important;justify-content:flex-end!important;padding-left:9rem!important;}#navbar .nav-desktop a{color:#064e3b!important;}#navbar .nav-desktop a:hover{color:#059669!important;}}
 .nav-link-premium:after{background:#059669!important;}
+
+
+/* =========================================================
+   abatez v29 - Logo transparente también en celular/Safari
+   Evita que el contenedor del logo parezca tarjeta o fondo sólido.
+   ========================================================= */
+#navbar a.abatez-floating-logo-link,
+#navbar.navbar--compact a.abatez-floating-logo-link,
+html.legacy-static #navbar a.abatez-floating-logo-link,
+html.legacy-static #navbar .abatez-floating-logo-link,
+#navbar a[aria-label*="abatez"],
+#navbar a[aria-label*="abatez"].abatez-floating-logo-link{
+  background:transparent!important;
+  background-color:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  -webkit-box-shadow:none!important;
+  outline:0!important;
+  overflow:visible!important;
+  padding:0!important;
+  border-radius:0!important;
+  -webkit-backdrop-filter:none!important;
+  backdrop-filter:none!important;
+}
+#navbar a.abatez-floating-logo-link:before,
+#navbar a.abatez-floating-logo-link:after,
+#navbar.navbar--compact a.abatez-floating-logo-link:before,
+#navbar.navbar--compact a.abatez-floating-logo-link:after,
+html.legacy-static #navbar a.abatez-floating-logo-link:before,
+html.legacy-static #navbar a.abatez-floating-logo-link:after{
+  content:none!important;
+  display:none!important;
+  opacity:0!important;
+  background:transparent!important;
+}
+#navbar a.abatez-floating-logo-link img,
+#navbar img.abatez-floating-logo-img,
+#navbar img#logo-abatez,
+html.legacy-static #navbar img.abatez-floating-logo-img,
+html.legacy-static #navbar img#logo-abatez{
+  background:transparent!important;
+  background-color:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  -webkit-box-shadow:none!important;
+  object-fit:contain!important;
+  object-position:center!important;
+}
+@media (max-width:767px){
+  #navbar a.abatez-floating-logo-link,
+  #navbar.navbar--compact a.abatez-floating-logo-link,
+  html.legacy-static #navbar a.abatez-floating-logo-link{
+    background:transparent!important;
+    background-color:transparent!important;
+    border:0!important;
+    box-shadow:none!important;
+    -webkit-box-shadow:none!important;
+  }
+}

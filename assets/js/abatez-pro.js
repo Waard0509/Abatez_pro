@@ -1,5 +1,5 @@
 /* abatez v16 - JavaScript compatible con Safari/Mac antiguos. */
-var abatez_WHATSAPP = "522313120797";
+var abatez_WHATSAPP = "522311139580";
 
 function abatezGet(id){ return document.getElementById(id); }
 function abatezToArray(list){ var arr=[]; if(!list) return arr; for(var i=0;i<list.length;i++){ arr.push(list[i]); } return arr; }
