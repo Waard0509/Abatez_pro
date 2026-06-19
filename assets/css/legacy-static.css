@@ -1,0 +1,406 @@
+
+/* =========================================================
+   abatez v21 - Respaldo visual para Mac/Safari antiguos
+   Este archivo solo se activa cuando <html> conserva la clase legacy-static.
+   En navegadores modernos esa clase se elimina en el <head>, así que la v20
+   mantiene su diseño normal de Edge/Chrome/Safari actual.
+   ========================================================= */
+html.legacy-static, html.legacy-static body{
+  margin:0!important;
+  padding:0!important;
+  width:100%!important;
+  min-height:100%!important;
+  background:#fff7ea!important;
+  color:#122f24!important;
+  font-family:Arial, Helvetica, sans-serif!important;
+  font-size:16px!important;
+  line-height:1.5!important;
+}
+html.legacy-static *{
+  -webkit-box-sizing:border-box!important;
+  box-sizing:border-box!important;
+}
+html.legacy-static [data-aos],
+html.legacy-static [data-aos^="fade"],
+html.legacy-static [data-aos][class]{
+  opacity:1!important;
+  -webkit-transform:none!important;
+  transform:none!important;
+  visibility:visible!important;
+}
+html.legacy-static img{
+  max-width:100%!important;
+  height:auto;
+  border:0;
+}
+html.legacy-static a{color:#2f5b37;text-decoration:none;}
+html.legacy-static a:hover{text-decoration:underline;}
+html.legacy-static .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;}
+
+/* Navbar compatible: sin variables CSS, sin grid/flex obligatorio. */
+html.legacy-static #navbar{
+  position:fixed!important;
+  top:0!important;
+  left:0!important;
+  right:0!important;
+  width:100%!important;
+  height:82px!important;
+  min-height:82px!important;
+  background:#fff7ea!important;
+  border-bottom:1px solid #d3a15e!important;
+  box-shadow:0 2px 14px rgba(18,47,36,.10)!important;
+  z-index:9999!important;
+  overflow:visible!important;
+}
+html.legacy-static #scroll-progress{display:none!important;}
+html.legacy-static #navbar .max-w-7xl{
+  max-width:1180px!important;
+  width:100%!important;
+  height:82px!important;
+  margin:0 auto!important;
+  padding:0 22px!important;
+  position:relative!important;
+}
+html.legacy-static #navbar .flex.justify-between.items-center.h-full{
+  display:block!important;
+  height:82px!important;
+  position:relative!important;
+}
+html.legacy-static #navbar .abatez-floating-logo-link,
+html.legacy-static #navbar a[aria-label*="abatez"]{
+  position:absolute!important;
+  left:22px!important;
+  top:10px!important;
+  width:190px!important;
+  height:62px!important;
+  padding:7px!important;
+  display:block!important;
+  background:#ffffff!important;
+  border:1px solid #c68a56!important;
+  border-left:6px solid #a64f2f!important;
+  border-radius:13px!important;
+  box-shadow:0 5px 18px rgba(18,47,36,.16)!important;
+  overflow:hidden!important;
+}
+html.legacy-static #navbar .abatez-floating-logo-link:before,
+html.legacy-static #navbar .abatez-floating-logo-link:after{display:none!important;}
+html.legacy-static #navbar .abatez-floating-logo-img,
+html.legacy-static #navbar #logo-abatez,
+html.legacy-static #navbar img[alt*="abatez"]{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  opacity:1!important;
+  visibility:visible!important;
+  -webkit-transform:none!important;
+  transform:none!important;
+}
+html.legacy-static #navbar .hidden.md\:flex,
+html.legacy-static #navbar .md\:flex{
+  display:block!important;
+  margin-left:240px!important;
+  padding-top:28px!important;
+  white-space:nowrap!important;
+}
+html.legacy-static #navbar .hidden.md\:flex a,
+html.legacy-static #navbar .md\:flex a{
+  display:inline-block!important;
+  margin:0 12px 0 0!important;
+  padding:6px 2px!important;
+  color:#122f24!important;
+  font-size:13px!important;
+  font-weight:bold!important;
+  text-decoration:none!important;
+}
+html.legacy-static #navbar .hidden.md\:flex a:hover,
+html.legacy-static #navbar .md\:flex a:hover{color:#a64f2f!important;}
+html.legacy-static #navbar .md\:hidden,
+html.legacy-static #mobile-menu{display:none!important;}
+
+/* Utilidades base suficientes cuando Tailwind CDN no corre. */
+html.legacy-static .relative{position:relative!important;}
+html.legacy-static .absolute{position:absolute!important;}
+html.legacy-static .fixed{position:fixed!important;}
+html.legacy-static .inset-0{top:0!important;right:0!important;bottom:0!important;left:0!important;}
+html.legacy-static .z-0{z-index:0!important;}
+html.legacy-static .z-10{z-index:10!important;}
+html.legacy-static .z-20{z-index:20!important;}
+html.legacy-static .z-30{z-index:30!important;}
+html.legacy-static .z-50{z-index:50!important;}
+html.legacy-static .overflow-hidden{overflow:hidden!important;}
+html.legacy-static .text-center{text-align:center!important;}
+html.legacy-static .text-left{text-align:left!important;}
+html.legacy-static .mx-auto{margin-left:auto!important;margin-right:auto!important;}
+html.legacy-static .w-full{width:100%!important;}
+html.legacy-static .h-full{height:100%!important;}
+html.legacy-static .block{display:block!important;}
+html.legacy-static .inline-flex{display:inline-block!important;}
+html.legacy-static .flex{display:block!important;}
+html.legacy-static .grid{display:block!important;}
+html.legacy-static .hidden{display:none!important;}
+html.legacy-static .rounded-full{border-radius:999px!important;}
+html.legacy-static .rounded-xl{border-radius:16px!important;}
+html.legacy-static .rounded-2xl{border-radius:22px!important;}
+html.legacy-static .rounded-3xl{border-radius:28px!important;}
+html.legacy-static .border{border:1px solid #e9ded1!important;}
+html.legacy-static .shadow-lg, html.legacy-static .shadow-xl, html.legacy-static .shadow-2xl{box-shadow:0 16px 38px rgba(18,47,36,.12)!important;}
+html.legacy-static .bg-white{background:#fff!important;}
+html.legacy-static .bg-gray-50{background:#f8faf9!important;}
+html.legacy-static .bg-gray-950{background:#08120d!important;}
+html.legacy-static .bg-marca{background:#2f5b37!important;}
+html.legacy-static .bg-marca-dark{background:#122f24!important;}
+html.legacy-static .bg-acento{background:#a64f2f!important;}
+html.legacy-static .text-white{color:#fff!important;}
+html.legacy-static .text-gray-900, html.legacy-static .text-gray-950{color:#07110d!important;}
+html.legacy-static .text-gray-800{color:#18251d!important;}
+html.legacy-static .text-gray-700{color:#344337!important;}
+html.legacy-static .text-gray-600{color:#526154!important;}
+html.legacy-static .text-gray-500{color:#667268!important;}
+html.legacy-static .text-gray-400{color:#aab2aa!important;}
+html.legacy-static .text-marca{color:#2f5b37!important;}
+html.legacy-static .text-marca-dark{color:#122f24!important;}
+html.legacy-static .text-acento{color:#a64f2f!important;}
+html.legacy-static .font-bold{font-weight:700!important;}
+html.legacy-static .font-extrabold{font-weight:800!important;}
+html.legacy-static .font-medium{font-weight:600!important;}
+html.legacy-static .leading-tight{line-height:1.12!important;}
+html.legacy-static .leading-relaxed{line-height:1.6!important;}
+html.legacy-static .text-xs{font-size:12px!important;}
+html.legacy-static .text-sm{font-size:14px!important;}
+html.legacy-static .text-lg{font-size:18px!important;}
+html.legacy-static .text-xl{font-size:20px!important;}
+html.legacy-static .text-2xl{font-size:26px!important;}
+html.legacy-static .text-3xl{font-size:34px!important;}
+html.legacy-static .text-4xl{font-size:44px!important;}
+html.legacy-static .max-w-7xl{max-width:1180px!important;margin-left:auto!important;margin-right:auto!important;}
+html.legacy-static .max-w-4xl{max-width:900px!important;margin-left:auto!important;margin-right:auto!important;}
+html.legacy-static .max-w-3xl{max-width:760px!important;margin-left:auto!important;margin-right:auto!important;}
+html.legacy-static .px-4{padding-left:18px!important;padding-right:18px!important;}
+html.legacy-static .px-5{padding-left:20px!important;padding-right:20px!important;}
+html.legacy-static .px-6{padding-left:24px!important;padding-right:24px!important;}
+html.legacy-static .px-7{padding-left:28px!important;padding-right:28px!important;}
+html.legacy-static .px-8{padding-left:32px!important;padding-right:32px!important;}
+html.legacy-static .py-1{padding-top:4px!important;padding-bottom:4px!important;}
+html.legacy-static .py-2{padding-top:8px!important;padding-bottom:8px!important;}
+html.legacy-static .py-3{padding-top:12px!important;padding-bottom:12px!important;}
+html.legacy-static .py-4{padding-top:16px!important;padding-bottom:16px!important;}
+html.legacy-static .py-6{padding-top:24px!important;padding-bottom:24px!important;}
+html.legacy-static .py-8{padding-top:32px!important;padding-bottom:32px!important;}
+html.legacy-static .py-10{padding-top:40px!important;padding-bottom:40px!important;}
+html.legacy-static .py-16{padding-top:64px!important;padding-bottom:64px!important;}
+html.legacy-static .py-20{padding-top:76px!important;padding-bottom:76px!important;}
+html.legacy-static .p-3{padding:12px!important;}
+html.legacy-static .p-4{padding:16px!important;}
+html.legacy-static .p-5{padding:20px!important;}
+html.legacy-static .p-6{padding:24px!important;}
+html.legacy-static .p-8{padding:32px!important;}
+html.legacy-static .mb-1{margin-bottom:4px!important;}
+html.legacy-static .mb-2{margin-bottom:8px!important;}
+html.legacy-static .mb-3{margin-bottom:12px!important;}
+html.legacy-static .mb-4{margin-bottom:16px!important;}
+html.legacy-static .mb-5{margin-bottom:20px!important;}
+html.legacy-static .mb-6{margin-bottom:24px!important;}
+html.legacy-static .mb-8{margin-bottom:32px!important;}
+html.legacy-static .mb-10{margin-bottom:40px!important;}
+html.legacy-static .mb-12{margin-bottom:48px!important;}
+html.legacy-static .mt-1{margin-top:4px!important;}
+html.legacy-static .mt-2{margin-top:8px!important;}
+html.legacy-static .mt-3{margin-top:12px!important;}
+html.legacy-static .mt-4{margin-top:16px!important;}
+html.legacy-static .mt-5{margin-top:20px!important;}
+html.legacy-static .mt-10{margin-top:40px!important;}
+html.legacy-static .mr-1{margin-right:4px!important;}
+html.legacy-static .mr-2{margin-right:8px!important;}
+html.legacy-static .mr-4{margin-right:16px!important;}
+html.legacy-static .ml-1{margin-left:4px!important;}
+html.legacy-static .ml-2{margin-left:8px!important;}
+
+/* Hero estable y legible aunque no exista Tailwind. */
+html.legacy-static .home-hero{
+  position:relative!important;
+  min-height:660px!important;
+  height:auto!important;
+  padding:150px 20px 90px!important;
+  background:#122f24!important;
+  color:#fff!important;
+  overflow:hidden!important;
+}
+html.legacy-static #carrusel-hero,
+html.legacy-static #carrusel-hero .diapositiva{position:absolute!important;top:0!important;right:0!important;bottom:0!important;left:0!important;}
+html.legacy-static #carrusel-hero .diapositiva{background-size:cover!important;background-position:center!important;opacity:0!important;}
+html.legacy-static #carrusel-hero .diapositiva:first-child{opacity:1!important;}
+html.legacy-static .hero-mobile-overlay{position:absolute!important;top:0!important;right:0!important;bottom:0!important;left:0!important;background:rgba(18,47,36,.74)!important;z-index:1!important;}
+html.legacy-static .home-hero-content{position:relative!important;z-index:2!important;max-width:900px!important;margin:0 auto!important;text-align:center!important;}
+html.legacy-static .home-hero h1{font-size:54px!important;line-height:1.08!important;font-weight:800!important;color:#fff!important;margin:0 0 24px!important;}
+html.legacy-static .home-hero p{font-size:22px!important;color:#f2efe9!important;margin:0 0 24px!important;}
+html.legacy-static .text-marca-light{color:#e5b54f!important;}
+html.legacy-static .hero-cta a,
+html.legacy-static .hero-cta button,
+html.legacy-static .home-hero .inline-flex{
+  display:inline-block!important;
+  margin:6px!important;
+  padding:15px 26px!important;
+  border-radius:999px!important;
+  font-weight:800!important;
+  border:1px solid rgba(255,255,255,.36)!important;
+  cursor:pointer!important;
+}
+html.legacy-static .hero-cta a:first-child{background:#2f5b37!important;color:#fff!important;}
+html.legacy-static .hero-cta button{background:#fff!important;color:#122f24!important;}
+html.legacy-static .hero-cta button:last-child{background:transparent!important;color:#fff!important;}
+html.legacy-static .hero-proof-grid{max-width:850px!important;margin:25px auto 0!important;}
+html.legacy-static .hero-proof-pill{display:inline-block!important;width:30%!important;margin:0 1%!important;vertical-align:top!important;background:rgba(18,47,36,.80)!important;border:1px solid rgba(229,181,79,.35)!important;color:#fff!important;}
+html.legacy-static .punto-carrusel, html.legacy-static .home-hero svg{display:none!important;}
+
+/* Secciones principales sin grid moderno. */
+html.legacy-static section{display:block!important;clear:both;}
+html.legacy-static .client-note,
+html.legacy-static .client-help-card,
+html.legacy-static .product-finder-card,
+html.legacy-static .customer-trust-card,
+html.legacy-static .pro-card,
+html.legacy-static .animal-card-premium{
+  background:#fff!important;
+  border:1px solid #ead9c7!important;
+  border-radius:24px!important;
+  box-shadow:0 12px 35px rgba(18,47,36,.09)!important;
+  color:#122f24!important;
+}
+html.legacy-static .client-note{padding:28px!important;overflow:hidden!important;}
+html.legacy-static .client-note > div{display:inline-block!important;vertical-align:middle!important;}
+html.legacy-static .client-note > div:first-child{width:56%!important;}
+html.legacy-static .client-note > div:last-child{width:40%!important;text-align:center!important;}
+html.legacy-static .client-note > div:last-child > div{display:inline-block!important;width:30%!important;margin:0 1%!important;background:#fff!important;border:1px solid #eee!important;border-radius:18px!important;padding:18px 8px!important;}
+html.legacy-static .bg-marca-dark.py-6 .grid > div{display:inline-block!important;width:31%!important;vertical-align:top!important;margin:0 1%!important;}
+
+/* Categorías por animal en columnas. */
+html.legacy-static #categorias .grid,
+html.legacy-static .animal-grid{display:block!important;text-align:left!important;}
+html.legacy-static #categorias .animal-card-premium,
+html.legacy-static .animal-card-premium{
+  display:inline-block!important;
+  width:31%!important;
+  margin:1%!important;
+  vertical-align:top!important;
+  min-height:330px!important;
+  overflow:hidden!important;
+}
+html.legacy-static .animal-card-premium img,
+html.legacy-static .animal-card-premium .h-52{height:190px!important;width:100%!important;object-fit:cover!important;display:block!important;}
+html.legacy-static .animal-card-premium .p-5{padding:18px!important;}
+
+/* Buscador, nosotros, confianza y tarjetas. */
+html.legacy-static .product-finder-card{padding:36px!important;margin:0 auto!important;max-width:1040px!important;}
+html.legacy-static .product-search-result{
+  display:inline-block!important;
+  width:31%!important;
+  margin:1%!important;
+  vertical-align:top!important;
+  background:#fff!important;
+  border:1px solid #ead9c7!important;
+  border-radius:18px!important;
+  padding:18px!important;
+  color:#122f24!important;
+}
+html.legacy-static #ayuda-cliente .grid > div,
+html.legacy-static #ayuda-cliente .customer-trust-card{
+  display:inline-block!important;
+  width:31%!important;
+  margin:1%!important;
+  vertical-align:top!important;
+  min-height:250px!important;
+}
+html.legacy-static .customer-trust-icon{width:54px!important;height:54px!important;border-radius:16px!important;background:#faecd0!important;color:#122f24!important;margin-bottom:18px!important;text-align:center!important;line-height:54px!important;}
+
+/* Producto/catálogos en escritorio viejo. */
+html.legacy-static .catalog-hero,
+html.legacy-static .pro-hero,
+html.legacy-static main.pt-32{padding-top:125px!important;}
+html.legacy-static .pro-card{display:inline-block!important;width:31%!important;margin:1%!important;vertical-align:top!important;}
+html.legacy-static .product-detail-grid{display:block!important;max-width:1120px!important;margin:0 auto!important;}
+html.legacy-static .product-media-panel,
+html.legacy-static .product-info-panel{display:inline-block!important;vertical-align:top!important;width:48%!important;margin:1%!important;}
+html.legacy-static .product-mobile-media-panel{display:none!important;}
+html.legacy-static .product-detail-thumb{height:420px!important;display:block!important;text-align:center!important;}
+html.legacy-static .product-detail-thumb img{max-height:400px!important;width:auto!important;}
+
+/* Contacto y pie de página. */
+html.legacy-static #contacto{background:#122f24!important;color:#fff!important;padding:70px 0!important;}
+html.legacy-static #contacto .lg\:w-7\/12,
+html.legacy-static #contacto .lg\:w-5\/12{display:inline-block!important;vertical-align:top!important;width:48%!important;margin:1%!important;}
+html.legacy-static #contacto input,
+html.legacy-static #contacto select,
+html.legacy-static #contacto textarea{width:100%!important;padding:12px!important;border:1px solid #d8d8d8!important;border-radius:10px!important;font-family:Arial, Helvetica, sans-serif!important;}
+html.legacy-static #contacto button[type="submit"]{width:100%!important;padding:14px!important;background:#2f5b37!important;color:#fff!important;border:0!important;border-radius:10px!important;font-weight:bold!important;}
+html.legacy-static iframe{max-width:100%!important;}
+html.legacy-static footer{background:#08120d!important;color:#cbd5ce!important;text-align:center!important;padding:30px 20px!important;border-top:1px solid #1e2a22!important;}
+html.legacy-static 
+html.legacy-static 
+html.legacy-static .quick-action-panel{display:none!important;}
+html.legacy-static .fixed.bottom-6.right-6{position:fixed!important;right:20px!important;bottom:20px!important;z-index:9999!important;}
+html.legacy-static .fixed.bottom-6.right-6 a{display:block!important;width:54px!important;height:54px!important;line-height:54px!important;border-radius:50%!important;background:#22c55e!important;color:#fff!important;text-align:center!important;font-size:24px!important;}
+
+/* Responsive básico para Safari antiguo en ventanas pequeñas. */
+@media screen and (max-width:760px){
+  html.legacy-static #navbar{height:70px!important;min-height:70px!important;}
+  html.legacy-static #navbar .max-w-7xl{height:70px!important;min-height:70px!important;}
+  html.legacy-static #navbar .abatez-floating-logo-link,
+  html.legacy-static #navbar a[aria-label*="abatez"]{left:12px!important;top:8px!important;width:145px!important;height:54px!important;padding:5px!important;}
+  html.legacy-static #navbar .hidden.md\:flex{display:none!important;}
+  html.legacy-static #navbar .md\:hidden{display:block!important;float:right!important;padding-top:18px!important;}
+  html.legacy-static #mobile-menu{top:70px!important;}
+  html.legacy-static .home-hero{min-height:590px!important;padding:105px 16px 70px!important;}
+  html.legacy-static .home-hero h1{font-size:32px!important;}
+  html.legacy-static .home-hero p{font-size:16px!important;}
+  html.legacy-static .hero-proof-grid{display:none!important;}
+  html.legacy-static .hero-cta a, html.legacy-static .hero-cta button{padding:10px 12px!important;font-size:13px!important;margin:3px!important;}
+  html.legacy-static .client-note > div:first-child,
+  html.legacy-static .client-note > div:last-child,
+  html.legacy-static #contacto .lg\:w-7\/12,
+  html.legacy-static #contacto .lg\:w-5\/12,
+  html.legacy-static .product-media-panel,
+  html.legacy-static .product-info-panel{display:block!important;width:100%!important;margin:0 0 18px!important;}
+  html.legacy-static .client-note > div:last-child > div,
+  html.legacy-static #categorias .animal-card-premium,
+  html.legacy-static .animal-card-premium,
+  html.legacy-static .product-search-result,
+  html.legacy-static #ayuda-cliente .customer-trust-card,
+  html.legacy-static .pro-card{width:48%!important;margin:1%!important;min-height:auto!important;}
+  html.legacy-static .animal-card-premium img,
+  html.legacy-static .animal-card-premium .h-52{height:120px!important;}
+}
+
+
+/* abatez v23 - Menú visible en escritorio antiguo */
+@media (min-width:768px){
+  html.legacy-static #navbar .nav-desktop,
+  html.legacy-static #navbar .hidden.md\:flex{
+    display:block!important;
+    margin-left:240px!important;
+    padding-top:28px!important;
+    white-space:nowrap!important;
+    opacity:1!important;
+    visibility:visible!important;
+  }
+  html.legacy-static #navbar .nav-desktop a,
+  html.legacy-static #navbar .hidden.md\:flex a{
+    display:inline-block!important;
+    margin-right:14px!important;
+    color:#122f24!important;
+    font-size:13px!important;
+    font-weight:bold!important;
+    text-decoration:none!important;
+  }
+  html.legacy-static #navbar .nav-mobile-toggle{display:none!important;}
+}
+
+
+/* abatez v24 - fallback muy antiguo: color verde y navegación derecha */
+html.legacy-static #navbar{background:#ffffff!important;border-bottom:1px solid #d1fae5!important;}
+html.legacy-static #navbar .abatez-floating-logo-link{background:#ffffff!important;border-color:#a7f3d0!important;}
+html.legacy-static #navbar .abatez-floating-logo-img{object-fit:contain!important;}
+@media(min-width:768px){html.legacy-static #navbar .nav-desktop{margin-left:auto!important;margin-right:0!important;justify-content:flex-end!important;padding-left:9rem!important;}html.legacy-static #navbar .nav-desktop a{color:#064e3b!important;}}

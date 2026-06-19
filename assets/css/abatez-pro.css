@@ -1,0 +1,1523 @@
+:root{
+  --abatez-green:#355E3B;
+  --abatez-dark:#183B2A;
+  --abatez-gold:#B9782C;
+  --abatez-cream:#f8faf7;
+}
+.pro-card{box-shadow:0 18px 45px -28px rgba(15,23,42,.45);}
+.pro-card:hover{transform:translateY(-6px);box-shadow:0 24px 70px -36px rgba(15,23,42,.6)}
+.pro-transition{transition:all .28s ease}
+.pro-glass{background:rgba(255,255,255,.86);backdrop-filter:blur(14px)}
+.pro-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(24,59,42,.92),rgba(24,59,42,.58),rgba(0,0,0,.25));}
+.product-table td,.product-table th{padding:.9rem 1rem;border-bottom:1px solid #e5e7eb;}
+.product-table tr:last-child td{border-bottom:0;}
+.badge-oficial{background:rgba(53,94,59,.12);color:#2F5135;border:1px solid rgba(53,94,59,.25)}
+.badge-update{background:rgba(185,120,44,.12);color:#8A5A22;border:1px solid rgba(185,120,44,.25)}
+.badge-dist{background:rgba(37,99,235,.10);color:#1d4ed8;border:1px solid rgba(37,99,235,.22)}
+.product-thumb{background:linear-gradient(180deg,#ffffff,#f3f4f6)}
+.mobile-menu-open{display:block!important}
+
+/* ===============================
+   abatez v2 - Pulido profesional
+   =============================== */
+#navbar{
+  transition: height .32s ease, background-color .32s ease, box-shadow .32s ease, backdrop-filter .32s ease;
+}
+#navbar img{
+  transition: max-height .32s ease, transform .32s ease, padding .32s ease;
+}
+#navbar.navbar--compact{
+  height: 4.25rem !important;
+  background: rgba(255,255,255,.96) !important;
+  box-shadow: 0 18px 45px -34px rgba(15,23,42,.85);
+}
+#navbar.navbar--compact img[src*="logo"]{
+  max-height: 3.25rem;
+  transform: scale(.96);
+}
+@media (max-width: 767px){
+  #navbar, #navbar.navbar--compact{height:4.5rem!important;}
+  #navbar img[src*="logo"]{max-height:3.35rem;}
+}
+body{scroll-padding-top:5.25rem;}
+.diagnostic-result{
+  border:1px solid rgba(53,94,59,.20);
+  background:linear-gradient(180deg, rgba(53,94,59,.08), rgba(255,255,255,.96));
+}
+.diag-product-card{
+  display:flex;align-items:flex-start;gap:.75rem;padding:.9rem;border-radius:1rem;background:#fff;border:1px solid #e5e7eb;
+}
+.diag-product-card:hover{border-color:rgba(53,94,59,.45);box-shadow:0 18px 35px -28px rgba(15,23,42,.7)}
+.commercial-note{background:linear-gradient(135deg,rgba(24,59,42,.08),rgba(185,120,44,.08));}
+.text-balance{text-wrap:balance;}
+
+
+/* ===============================
+   abatez v3 - Movimiento premium y accesibilidad
+   =============================== */
+html{scroll-behavior:smooth;}
+body{scroll-padding-top:var(--abatez-nav-height, 96px);}
+:focus-visible{outline:3px solid rgba(185,120,44,.75);outline-offset:4px;border-radius:.65rem;}
+.skip-link{position:fixed;left:1rem;top:.75rem;z-index:10000;transform:translateY(-150%);background:#183B2A;color:white;font-weight:800;padding:.7rem 1rem;border-radius:999px;box-shadow:0 18px 50px -25px rgba(0,0,0,.45);transition:transform .25s ease;}
+.skip-link:focus{transform:translateY(0);}
+#navbar{
+  --abatez-nav-height:104px;
+  --abatez-logo-height:84px;
+  --abatez-nav-bg:rgba(255,255,255,.90);
+  --abatez-nav-shadow:0 1px 0 rgba(15,23,42,.05);
+  height:var(--abatez-nav-height)!important;
+  background:var(--abatez-nav-bg)!important;
+  box-shadow:var(--abatez-nav-shadow)!important;
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  will-change:height, background, box-shadow;
+  transition:background-color .18s ease, box-shadow .18s ease, backdrop-filter .18s ease;
+}
+#navbar > div:not(#mobile-menu):not(#scroll-progress),
+#navbar .max-w-7xl{height:100%;}
+#navbar a[href="index.html"],
+#navbar a[href="#inicio"],
+#navbar .flex-shrink-0,
+#navbar .logo-wrap{transition:padding .22s ease, transform .22s ease;}
+#navbar img[alt*="abatez"],
+#navbar img[alt*="Logo"],
+#logo-abatez{
+  height:var(--abatez-logo-height)!important;
+  max-height:var(--abatez-logo-height)!important;
+  width:auto!important;
+  object-fit:contain;
+  transform:translateY(var(--abatez-logo-y, 0px)) scale(var(--abatez-logo-scale, 1));
+  transform-origin:left center;
+  transition:filter .2s ease;
+  will-change:height, transform;
+}
+#navbar.navbar--compact{border-bottom:1px solid rgba(15,23,42,.06);}
+#scroll-progress{position:absolute;top:0;left:0;height:3px;background:linear-gradient(90deg,#B9782C,#355E3B);width:0%;z-index:70;transition:width .08s linear;}
+#mobile-menu{transform-origin:top;animation:abatezMenuDrop .18s ease-out;}
+@keyframes abatezMenuDrop{from{opacity:.2;transform:translateY(-8px) scaleY(.96)}to{opacity:1;transform:translateY(0) scaleY(1)}}
+.nav-link-premium{position:relative;}
+.nav-link-premium:after{content:"";position:absolute;left:0;right:0;bottom:-.45rem;height:2px;border-radius:999px;background:#355E3B;transform:scaleX(0);transform-origin:center;transition:transform .22s ease;}
+.nav-link-premium:hover:after,.nav-link-premium.is-active:after{transform:scaleX(1);}
+.diagnostic-result{animation:abatezResultIn .35s cubic-bezier(.2,.75,.2,1) both;}
+@keyframes abatezResultIn{from{opacity:0;transform:translateY(12px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+.diag-score{background:linear-gradient(135deg,rgba(53,94,59,.12),rgba(185,120,44,.10));border:1px solid rgba(53,94,59,.18);}
+.quick-actions-bar{position:sticky;bottom:1rem;z-index:40;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);}
+.soft-entrance{animation:softEntrance .5s ease both;}
+@keyframes softEntrance{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@media (max-width:767px){
+  #navbar{--abatez-nav-height:76px!important;--abatez-logo-height:58px!important;}
+  #navbar img[alt*="abatez"],#navbar img[alt*="Logo"],#logo-abatez{transform-origin:left center;}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important;}
+}
+
+
+/* ===============================
+   abatez v4 - Enfoque cliente y marcas aliadas
+   =============================== */
+.client-note{background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(53,94,59,.07),rgba(185,120,44,.07));box-shadow:0 22px 70px -48px rgba(15,23,42,.45)}
+.badge-ally{background:rgba(37,99,235,.10);color:#1d4ed8;border:1px solid rgba(37,99,235,.22)}
+.badge-consult{background:rgba(53,94,59,.10);color:#2F5135;border:1px solid rgba(53,94,59,.22)}
+.product-thumb img{filter:drop-shadow(0 18px 22px rgba(15,23,42,.10));}
+.hero-mini-card{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(12px);}
+@media (min-width:768px){.product-card-equal{min-height:100%;display:flex;flex-direction:column}.product-card-equal>div:last-child{flex:1;display:flex;flex-direction:column}.product-card-equal .card-actions{margin-top:auto}}
+
+
+/* ===============================
+   abatez v5 - Navegación ultra suave y lenguaje cliente
+   =============================== */
+#navbar{
+  height:var(--abatez-nav-height)!important;
+  background:var(--abatez-nav-bg)!important;
+  box-shadow:var(--abatez-nav-shadow)!important;
+  transition:background .28s ease, box-shadow .28s ease, backdrop-filter .28s ease!important;
+}
+#navbar.navbar--compact{
+  height:var(--abatez-nav-height)!important;
+  background:var(--abatez-nav-bg)!important;
+  box-shadow:var(--abatez-nav-shadow)!important;
+}
+#navbar.navbar--compact img[src*="logo"],
+#navbar img[alt*="abatez"],
+#navbar img[alt*="Logo"],
+#logo-abatez{
+  height:var(--abatez-logo-height)!important;
+  max-height:var(--abatez-logo-height)!important;
+  transform:translate3d(0,var(--abatez-logo-y,0px),0) scale(var(--abatez-logo-scale,1))!important;
+  transition:filter .25s ease!important;
+  will-change:height, transform;
+}
+#navbar .max-w-7xl{transition:padding .28s ease;}
+.client-help-card{transition:transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s cubic-bezier(.16,1,.3,1), border-color .35s ease;}
+.client-help-card:before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,#355E3B,#B9782C);opacity:.9;}
+.client-help-card:hover{transform:translateY(-8px);box-shadow:0 28px 80px -46px rgba(15,23,42,.72);border-color:rgba(53,94,59,.22);}
+.client-help-icon{width:3.5rem;height:3.5rem;border-radius:1.25rem;display:flex;align-items:center;justify-content:center;font-size:1.45rem;margin-bottom:1.35rem;}
+@media (prefers-reduced-motion:no-preference){
+  .client-help-card{animation:softEntrance .55s ease both;}
+}
+
+
+/* ===============================
+   abatez v6 - Acabado premium, cliente primero
+   =============================== */
+#navbar{
+  --abatez-nav-height:96px;
+  --abatez-logo-height:84px;
+  --abatez-logo-scale:1;
+  --abatez-logo-y:0px;
+  height:var(--abatez-nav-height)!important;
+  min-height:var(--abatez-nav-height)!important;
+  transition:background .38s cubic-bezier(.16,1,.3,1), box-shadow .38s cubic-bezier(.16,1,.3,1), border-color .38s cubic-bezier(.16,1,.3,1)!important;
+}
+#navbar img[alt*="abatez"],
+#navbar img[alt*="Logo"],
+#logo-abatez{
+  height:var(--abatez-logo-height)!important;
+  max-height:var(--abatez-logo-height)!important;
+  transform:translate3d(0,var(--abatez-logo-y),0) scale(var(--abatez-logo-scale))!important;
+  transform-origin:left center!important;
+  transition:filter .32s ease!important;
+  will-change:transform;
+  backface-visibility:hidden;
+}
+#navbar.navbar--compact{border-bottom:1px solid rgba(15,23,42,.08);}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.85rem;justify-content:center;align-items:center;}
+.hero-proof-pill{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);}
+.animal-card-premium{position:relative;isolation:isolate;box-shadow:0 20px 55px -38px rgba(15,23,42,.72);transition:transform .42s cubic-bezier(.16,1,.3,1), box-shadow .42s cubic-bezier(.16,1,.3,1), opacity .28s ease!important;}
+.animal-card-premium:hover{transform:translateY(-10px);box-shadow:0 36px 90px -50px rgba(15,23,42,.95);}
+.animal-card-premium img{transition:transform .65s cubic-bezier(.16,1,.3,1), filter .45s ease;}
+.animal-card-premium:hover img{transform:scale(1.08);filter:saturate(1.08) contrast(1.04);}
+.animal-card-premium .animal-chip{position:absolute;top:1rem;left:1rem;z-index:18;background:rgba(255,255,255,.92);border:1px solid rgba(255,255,255,.65);box-shadow:0 18px 36px -28px rgba(15,23,42,.9);}
+.animal-card-premium .animal-gradient{position:absolute;inset:auto 0 0 0;height:68%;z-index:11;background:linear-gradient(180deg,transparent,rgba(0,0,0,.52));opacity:.84;transition:opacity .35s ease;}
+.animal-card-premium:hover .animal-gradient{opacity:.98;}
+.premium-section-title{text-wrap:balance;}
+.product-finder-card{background:radial-gradient(circle at 10% 0%,rgba(53,94,59,.14),transparent 32%),radial-gradient(circle at 90% 20%,rgba(185,120,44,.13),transparent 30%),#fff;border:1px solid rgba(53,94,59,.12);box-shadow:0 28px 80px -55px rgba(15,23,42,.7);}
+.product-search-input{box-shadow:0 16px 35px -30px rgba(15,23,42,.8);}
+.product-search-result{display:block;border:1px solid #e5e7eb;background:white;border-radius:1.25rem;padding:1rem;transition:transform .28s cubic-bezier(.16,1,.3,1), border-color .28s ease, box-shadow .28s ease;}
+.product-search-result:hover{transform:translateY(-3px);border-color:rgba(53,94,59,.48);box-shadow:0 24px 45px -35px rgba(15,23,42,.75);}
+.catalog-filter-panel{background:linear-gradient(135deg,#ffffff,rgba(53,94,59,.055));border:1px solid rgba(53,94,59,.12);box-shadow:0 22px 70px -50px rgba(15,23,42,.55);}
+.catalog-filter-input{background:#fff;border:1px solid #e5e7eb;border-radius:999px;padding:.95rem 1.15rem .95rem 2.8rem;width:100%;outline:none;transition:border-color .25s ease, box-shadow .25s ease;}
+.catalog-filter-input:focus{border-color:rgba(53,94,59,.65);box-shadow:0 0 0 4px rgba(53,94,59,.10);}
+.catalog-filter-chip{border:1px solid #e5e7eb;background:white;color:#374151;border-radius:999px;font-size:.78rem;font-weight:800;padding:.6rem .9rem;transition:all .25s ease;}
+.catalog-filter-chip:hover,.catalog-filter-chip.is-active{background:#355E3B;color:white;border-color:#355E3B;}
+.customer-trust-card{background:white;border:1px solid #edf2f7;border-radius:1.5rem;padding:1.4rem;box-shadow:0 20px 55px -42px rgba(15,23,42,.75);transition:transform .34s cubic-bezier(.16,1,.3,1), box-shadow .34s cubic-bezier(.16,1,.3,1);}
+.customer-trust-card:hover{transform:translateY(-6px);box-shadow:0 30px 80px -55px rgba(15,23,42,.95);}
+.customer-trust-icon{width:3rem;height:3rem;border-radius:1rem;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;background:rgba(53,94,59,.10);color:#355E3B;}
+.quick-action-panel{position:fixed;left:50%;bottom:1rem;transform:translateX(-50%);z-index:45;display:none;gap:.5rem;align-items:center;background:rgba(255,255,255,.88);border:1px solid rgba(15,23,42,.08);box-shadow:0 24px 80px -42px rgba(15,23,42,.95);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-radius:999px;padding:.5rem;}
+.quick-action-panel a,.quick-action-panel button{white-space:nowrap;border-radius:999px;padding:.75rem 1rem;font-size:.82rem;font-weight:900;}
+.quick-action-panel .primary{background:#355E3B;color:white;}
+.quick-action-panel .secondary{color:#183B2A;background:rgba(53,94,59,.10);}
+@media (min-width:900px){.quick-action-panel{display:flex;}}
+@media (max-width:767px){
+  #navbar{--abatez-nav-height:76px;--abatez-logo-height:58px;}
+  .hero-cta{flex-direction:column;align-items:stretch;}
+  .hero-cta a,.hero-cta button{width:100%;text-align:center;justify-content:center;}
+}
+@media (prefers-reduced-motion:no-preference){
+  .premium-fade-up{animation:premiumFadeUp .62s cubic-bezier(.16,1,.3,1) both;}
+  @keyframes premiumFadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+}
+
+/* Ajuste para bloques de consulta insertados después de una ficha */
+main > .customer-trust-card{max-width:80rem;width:calc(100% - 2rem);margin-left:auto;margin-right:auto;}
+@media (min-width:640px){main > .customer-trust-card{width:calc(100% - 3rem);}}
+
+
+/* ===============================
+   abatez v7 - Pulido final para publicación
+   =============================== */
+.pdf-new-tab{position:relative;}
+.pdf-new-tab i.fa-up-right-from-square{opacity:.75;transition:transform .22s ease, opacity .22s ease;}
+.pdf-new-tab:hover i.fa-up-right-from-square{opacity:1;transform:translate(2px,-2px);}
+
+/* Suavidad extra: el logo ya no cambia por alto; se mantiene estable y solo escala con transform. */
+#navbar img[alt*="abatez"],
+#navbar img[alt*="Logo"],
+#logo-abatez{
+  height:84px!important;
+  max-height:84px!important;
+  transition:filter .32s ease!important;
+  will-change:transform;
+}
+@media (max-width:767px){
+  #navbar img[alt*="abatez"],
+  #navbar img[alt*="Logo"],
+  #logo-abatez{height:58px!important;max-height:58px!important;}
+}
+
+/* Limpieza visual: reduce el ruido de sombras en tarjetas secundarias sin perder sensación premium. */
+.customer-trust-card,
+.product-search-result,
+.catalog-filter-panel{backface-visibility:hidden;}
+
+/* ===============================
+   abatez v8 - Corrección móvil real, hero seguro y fichas más cómodas
+   =============================== */
+html{min-height:100%;}
+body{padding-top:env(safe-area-inset-top);overflow-x:hidden;}
+#navbar{
+  border-bottom:1px solid var(--abatez-nav-border, rgba(15,23,42,.04));
+  transform:translateZ(0);
+  contain:layout paint;
+}
+#navbar img[alt*="abatez"],
+#navbar img[alt*="Logo"],
+#logo-abatez{
+  transform:translate3d(0,var(--abatez-logo-y,0px),0) scale(var(--abatez-logo-scale,1))!important;
+  transition:none!important;
+}
+#navbar .max-w-7xl{min-height:var(--abatez-nav-height, 96px);}
+.home-hero{
+  min-height:calc(var(--abatez-vh, 1vh) * 100)!important;
+  height:auto!important;
+  padding-top:calc(var(--abatez-nav-height, 96px) + env(safe-area-inset-top) + 1.25rem);
+  padding-bottom:calc(6rem + env(safe-area-inset-bottom));
+  isolation:isolate;
+}
+.home-hero-content{width:100%;}
+.catalog-hero{
+  padding-top:calc(var(--abatez-nav-height, 96px) + 3rem)!important;
+}
+.product-detail-grid{scroll-margin-top:calc(var(--abatez-nav-height, 96px) + 1rem);}
+.product-detail-thumb img{filter:drop-shadow(0 22px 28px rgba(15,23,42,.10));}
+button[aria-label="Contactar por WhatsApp"]{bottom:calc(1.5rem + env(safe-area-inset-bottom))!important;}
+
+@media (max-width: 767px){
+  #navbar{--abatez-nav-height:78px!important;--abatez-logo-height:60px!important;}
+  #navbar .max-w-7xl{min-height:78px;}
+  #navbar a.h-full.py-2{padding-top:.45rem!important;padding-bottom:.45rem!important;}
+  #mobile-menu{max-height:calc((var(--abatez-vh, 1vh) * 100) - var(--abatez-nav-height, 78px));overflow:auto;}
+  .home-hero{
+    min-height:max(760px, calc(var(--abatez-vh, 1vh) * 100))!important;
+    align-items:flex-start!important;
+    padding-top:calc(78px + env(safe-area-inset-top) + 1rem)!important;
+    padding-bottom:calc(5.75rem + env(safe-area-inset-bottom))!important;
+  }
+  .home-hero h1{font-size:clamp(2.05rem, 8.2vw, 2.65rem)!important;line-height:1.06!important;margin-bottom:1rem!important;}
+  .home-hero p{font-size:1rem!important;line-height:1.55!important;margin-bottom:1rem!important;}
+  .home-hero .inline-flex.rounded-full{font-size:.78rem;line-height:1.35;}
+  .hero-cta{gap:.65rem!important;margin-bottom:1rem!important;}
+  .hero-cta a,.hero-cta button{width:100%;padding:.92rem 1.1rem!important;font-size:.95rem;}
+  .hero-proof-pill{padding:.85rem 1rem!important;}
+  .diapositiva{background-attachment:scroll!important;background-position:center!important;}
+  .catalog-hero{padding-top:calc(78px + env(safe-area-inset-top) + 2rem)!important;padding-bottom:3rem!important;}
+  .catalog-hero h1{font-size:clamp(2.25rem, 10vw, 3rem)!important;line-height:1.05!important;}
+  main.pt-32{padding-top:calc(78px + env(safe-area-inset-top) + 2rem)!important;}
+  .product-detail-grid{display:flex!important;flex-direction:column;gap:1.25rem!important;}
+  .product-info-panel{order:1;}
+  .product-media-panel{order:2;position:static!important;top:auto!important;padding:1rem!important;border-radius:1.5rem!important;}
+  .product-detail-thumb{height:auto!important;min-height:0!important;max-height:none!important;padding:1rem!important;}
+  .product-detail-thumb img{max-height:360px!important;width:100%;object-fit:contain;}
+  .product-info-panel h1{font-size:clamp(2.35rem, 10vw, 3.15rem)!important;line-height:1.02!important;}
+  .product-info-panel p.text-xl{font-size:1.05rem!important;line-height:1.65!important;}
+  .product-table td,.product-table th{padding:.75rem .8rem;font-size:.86rem;}
+  button[aria-label="Contactar por WhatsApp"]{
+    width:3.35rem!important;height:3.35rem!important;font-size:1.55rem!important;
+    right:.9rem!important;bottom:calc(5.25rem + env(safe-area-inset-bottom))!important;
+  }
+  .quick-actions-bar{bottom:calc(5.25rem + env(safe-area-inset-bottom));}
+}
+
+@media (max-width: 380px){
+  .home-hero{min-height:820px!important;}
+  .hero-proof-pill{font-size:.88rem;}
+  .product-detail-thumb img{max-height:315px!important;}
+}
+
+@media (hover:none){
+  .animal-card-premium:hover,.pro-card:hover,.client-help-card:hover{transform:none!important;}
+}
+
+@media print{
+  #navbar,#preloader,#scroll-progress,button[aria-label="Contactar por WhatsApp"],.quick-actions-bar{display:none!important;}
+  body{background:#fff!important;padding:0!important;}
+  .home-hero,.catalog-hero,main.pt-32{padding-top:0!important;min-height:auto!important;height:auto!important;}
+  .diapositiva{background-attachment:scroll!important;}
+  .pro-card,.tarjeta-elegante{box-shadow:none!important;}
+  a[href]::after{content:""!important;}
+}
+
+/* ===============================
+   abatez v11 - Experiencia móvil más compacta y fichas mejor ordenadas
+   =============================== */
+.product-mobile-media-panel{display:none;}
+.product-mobile-thumb{height:230px;background:linear-gradient(135deg,rgba(53,94,59,.055),rgba(185,120,44,.05));}
+.product-mobile-thumb img{filter:drop-shadow(0 14px 18px rgba(15,23,42,.10));}
+.mobile-action-compact{display:flex!important;align-items:center;justify-content:center;gap:.35rem;text-align:center;line-height:1.15!important;min-height:44px;}
+
+@media (max-width:767px){
+  :root{--mobile-section-y:3.6rem;}
+  body{font-size:15px;}
+  #navbar{--abatez-nav-height:72px!important;--abatez-logo-height:54px!important;}
+  #navbar .max-w-7xl{min-height:72px!important;}
+  #navbar a.h-full.py-2{padding-top:.38rem!important;padding-bottom:.38rem!important;}
+
+  /* Inicio más respirable: compacto sin sacrificar impacto */
+  .home-hero{
+    min-height:calc(var(--abatez-vh, 1vh) * 100)!important;
+    padding-top:calc(72px + env(safe-area-inset-top) + .75rem)!important;
+    padding-bottom:calc(4.4rem + env(safe-area-inset-bottom))!important;
+  }
+  .home-hero h1{font-size:clamp(1.82rem, 7.6vw, 2.35rem)!important;line-height:1.07!important;margin-bottom:.8rem!important;}
+  .home-hero p{font-size:.95rem!important;line-height:1.48!important;margin-bottom:.85rem!important;}
+  .home-hero .inline-flex.rounded-full{font-size:.72rem!important;padding:.5rem .85rem!important;}
+  .hero-cta{gap:.5rem!important;margin-bottom:.75rem!important;}
+  .hero-cta a,.hero-cta button{padding:.78rem 1rem!important;font-size:.88rem!important;border-radius:999px!important;}
+  .hero-proof-pill{padding:.7rem .8rem!important;font-size:.82rem!important;}
+  .home-hero .grid{gap:.55rem!important;}
+
+  /* Secciones y tarjetas: menos altura de scroll en celular */
+  section.py-20, section.py-24, .py-20, .py-24{padding-top:var(--mobile-section-y)!important;padding-bottom:var(--mobile-section-y)!important;}
+  .premium-section-title, section h2{font-size:clamp(1.65rem, 7.2vw, 2.15rem)!important;line-height:1.12!important;}
+  section p.text-xl, .text-xl{font-size:1rem!important;line-height:1.55!important;}
+  .animal-card-premium{border-radius:1.35rem!important;min-height:auto!important;}
+  .animal-card-premium .animal-chip{top:.75rem!important;left:.75rem!important;font-size:.7rem!important;padding:.35rem .55rem!important;}
+  .animal-card-premium img{height:13.5rem!important;}
+  .animal-card-premium .p-6{padding:1rem!important;}
+  .animal-card-premium h3{font-size:1.22rem!important;}
+  .animal-card-premium p{font-size:.85rem!important;line-height:1.45!important;}
+  .product-finder-card, .catalog-filter-panel, .client-note{border-radius:1.45rem!important;padding:1rem!important;}
+  .product-search-result{padding:.85rem!important;border-radius:1rem!important;}
+  .product-search-result strong{font-size:1rem!important;}
+  .client-help-card, .customer-trust-card{padding:1rem!important;border-radius:1.15rem!important;}
+
+  /* Catálogos */
+  .catalog-hero{padding-top:calc(72px + env(safe-area-inset-top) + 1.35rem)!important;padding-bottom:2.25rem!important;}
+  .catalog-hero h1{font-size:clamp(1.85rem, 8.4vw, 2.45rem)!important;line-height:1.08!important;}
+  .catalog-filter-chip{font-size:.72rem!important;padding:.48rem .7rem!important;}
+  .catalog-filter-input{padding:.78rem 1rem .78rem 2.45rem!important;font-size:.9rem!important;}
+  article .p-6, article.p-6{padding:1rem!important;}
+  article h3{font-size:1.15rem!important;}
+
+  /* Fichas de producto: título + imagen compacta + detalles */
+  main.pt-32{padding-top:calc(72px + env(safe-area-inset-top) + 1rem)!important;padding-bottom:3.5rem!important;}
+  main .text-sm.text-gray-500.mb-8{margin-bottom:1rem!important;font-size:.78rem!important;line-height:1.45!important;}
+  .product-detail-grid{display:block!important;}
+  .product-media-panel{display:none!important;}
+  .product-mobile-media-panel{display:block!important;}
+  .product-mobile-thumb{height:215px!important;}
+  .product-mobile-actions a,.product-mobile-actions button{padding:.72rem .55rem!important;font-size:.78rem!important;border-radius:.9rem!important;}
+  .product-info-panel h1{font-size:clamp(1.95rem, 8.3vw, 2.55rem)!important;line-height:1.05!important;margin-bottom:.75rem!important;}
+  .product-info-panel > p.text-xl{font-size:.96rem!important;line-height:1.5!important;margin-bottom:1rem!important;}
+  .product-info-panel > p.text-sm{margin-top:.7rem!important;margin-bottom:.4rem!important;font-size:.78rem!important;}
+  .badge-oficial,.badge-ally,.badge-consult{font-size:.68rem!important;padding:.24rem .55rem!important;}
+  .product-info-panel .grid.md\:grid-cols-2{gap:.8rem!important;margin-bottom:1rem!important;}
+  .product-info-panel .bg-white.rounded-2xl.p-6{padding:1rem!important;border-radius:1rem!important;}
+  .product-info-panel h2{font-size:1.25rem!important;margin-bottom:.8rem!important;}
+  .product-info-panel h3{font-size:1rem!important;margin-bottom:.55rem!important;}
+  .product-info-panel .bg-white.rounded-3xl{padding:1rem!important;border-radius:1.15rem!important;margin-bottom:1rem!important;}
+  .product-info-panel ul.space-y-3{gap:.55rem!important;}
+  .product-info-panel li{font-size:.9rem!important;line-height:1.45!important;}
+  .product-table td,.product-table th{padding:.58rem .65rem!important;font-size:.8rem!important;}
+  .product-info-panel details{padding:1rem!important;margin-bottom:.8rem!important;border-radius:1rem!important;}
+  .product-info-panel .bg-red-50{padding:1rem!important;margin-bottom:1.25rem!important;border-radius:1rem!important;}
+  .product-info-panel section.mt-12{margin-top:1.7rem!important;}
+  .product-info-panel section.mt-12 .grid{gap:.75rem!important;}
+  .product-info-panel section.mt-12 a{padding:1rem!important;border-radius:1rem!important;}
+
+  button[aria-label="Contactar por WhatsApp"]{
+    width:3.05rem!important;height:3.05rem!important;font-size:1.35rem!important;
+    right:.85rem!important;bottom:calc(4.6rem + env(safe-area-inset-bottom))!important;
+  }
+}
+
+@media (max-width:380px){
+  .home-hero{min-height:calc(var(--abatez-vh, 1vh) * 100)!important;}
+  .home-hero h1{font-size:clamp(1.72rem, 7.8vw, 2.15rem)!important;}
+  .product-mobile-thumb{height:190px!important;}
+  .product-info-panel h1{font-size:clamp(1.8rem, 8.8vw, 2.3rem)!important;}
+}
+
+
+/* ===============================
+   abatez v12 - Tarjetas de animales más compactas en celular
+   =============================== */
+@media (max-width:767px){
+  #categorias{padding-top:3.15rem!important;padding-bottom:3.25rem!important;}
+  #categorias .text-center.mb-16{margin-bottom:1.65rem!important;}
+  #categorias h2{font-size:1.75rem!important;}
+  #categorias p{font-size:.9rem!important;line-height:1.45!important;}
+  .animal-grid-mobile{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:.78rem!important;}
+  .animal-card-premium{border-radius:1.05rem!important;box-shadow:0 14px 34px -26px rgba(15,23,42,.78)!important;}
+  .animal-card-premium > .relative.h-52{height:8.9rem!important;}
+  .animal-card-premium img{height:100%!important;min-height:0!important;}
+  .animal-card-premium .animal-gradient{height:78%!important;background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.62))!important;}
+  .animal-card-premium .animal-chip{top:.55rem!important;left:.55rem!important;font-size:.62rem!important;padding:.26rem .46rem!important;}
+  .animal-card-premium .p-6{padding:.68rem .72rem .72rem!important;}
+  .animal-card-premium h3{font-size:.92rem!important;line-height:1.15!important;margin-bottom:.12rem!important;}
+  .animal-card-premium p{display:none!important;}
+  .animal-card-premium span.inline-flex{font-size:.72rem!important;line-height:1.1!important;}
+  .animal-card-premium span.inline-flex i{font-size:.65rem!important;margin-left:.28rem!important;}
+}
+
+@media (max-width:380px){
+  .animal-grid-mobile{gap:.62rem!important;}
+  .animal-card-premium > .relative.h-52{height:8.05rem!important;}
+  .animal-card-premium .p-6{padding:.58rem .62rem .64rem!important;}
+  .animal-card-premium h3{font-size:.86rem!important;}
+  .animal-card-premium span.inline-flex{font-size:.68rem!important;}
+}
+
+
+/* ===============================
+   abatez v13 - Móvil más compacto en secciones largas
+   =============================== */
+@media (max-width:767px){
+  /* Búsqueda rápida: se mantiene útil, pero ya no domina la pantalla */
+  #buscador-productos{padding-top:2.35rem!important;padding-bottom:2.6rem!important;}
+  #buscador-productos .product-finder-card{padding:.88rem!important;border-radius:1.15rem!important;}
+  #buscador-productos .grid{gap:.9rem!important;}
+  #buscador-productos [data-aos="fade-right"]{margin-bottom:.15rem!important;}
+  #buscador-productos .inline-flex{font-size:.62rem!important;padding:.28rem .55rem!important;}
+  #buscador-productos h2{font-size:1.35rem!important;line-height:1.08!important;margin-top:.55rem!important;margin-bottom:.35rem!important;}
+  #buscador-productos [data-aos="fade-right"] p{display:none!important;}
+  #buscador-productos [data-aos="fade-right"] .flex.flex-wrap{gap:.35rem!important;margin-top:.45rem!important;}
+  #buscador-productos [data-aos="fade-right"] .flex.flex-wrap span{font-size:.64rem!important;padding:.28rem .5rem!important;}
+  #buscador-productos .relative.mb-4{margin-bottom:.55rem!important;}
+  #buscador-productos input{padding-top:.72rem!important;padding-bottom:.72rem!important;border-radius:.95rem!important;font-size:.86rem!important;}
+  #resultados-productos-abatez{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:.55rem!important;}
+  #resultados-productos-abatez .product-search-result{padding:.62rem!important;border-radius:.82rem!important;min-height:auto!important;}
+  #resultados-productos-abatez .product-search-result:nth-child(n+5){display:none!important;}
+  #resultados-productos-abatez .product-search-result span.text-xs{font-size:.55rem!important;line-height:1.1!important;letter-spacing:.035em!important;}
+  #resultados-productos-abatez .product-search-result strong{font-size:.82rem!important;line-height:1.12!important;margin-top:.18rem!important;}
+  #resultados-productos-abatez .product-search-result span.block.text-gray-600{display:none!important;}
+  #resultados-productos-abatez .product-search-result span.inline-flex{font-size:.66rem!important;margin-top:.4rem!important;padding:0!important;background:transparent!important;border:0!important;}
+
+  /* Asesor inteligente: menos alto, más directo */
+  #cta-asesor{padding-top:2.65rem!important;padding-bottom:2.85rem!important;}
+  #cta-asesor .max-w-4xl{max-width:100%!important;}
+  #cta-asesor h2{font-size:1.55rem!important;line-height:1.12!important;margin-bottom:.65rem!important;}
+  #cta-asesor p{font-size:.92rem!important;line-height:1.45!important;margin-bottom:.9rem!important;}
+  #cta-asesor button{margin-top:.15rem!important;padding:.78rem 1.15rem!important;font-size:.9rem!important;border-radius:999px!important;}
+
+  /* Nosotros: imagen y contenido más ligeros en celular */
+  #nosotros{padding-top:2.7rem!important;padding-bottom:2.8rem!important;}
+  #nosotros .flex{gap:1rem!important;}
+  #nosotros img{height:11rem!important;width:100%!important;object-fit:cover!important;border-radius:1.2rem!important;box-shadow:0 18px 40px -32px rgba(15,23,42,.8)!important;}
+  #nosotros h2{font-size:1.5rem!important;line-height:1.12!important;margin-bottom:.65rem!important;}
+  #nosotros p.text-lg{font-size:.92rem!important;line-height:1.48!important;margin-bottom:.85rem!important;}
+  #nosotros .inline-flex{padding:.7rem!important;border-radius:.95rem!important;margin-bottom:.8rem!important;}
+  #nosotros .inline-flex .w-12{width:2.35rem!important;height:2.35rem!important;margin-right:.65rem!important;}
+  #nosotros ul{margin-bottom:0!important;gap:.45rem!important;}
+  #nosotros li{font-size:.86rem!important;line-height:1.32!important;align-items:flex-start!important;}
+  #nosotros li i{font-size:.95rem!important;margin-top:.12rem!important;}
+
+  /* Por qué confiar: tarjetas resumidas, sin párrafos largos en móvil */
+  #ayuda-cliente{padding-top:2.65rem!important;padding-bottom:2.75rem!important;}
+  #ayuda-cliente .text-center.mb-14{margin-bottom:1rem!important;}
+  #ayuda-cliente .text-center span{font-size:.66rem!important;margin-bottom:.35rem!important;}
+  #ayuda-cliente h2{font-size:1.45rem!important;line-height:1.12!important;margin-bottom:.45rem!important;}
+  #ayuda-cliente .h-1{height:3px!important;width:3rem!important;}
+  #ayuda-cliente .text-center p{display:none!important;}
+  #ayuda-cliente .grid{gap:.65rem!important;}
+  #ayuda-cliente .customer-trust-card{display:flex!important;align-items:center!important;gap:.75rem!important;padding:.78rem!important;border-radius:1rem!important;}
+  #ayuda-cliente .customer-trust-icon{width:2.25rem!important;height:2.25rem!important;border-radius:.75rem!important;margin:0!important;flex-shrink:0!important;font-size:.88rem!important;}
+  #ayuda-cliente h3{font-size:.95rem!important;margin:0!important;line-height:1.15!important;}
+  #ayuda-cliente p{display:none!important;}
+
+  /* FAQ: menos aire vertical y acordeones más compactos */
+  #faq{padding-top:2.6rem!important;padding-bottom:2.75rem!important;}
+  #faq .text-center.mb-12{margin-bottom:1rem!important;}
+  #faq .text-center span{font-size:.66rem!important;margin-bottom:.35rem!important;}
+  #faq h2{font-size:1.48rem!important;line-height:1.12!important;}
+  #faq .h-1{height:3px!important;width:2.8rem!important;margin-top:.65rem!important;}
+  #faq .space-y-4{gap:.55rem!important;}
+  #faq .rounded-2xl{border-radius:.9rem!important;}
+  #faq button{padding:.82rem .9rem!important;}
+  #faq button span{font-size:.88rem!important;line-height:1.25!important;}
+  #faq [id^="faq-ans-"] p{padding:.85rem .95rem!important;font-size:.82rem!important;line-height:1.45!important;}
+
+  /* Contacto también baja un poco de altura para que todo el home se sienta más ágil */
+  #contacto{padding-top:3rem!important;padding-bottom:3rem!important;}
+}
+
+@media (max-width:380px){
+  #resultados-productos-abatez .product-search-result{padding:.55rem!important;}
+  #resultados-productos-abatez .product-search-result strong{font-size:.78rem!important;}
+  #nosotros img{height:9.8rem!important;}
+  #cta-asesor h2,#ayuda-cliente h2,#faq h2{font-size:1.35rem!important;}
+}
+
+/* ===============================
+   abatez v14 - Contacto y footer más compactos en celular
+   =============================== */
+@media (max-width:767px){
+  /* Contacto: mismo contenido, menos altura y menos scroll */
+  #contacto{padding-top:2.15rem!important;padding-bottom:2.25rem!important;}
+  #contacto .text-center.mb-16{margin-bottom:.95rem!important;}
+  #contacto h2{font-size:1.42rem!important;line-height:1.1!important;margin-bottom:.45rem!important;}
+  #contacto .h-1{height:3px!important;width:2.8rem!important;}
+  #contacto .flex.flex-col.lg\:flex-row{gap:.95rem!important;}
+
+  /* Formulario de cotización */
+  #contacto .lg\:w-7\/12{padding:.95rem!important;border-radius:1.05rem!important;box-shadow:0 18px 44px -34px rgba(15,23,42,.9)!important;}
+  #contacto .lg\:w-7\/12 h3{font-size:1.12rem!important;line-height:1.15!important;margin-bottom:.28rem!important;}
+  #contacto .lg\:w-7\/12 p{font-size:.78rem!important;line-height:1.35!important;margin-bottom:.72rem!important;}
+  #contacto form.space-y-5 > :not([hidden]) ~ :not([hidden]){margin-top:.62rem!important;}
+  #contacto form .grid.gap-5{gap:.62rem!important;}
+  #contacto label{font-size:.72rem!important;line-height:1.1!important;margin-bottom:.24rem!important;}
+  #contacto input,
+  #contacto select,
+  #contacto textarea{padding:.66rem .78rem!important;border-radius:.72rem!important;font-size:.82rem!important;line-height:1.25!important;}
+  #contacto textarea{height:4.35rem!important;min-height:4.35rem!important;resize:vertical!important;}
+  #contacto button[type="submit"]{padding:.78rem .95rem!important;font-size:.86rem!important;border-radius:.82rem!important;box-shadow:0 12px 28px -22px rgba(22,101,52,.9)!important;transform:none!important;}
+
+  /* Datos de atención: más tipo tarjeta compacta */
+  #contacto .lg\:w-5\/12.flex{justify-content:flex-start!important;}
+  #contacto .lg\:w-5\/12.space-y-8 > :not([hidden]) ~ :not([hidden]){margin-top:.72rem!important;}
+  #contacto .lg\:w-5\/12 h3{font-size:1.1rem!important;line-height:1.15!important;margin-bottom:.55rem!important;}
+  #contacto .lg\:w-5\/12 .space-y-4 > :not([hidden]) ~ :not([hidden]){margin-top:.48rem!important;}
+  #contacto .lg\:w-5\/12 a,
+  #contacto .lg\:w-5\/12 p{font-size:.82rem!important;line-height:1.32!important;}
+  #contacto .lg\:w-5\/12 i{font-size:.9rem!important;width:1.05rem!important;min-width:1.05rem!important;margin-right:.58rem!important;}
+  #contacto .flex.space-x-4{padding-top:0!important;gap:.45rem!important;}
+  #contacto .flex.space-x-4 > a{width:2.05rem!important;height:2.05rem!important;font-size:.82rem!important;}
+
+  /* Mapa: visible, pero menos protagonista en móvil */
+  #contacto iframe{height:6.8rem!important;}
+  #contacto .w-full.mt-4{margin-top:.58rem!important;border-radius:.85rem!important;border-width:1px!important;}
+  #contacto .w-full.mt-4 a.block{padding:.6rem .75rem!important;font-size:.78rem!important;}
+
+  /* Footer general: compacto en todo el sitio móvil */
+  footer{padding-top:1.25rem!important;padding-bottom:calc(1.05rem + env(safe-area-inset-bottom))!important;}
+  footer .max-w-7xl{padding-left:1rem!important;padding-right:1rem!important;}
+  footer .grid{gap:.85rem!important;}
+  footer img{height:3.1rem!important;margin-bottom:.42rem!important;border-radius:.65rem!important;padding:.25rem!important;}
+  footer h3{font-size:.92rem!important;margin-bottom:.38rem!important;}
+  footer p,
+  footer li,
+  footer a{font-size:.76rem!important;line-height:1.35!important;}
+  footer ul.space-y-2 > :not([hidden]) ~ :not([hidden]),
+  footer .space-y-2 > :not([hidden]) ~ :not([hidden]){margin-top:.25rem!important;}
+  footer button{padding:.62rem .9rem!important;font-size:.78rem!important;border-radius:999px!important;}
+  footer .mt-10{margin-top:.95rem!important;padding-top:.62rem!important;}
+  footer .text-center.space-y-2 > :not([hidden]) ~ :not([hidden]){margin-top:.26rem!important;}
+}
+
+@media (max-width:380px){
+  #contacto{padding-top:1.9rem!important;padding-bottom:2rem!important;}
+  #contacto .lg\:w-7\/12{padding:.82rem!important;}
+  #contacto input,
+  #contacto select,
+  #contacto textarea{font-size:.78rem!important;padding:.58rem .68rem!important;}
+  #contacto textarea{height:3.95rem!important;min-height:3.95rem!important;}
+  #contacto iframe{height:6rem!important;}
+  footer p,
+  footer li,
+  footer a{font-size:.72rem!important;}
+}
+
+/* ===============================
+   abatez v15 - Hero móvil más limpio: imagen visible + CTA compactas
+   =============================== */
+.mobile-cta-text{display:none;}
+
+@media (max-width:767px){
+  /* En móvil quitamos las 3 tarjetas informativas del hero para que respire la imagen. */
+  .hero-proof-grid{display:none!important;}
+
+  /* La imagen del hero se percibe mejor sin perder legibilidad. */
+  .hero-mobile-overlay{background:linear-gradient(180deg,rgba(0,0,0,.54),rgba(0,0,0,.48),rgba(0,0,0,.58))!important;}
+  .home-hero{min-height:calc(var(--abatez-vh, 1vh) * 100)!important;align-items:center!important;padding-top:calc(76px + env(safe-area-inset-top) + .55rem)!important;padding-bottom:calc(3.85rem + env(safe-area-inset-bottom))!important;}
+  .home-hero-content{max-width:26rem!important;padding-left:1rem!important;padding-right:1rem!important;}
+  .home-hero h1{font-size:clamp(1.68rem,7.4vw,2.08rem)!important;line-height:1.05!important;margin-bottom:.65rem!important;text-wrap:balance;}
+  .home-hero p{font-size:.88rem!important;line-height:1.38!important;margin-bottom:.65rem!important;}
+  .home-hero .flex.justify-center.mb-8{margin-bottom:.72rem!important;}
+  .home-hero .inline-flex.rounded-full{font-size:.68rem!important;padding:.42rem .7rem!important;max-width:100%;}
+  .home-hero .inline-flex.rounded-full span{white-space:normal!important;line-height:1.25!important;}
+
+  /* La barra principal de acciones vuelve a mostrarse en móvil, pero pequeña y no invasiva. */
+  .hero-cta{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:.42rem!important;margin:.25rem auto 0!important;width:100%!important;max-width:22rem!important;align-items:stretch!important;}
+  .hero-cta a,.hero-cta button{width:auto!important;min-width:0!important;padding:.58rem .34rem!important;font-size:.68rem!important;line-height:1.05!important;border-radius:999px!important;box-shadow:0 14px 30px -26px rgba(0,0,0,.85)!important;transform:none!important;}
+  .hero-cta i{margin-right:.22rem!important;font-size:.78rem!important;}
+  .desktop-cta-text{display:none!important;}
+  .mobile-cta-text{display:inline!important;}
+
+  .punto-carrusel{width:.46rem!important;height:.46rem!important;}
+  .home-hero .absolute.bottom-10{bottom:1.65rem!important;}
+}
+
+@media (max-width:380px){
+  .home-hero h1{font-size:clamp(1.55rem,7.8vw,1.88rem)!important;}
+  .home-hero p{font-size:.82rem!important;line-height:1.34!important;}
+  .hero-cta{gap:.32rem!important;max-width:20.5rem!important;}
+  .hero-cta a,.hero-cta button{padding:.52rem .26rem!important;font-size:.64rem!important;}
+  .hero-cta i{font-size:.72rem!important;margin-right:.16rem!important;}
+}
+
+
+/* ===============================
+   abatez v17 - Identidad premium, logo independiente y galería
+   =============================== */
+:root{
+  --abatez-green:#355E3B;
+  --abatez-dark:#183B2A;
+  --abatez-gold:#D7B354;
+  --abatez-copper:#B9782C;
+  --abatez-cream:#fffaf1;
+  --abatez-ink:#1e241b;
+}
+body{background:#fffaf1;color:#1e241b;}
+.text-marca-dark{color:#183B2A!important;}
+.text-marca{color:#355E3B!important;}
+.text-acento{color:#B9782C!important;}
+.bg-marca{background-color:#355E3B!important;}
+.bg-marca-dark{background-color:#183B2A!important;}
+.bg-acento{background-color:#B9782C!important;}
+.border-marca{border-color:#355E3B!important;}
+.border-acento{border-color:#B9782C!important;}
+.hover\:bg-marca-dark:hover{background-color:#183B2A!important;}
+.hover\:bg-marca:hover{background-color:#355E3B!important;}
+.hover\:text-marca:hover{color:#355E3B!important;}
+.fill-gray-900{fill:#fffaf1!important;}
+
+/* Navbar: el logo ya no determina la altura. Flota fuera de la barra y se integra al bajar. */
+#navbar{
+  --abatez-nav-height:72px;
+  --abatez-logo-card-w:224px;
+  --abatez-logo-card-h:104px;
+  --abatez-logo-card-top:8px;
+  --abatez-logo-card-y:9px;
+  --abatez-logo-card-pad:14px;
+  --abatez-logo-card-radius:18px;
+  height:var(--abatez-nav-height)!important;
+  min-height:var(--abatez-nav-height)!important;
+  background:var(--abatez-nav-bg,rgba(255,252,245,.92))!important;
+  border-bottom:1px solid var(--abatez-nav-border,rgba(80,55,30,.08));
+  box-shadow:var(--abatez-nav-shadow,0 1px 0 rgba(80,55,30,.06))!important;
+  overflow:visible!important;
+  contain:none!important;
+}
+#navbar .max-w-7xl{height:var(--abatez-nav-height)!important;min-height:var(--abatez-nav-height)!important;position:relative;}
+#navbar .flex.justify-between.items-center.h-full{height:var(--abatez-nav-height)!important;}
+#navbar .abatez-floating-logo-link{
+  position:absolute!important;
+  left:1rem;
+  top:var(--abatez-logo-card-top);
+  width:var(--abatez-logo-card-w)!important;
+  height:var(--abatez-logo-card-h)!important;
+  padding:var(--abatez-logo-card-pad)!important;
+  border-radius:var(--abatez-logo-card-radius)!important;
+  background:rgba(255,255,255,.96);
+  border:1px solid rgba(185,120,44,.18);
+  box-shadow:0 24px 70px -38px rgba(24,35,28,.72), 0 1px 0 rgba(255,255,255,.65) inset;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  transform:translate3d(0,var(--abatez-logo-card-y),0);
+  z-index:80;
+  overflow:hidden;
+  transition:none!important;
+}
+#navbar .abatez-floating-logo-img{
+  width:100%!important;
+  height:100%!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  transform:none!important;
+  transition:none!important;
+}
+#navbar .hidden.md\:flex{margin-left:245px;align-items:center;}
+#navbar.navbar--compact .hidden.md\:flex{margin-left:165px;}
+#navbar .hidden.md\:flex a{font-size:.88rem;}
+#scroll-progress{background:linear-gradient(90deg,#B9782C,#D7B354,#355E3B)!important;}
+
+/* Hero más cálido, menos parecido a MNA. */
+.hero-mobile-overlay{background:linear-gradient(90deg,rgba(24,59,42,.78),rgba(30,20,12,.55),rgba(0,0,0,.42))!important;}
+.home-hero .bg-marca,.hero-cta .bg-marca{background:linear-gradient(135deg,#355E3B,#183B2A)!important;}
+.hero-cta .border{border-color:rgba(215,179,84,.55)!important;}
+.hero-proof-pill{background:rgba(24,59,42,.42);border:1px solid rgba(215,179,84,.24);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}
+.animal-card-premium{border:1px solid rgba(185,120,44,.14);}
+.animal-card-premium .animal-chip{background:rgba(255,250,241,.94)!important;color:#183B2A!important;border:1px solid rgba(185,120,44,.20);}
+.customer-trust-card,.client-help-card,.product-finder-card{border:1px solid rgba(185,120,44,.12);}
+.customer-trust-icon{background:rgba(215,179,84,.18)!important;color:#183B2A!important;}
+.gallery-card img{transition:transform .45s ease, filter .45s ease;}
+.gallery-card:hover img{transform:scale(1.045);filter:saturate(1.08) contrast(1.03);}
+.testimonial-empty{box-shadow:0 20px 60px -42px rgba(24,35,28,.55);}
+.home-gallery-cta a:hover i{color:#fff!important;}
+
+@media (max-width:767px){
+  #navbar{--abatez-nav-height:64px!important;--abatez-logo-card-w:150px;--abatez-logo-card-h:70px;--abatez-logo-card-top:7px;--abatez-logo-card-pad:9px;}
+  #navbar .max-w-7xl{height:64px!important;min-height:64px!important;}
+  #navbar .abatez-floating-logo-link{left:.75rem;}
+  #navbar .md\:hidden, #navbar button.md\:hidden{margin-left:auto;}
+  #mobile-menu{top:64px!important;}
+  .home-hero{padding-top:calc(74px + env(safe-area-inset-top))!important;}
+  .catalog-hero, main.pt-32{padding-top:calc(84px + env(safe-area-inset-top))!important;}
+  .gallery-hero .py-16{padding-top:3.5rem!important;padding-bottom:3rem!important;}
+  .gallery-hero h1{font-size:clamp(1.9rem,8vw,2.55rem)!important;line-height:1.08!important;}
+  .gallery-hero p{font-size:.92rem!important;line-height:1.45!important;}
+  .gallery-card img{height:9.5rem!important;}
+  .gallery-card .p-5{padding:.9rem!important;}
+  .gallery-card h3{font-size:1rem!important;}
+  .gallery-card p{font-size:.8rem!important;line-height:1.4!important;}
+  .testimonial-empty{padding:1rem!important;border-radius:1rem!important;}
+  .home-gallery-cta{margin-top:1rem!important;}
+  .home-gallery-cta a{padding:.72rem 1rem!important;font-size:.82rem!important;}
+  .home-gallery-cta p{display:none!important;}
+}
+
+@media (min-width:1280px){
+  #navbar .abatez-floating-logo-link{left:0;}
+}
+
+/* ===============================
+   abatez v18 - Logo fusionado + paleta más propia del logotipo
+   =============================== */
+:root{
+  --abatez-green:#315b38;
+  --abatez-green-2:#24472f;
+  --abatez-dark:#132f24;
+  --abatez-gold:#e3b653;
+  --abatez-amber:#f1d27a;
+  --abatez-copper:#a64f2f;
+  --abatez-rust:#7d3127;
+  --abatez-cream:#fff8ec;
+}
+body{background:#fff8ec;}
+.text-marca{color:#315b38!important;}
+.text-marca-dark{color:#132f24!important;}
+.text-acento{color:#a64f2f!important;}
+.bg-marca{background-color:#315b38!important;}
+.bg-marca-dark{background-color:#132f24!important;}
+.bg-acento{background-color:#a64f2f!important;}
+.border-acento{border-color:#a64f2f!important;}
+#scroll-progress{background:linear-gradient(90deg,#7d3127 0%,#e3b653 42%,#315b38 100%)!important;}
+
+/* La barra conserva su altura propia; el logo flota y al bajar se vuelve parte visual de la barra. */
+#navbar{
+  background:var(--abatez-nav-bg,rgba(255,248,236,.94))!important;
+  border-bottom:1px solid var(--abatez-nav-border,rgba(166,79,47,.10))!important;
+}
+#navbar .abatez-floating-logo-link{
+  background:var(--abatez-logo-bg,rgba(255,255,255,.97))!important;
+  border:1px solid var(--abatez-logo-border,rgba(166,79,47,.28))!important;
+  box-shadow:var(--abatez-logo-shadow,0 24px 70px -38px rgba(24,35,28,.72),0 1px 0 rgba(255,255,255,.65) inset)!important;
+  isolation:isolate;
+}
+#navbar .abatez-floating-logo-link:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:6px;
+  background:linear-gradient(180deg,#e3b653,#a64f2f,#7d3127);
+  opacity:var(--abatez-logo-accent-opacity,1);
+  z-index:-1;
+}
+#navbar .abatez-floating-logo-link:after{
+  content:"";
+  position:absolute;
+  left:10px;
+  right:10px;
+  bottom:0;
+  height:2px;
+  border-radius:999px;
+  background:linear-gradient(90deg,transparent,#e3b653,#a64f2f,transparent);
+  opacity:var(--abatez-logo-accent-opacity,.75);
+}
+#navbar .abatez-floating-logo-img{
+  display:block!important;
+  filter:drop-shadow(0 1px 0 rgba(255,255,255,.45));
+}
+#navbar .hidden.md\:flex,
+#navbar.navbar--compact .hidden.md\:flex{
+  margin-left:calc(var(--abatez-logo-card-w, 186px) + 1.7rem)!important;
+  transition:margin-left .12s linear!important;
+}
+#navbar .hidden.md\:flex a{letter-spacing:-.01em;}
+.nav-link-premium:after{background:linear-gradient(90deg,#7d3127,#e3b653,#315b38)!important;height:3px!important;bottom:-.62rem!important;}
+
+/* Más presencia del cobre/dorado del logo sin perder el verde premium. */
+.home-hero h1 .text-acento,
+.text-marca-light{
+  color:#e3b653!important;
+  text-shadow:0 2px 18px rgba(166,79,47,.18);
+}
+.hero-mobile-overlay{
+  background:linear-gradient(90deg,rgba(19,47,36,.82),rgba(78,42,24,.58),rgba(22,28,20,.44))!important;
+}
+.home-hero .bg-marca,
+.hero-cta .bg-marca,
+button.bg-marca,
+a.bg-marca{
+  background:linear-gradient(135deg,#315b38 0%,#24472f 56%,#7d3127 145%)!important;
+}
+.home-hero .bg-marca:hover,
+.hero-cta .bg-marca:hover,
+button.bg-marca:hover,
+a.bg-marca:hover{
+  background:linear-gradient(135deg,#24472f 0%,#132f24 62%,#a64f2f 150%)!important;
+}
+.hero-proof-pill,
+.mobile-hero-actions,
+.client-help-card,
+.product-finder-card,
+.customer-trust-card,
+.animal-card-premium,
+.pro-card{
+  border-color:rgba(166,79,47,.16)!important;
+}
+.animal-card-premium:hover,
+.pro-card:hover{
+  box-shadow:0 24px 70px -46px rgba(125,49,39,.38),0 18px 50px -42px rgba(49,91,56,.45)!important;
+}
+.animal-card-premium .animal-chip,
+.badge-official,
+.badge-consult{
+  border-color:rgba(166,79,47,.22)!important;
+}
+.customer-trust-icon,
+.quick-finder-tag,
+.product-filter-btn.is-active,
+.catalog-filter-btn.is-active{
+  background:rgba(227,182,83,.18)!important;
+  color:#132f24!important;
+  border-color:rgba(166,79,47,.18)!important;
+}
+.section-kicker,
+.kicker,
+.badge-kicker{
+  color:#a64f2f!important;
+}
+
+@media (max-width:767px){
+  #navbar .abatez-floating-logo-link:before{width:4px;}
+  #navbar .abatez-floating-logo-link:after{left:8px;right:8px;}
+  #navbar .abatez-floating-logo-img{filter:none;}
+}
+
+
+/* ===============================
+   abatez v19 - Logo legible/fusionado + acentos del logotipo
+   =============================== */
+:root{
+  --abatez-gold:#e5b54f;
+  --abatez-amber:#f3ca68;
+  --abatez-copper:#a64f2f;
+  --abatez-rust:#7d3127;
+  --abatez-cream:#fff7ea;
+  --abatez-green:#2f5b37;
+  --abatez-green-2:#244b31;
+  --abatez-dark:#122f24;
+}
+
+/* Más presencia de los tonos reales del logotipo sin abandonar el verde premium. */
+.text-acento{color:var(--abatez-copper)!important;}
+.text-marca-light{color:var(--abatez-gold)!important;}
+.bg-acento{background-color:var(--abatez-copper)!important;}
+.border-acento{border-color:var(--abatez-copper)!important;}
+#scroll-progress{background:linear-gradient(90deg,var(--abatez-rust),var(--abatez-gold),var(--abatez-green))!important;}
+.nav-link-premium:after{background:linear-gradient(90deg,var(--abatez-rust),var(--abatez-gold),var(--abatez-green))!important;}
+.home-hero h1 .text-acento{color:var(--abatez-gold)!important;text-shadow:0 2px 22px rgba(166,79,47,.28)!important;}
+.hero-proof-pill{border-color:rgba(229,181,79,.34)!important;background:rgba(55,38,23,.42)!important;}
+.mobile-hero-actions{border-color:rgba(166,79,47,.18)!important;}
+.quick-finder-tag,.product-filter-btn.is-active,.catalog-filter-btn.is-active{border-color:rgba(166,79,47,.22)!important;background:rgba(229,181,79,.20)!important;}
+.animal-card-premium,.product-finder-card,.client-help-card,.customer-trust-card,.pro-card{border-color:rgba(166,79,47,.16)!important;}
+
+/* Logo independiente: grande como tarjeta y compacto fusionado con la barra. */
+#navbar{
+  --abatez-nav-height:72px;
+  height:var(--abatez-nav-height)!important;
+  min-height:var(--abatez-nav-height)!important;
+  overflow:visible!important;
+  background:var(--abatez-nav-bg,rgba(255,247,234,.945))!important;
+}
+#navbar .max-w-7xl,
+#navbar .flex.justify-between.items-center.h-full{
+  height:var(--abatez-nav-height)!important;
+  min-height:var(--abatez-nav-height)!important;
+}
+#navbar .abatez-floating-logo-link{
+  position:absolute!important;
+  left:1rem!important;
+  top:var(--abatez-logo-card-top,8px)!important;
+  width:var(--abatez-logo-card-w,236px)!important;
+  height:var(--abatez-logo-card-h,106px)!important;
+  padding:var(--abatez-logo-card-pad,14px)!important;
+  border-radius:var(--abatez-logo-card-radius,20px)!important;
+  background:var(--abatez-logo-bg,rgba(255,255,255,.985))!important;
+  border:1px solid var(--abatez-logo-border,rgba(166,79,47,.30))!important;
+  box-shadow:var(--abatez-logo-shadow,0 26px 70px -38px rgba(24,35,28,.72),0 1px 0 rgba(255,255,255,.72) inset)!important;
+  overflow:visible!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  z-index:85!important;
+  transform:translate3d(0,var(--abatez-logo-card-y,8px),0)!important;
+  transition:none!important;
+}
+#navbar .abatez-floating-logo-link:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:7px;
+  border-radius:inherit;
+  border-top-right-radius:0;
+  border-bottom-right-radius:0;
+  background:linear-gradient(180deg,var(--abatez-gold),var(--abatez-copper),var(--abatez-rust));
+  opacity:var(--abatez-logo-accent-opacity,1)!important;
+  pointer-events:none;
+}
+#navbar .abatez-floating-logo-link:after{
+  content:"";
+  position:absolute;
+  left:14px;
+  right:14px;
+  bottom:0;
+  height:2px;
+  border-radius:999px;
+  background:linear-gradient(90deg,transparent,var(--abatez-gold),var(--abatez-copper),transparent);
+  opacity:var(--abatez-logo-line-opacity,.85)!important;
+  pointer-events:none;
+}
+#navbar .abatez-floating-logo-img,
+#logo-abatez.abatez-floating-logo-img{
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  min-width:0!important;
+  object-fit:contain!important;
+  transform:none!important;
+  opacity:1!important;
+  visibility:visible!important;
+  filter:drop-shadow(0 1px 0 rgba(255,255,255,.50));
+}
+#navbar .hidden.md\:flex,
+#navbar.navbar--compact .hidden.md\:flex{
+  margin-left:calc(var(--abatez-logo-card-w, 206px) + 1.8rem)!important;
+  transition:margin-left .12s linear!important;
+}
+
+/* Estado compacto: ya no se ve como tarjeta separada; se integra visualmente con el nav. */
+#navbar.navbar--compact .abatez-floating-logo-link{
+  background:rgba(255,247,234,.96)!important;
+  border-color:rgba(166,79,47,.12)!important;
+  box-shadow:none!important;
+  border-top-color:transparent!important;
+  border-left-color:rgba(166,79,47,.16)!important;
+  border-radius:0 0 18px 18px!important;
+  overflow:visible!important;
+}
+#navbar.navbar--compact .abatez-floating-logo-link:before{
+  opacity:1!important;
+  width:5px!important;
+  border-radius:0 0 0 18px!important;
+}
+#navbar.navbar--compact .abatez-floating-logo-link:after{
+  opacity:1!important;
+  left:12px!important;
+  right:12px!important;
+  height:3px!important;
+}
+#navbar.navbar--compact .abatez-floating-logo-img,
+#navbar.navbar--compact #logo-abatez{
+  object-fit:contain!important;
+  transform:scale(1.04)!important;
+  filter:none!important;
+}
+
+@media (max-width:767px){
+  #navbar{--abatez-nav-height:64px!important;}
+  #navbar .abatez-floating-logo-link{
+    left:.75rem!important;
+    width:var(--abatez-logo-card-w,152px)!important;
+    height:var(--abatez-logo-card-h,70px)!important;
+    padding:var(--abatez-logo-card-pad,9px)!important;
+  }
+  #navbar.navbar--compact .abatez-floating-logo-link{border-radius:0 0 14px 14px!important;}
+  #navbar .md\:hidden,#navbar button.md\:hidden{margin-left:auto!important;}
+}
+
+
+/* ===============================
+   abatez v20 - Logo continuo + textos enfocados al cliente
+   =============================== */
+#navbar .abatez-floating-logo-link,
+#navbar.navbar--compact .abatez-floating-logo-link{
+  background:var(--abatez-logo-bg,rgba(255,247,234,.96))!important;
+  border-color:var(--abatez-logo-border,rgba(166,79,47,.16))!important;
+  box-shadow:var(--abatez-logo-shadow,0 18px 44px -34px rgba(24,35,28,.22))!important;
+  border-radius:var(--abatez-logo-card-radius,16px)!important;
+  overflow:visible!important;
+  will-change:width,height,top,transform,padding,border-radius;
+}
+#navbar .abatez-floating-logo-link:before,
+#navbar.navbar--compact .abatez-floating-logo-link:before{
+  width:var(--abatez-logo-accent-w,6px)!important;
+  opacity:var(--abatez-logo-accent-opacity,.85)!important;
+  border-radius:inherit!important;
+  border-top-right-radius:0!important;
+  border-bottom-right-radius:0!important;
+}
+#navbar .abatez-floating-logo-link:after,
+#navbar.navbar--compact .abatez-floating-logo-link:after{
+  opacity:var(--abatez-logo-line-opacity,.85)!important;
+  height:2px!important;
+  left:12px!important;
+  right:12px!important;
+}
+#navbar a.abatez-floating-logo-link > img#logo-abatez.abatez-floating-logo-img,
+#navbar.navbar--compact a.abatez-floating-logo-link > img#logo-abatez.abatez-floating-logo-img,
+#navbar a.abatez-floating-logo-link > img[alt*="abatez"].abatez-floating-logo-img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  transform:none!important;
+  opacity:1!important;
+  visibility:visible!important;
+  filter:drop-shadow(0 1px 0 rgba(255,255,255,.35))!important;
+  image-rendering:auto;
+}
+#navbar.navbar--compact a.abatez-floating-logo-link > img#logo-abatez.abatez-floating-logo-img{
+  transform:none!important;
+  filter:none!important;
+}
+#navbar .hidden.md\:flex,
+#navbar.navbar--compact .hidden.md\:flex{
+  margin-left:calc(var(--abatez-logo-card-w,178px) + 1.85rem)!important;
+  transition:none!important;
+}
+#navbar .nav-link-premium{text-transform:none!important;}
+
+/* Microcopy: apariencia menos interna y más de atención al cliente. */
+#ayuda-cliente .section-kicker,
+#ayuda-cliente span[class*="tracking"],
+.product-finder-card span[class*="tracking"],
+.client-help-card span[class*="tracking"]{
+  text-transform:none!important;
+  letter-spacing:.02em!important;
+}
+#ayuda-cliente h2,
+.product-finder-card h2,
+.client-help-card h2{letter-spacing:-.035em;}
+
+@media (max-width:767px){
+  #navbar .abatez-floating-logo-link,
+  #navbar.navbar--compact .abatez-floating-logo-link{
+    border-radius:var(--abatez-logo-card-radius,14px)!important;
+  }
+  #navbar a.abatez-floating-logo-link > img#logo-abatez.abatez-floating-logo-img{
+    object-fit:contain!important;
+  }
+}
+
+
+/* ===============================
+   abatez v21 - Ajustes finales: footer con logo y microcopy cliente
+   =============================== */
+#ayuda-cliente .section-kicker{font-size:.78rem;}
+#ayuda-cliente h2{max-width:980px;margin-left:auto;margin-right:auto;}
+#ayuda-cliente p{max-width:760px;margin-left:auto;margin-right:auto;}
+.product-finder-card h2{text-wrap:balance;}
+@media (max-width:767px){
+  
+}
+
+
+/* =========================================================
+   abatez v23 - Restauración de botones en barra de navegación
+   Mantiene compatibilidad con Mac/Safari antiguo.
+   ========================================================= */
+#navbar .nav-desktop{
+  opacity:1!important;
+  visibility:visible!important;
+  z-index:90!important;
+}
+@media (min-width:768px){
+  #navbar .nav-desktop,
+  html:not(.legacy-static) #navbar .nav-desktop,
+  html.legacy-static #navbar .nav-desktop{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:flex-end!important;
+    margin-left:230px!important;
+    padding-top:0!important;
+    white-space:nowrap!important;
+    position:relative!important;
+    z-index:90!important;
+    opacity:1!important;
+    visibility:visible!important;
+  }
+  #navbar .nav-desktop{margin-left:calc(var(--abatez-logo-card-w,178px) + 1.85rem)!important;}
+  #navbar .nav-desktop a,
+  html.legacy-static #navbar .nav-desktop a{
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    margin:0 .55rem!important;
+    padding:.55rem .2rem!important;
+    color:#122f24!important;
+    font-size:.88rem!important;
+    line-height:1!important;
+    font-weight:700!important;
+    text-decoration:none!important;
+    opacity:1!important;
+    visibility:visible!important;
+  }
+  #navbar .nav-desktop a:hover,
+  html.legacy-static #navbar .nav-desktop a:hover{color:#a64f2f!important;}
+  #navbar .nav-mobile-toggle{display:none!important;}
+}
+@media (max-width:767px){
+  #navbar .nav-desktop,
+  html.legacy-static #navbar .nav-desktop{display:none!important;}
+  #navbar .nav-mobile-toggle,
+  html.legacy-static #navbar .nav-mobile-toggle{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    margin-left:auto!important;
+    width:44px!important;
+    height:44px!important;
+    border-radius:12px!important;
+    background:rgba(255,247,234,.92)!important;
+    color:#122f24!important;
+    border:1px solid rgba(166,79,47,.18)!important;
+    position:relative!important;
+    z-index:95!important;
+  }
+}
+
+
+/* =========================================================
+   abatez v24 - Paleta verde original + logo completo + navegación derecha
+   ========================================================= */
+:root{
+  --abatez-green:#059669;
+  --abatez-green-2:#047857;
+  --abatez-dark:#064e3b;
+  --abatez-light:#4ade80;
+  --abatez-accent:#d97706;
+  --abatez-cream:#f9fafb;
+  --abatez-ink:#0f172a;
+}
+body{background:#f9fafb!important;color:#1f2937!important;}
+.text-marca{color:#059669!important;}
+.text-marca-dark{color:#064e3b!important;}
+.text-marca-light{color:#4ade80!important;}
+.text-acento{color:#d97706!important;}
+.bg-marca{background-color:#059669!important;}
+.bg-marca-dark{background-color:#064e3b!important;}
+.bg-acento{background-color:#d97706!important;}
+.border-marca{border-color:#059669!important;}
+.border-acento{border-color:#d97706!important;}
+.hover\:bg-marca:hover{background-color:#059669!important;}
+.hover\:bg-marca-dark:hover{background-color:#064e3b!important;}
+.hover\:text-marca:hover{color:#059669!important;}
+.selection\:bg-marca::selection{background:#059669!important;color:#fff!important;}
+#scroll-progress{background:linear-gradient(90deg,#064e3b,#059669,#4ade80)!important;}
+
+/* Barra limpia, blanca y con acentos verdes como la línea anterior del proyecto. */
+#navbar{
+  background:var(--abatez-nav-bg,rgba(255,255,255,.94))!important;
+  border-bottom:1px solid var(--abatez-nav-border,rgba(5,150,105,.10))!important;
+  box-shadow:var(--abatez-nav-shadow,0 1px 0 rgba(5,150,105,.08))!important;
+}
+#navbar .max-w-7xl{max-width:1280px!important;}
+#navbar .abatez-floating-logo-link,
+#navbar.navbar--compact .abatez-floating-logo-link{
+  background:var(--abatez-logo-bg,rgba(255,255,255,.98))!important;
+  border-color:var(--abatez-logo-border,rgba(5,150,105,.18))!important;
+  box-shadow:var(--abatez-logo-shadow,0 20px 54px -36px rgba(6,78,59,.34))!important;
+  border-radius:var(--abatez-logo-card-radius,18px)!important;
+  overflow:visible!important;
+}
+#navbar .abatez-floating-logo-link:before,
+#navbar.navbar--compact .abatez-floating-logo-link:before{
+  width:4px!important;
+  background:linear-gradient(180deg,#4ade80,#059669,#064e3b)!important;
+  opacity:.85!important;
+}
+#navbar .abatez-floating-logo-link:after,
+#navbar.navbar--compact .abatez-floating-logo-link:after{
+  background:linear-gradient(90deg,transparent,#4ade80,#059669,transparent)!important;
+  opacity:.72!important;
+}
+#navbar a.abatez-floating-logo-link > img#logo-abatez.abatez-floating-logo-img,
+#navbar.navbar--compact a.abatez-floating-logo-link > img#logo-abatez.abatez-floating-logo-img,
+#navbar a.abatez-floating-logo-link > img[alt*="abatez"].abatez-floating-logo-img{
+  object-fit:contain!important;
+  object-position:center!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  filter:none!important;
+}
+
+/* Menú en escritorio alineado a la derecha, no centrado. */
+@media (min-width:768px){
+  #navbar .nav-desktop,
+  html:not(.legacy-static) #navbar .nav-desktop,
+  html.legacy-static #navbar .nav-desktop,
+  #navbar .hidden.md\:flex.nav-desktop,
+  #navbar.navbar--compact .nav-desktop{
+    margin-left:auto!important;
+    margin-right:0!important;
+    width:auto!important;
+    justify-content:flex-end!important;
+    gap:1.25rem!important;
+    padding-left:9rem!important;
+  }
+  #navbar .nav-desktop a,
+  html.legacy-static #navbar .nav-desktop a{
+    color:#064e3b!important;
+    margin:0!important;
+    font-weight:700!important;
+  }
+  #navbar .nav-desktop a:hover,
+  html.legacy-static #navbar .nav-desktop a:hover{color:#059669!important;}
+  .nav-link-premium:after{background:#059669!important;height:2px!important;bottom:-.5rem!important;}
+}
+
+/* El logo completo mantiene su proporción; al bajar se integra con la barra sin recortarse. */
+#navbar .abatez-floating-logo-link{
+  width:var(--abatez-logo-card-w,198px)!important;
+  height:var(--abatez-logo-card-h,148px)!important;
+  padding:var(--abatez-logo-card-pad,10px)!important;
+  top:var(--abatez-logo-card-top,7px)!important;
+}
+#navbar.navbar--compact .abatez-floating-logo-link{
+  border-radius:0 0 var(--abatez-logo-card-radius,14px) var(--abatez-logo-card-radius,14px)!important;
+}
+
+/* Regreso de sensación verde original, sin forzar cobre/dorado del logo. */
+.hero-mobile-overlay{background:linear-gradient(90deg,rgba(6,78,59,.76),rgba(0,0,0,.48),rgba(0,0,0,.34))!important;}
+.home-hero .bg-marca,
+.hero-cta .bg-marca,
+button.bg-marca,
+a.bg-marca{background:#059669!important;}
+.home-hero .bg-marca:hover,
+.hero-cta .bg-marca:hover,
+button.bg-marca:hover,
+a.bg-marca:hover{background:#064e3b!important;}
+.hero-proof-pill{background:rgba(6,78,59,.38)!important;border-color:rgba(74,222,128,.25)!important;}
+.mobile-hero-actions,.client-help-card,.product-finder-card,.customer-trust-card,.animal-card-premium,.pro-card{border-color:rgba(5,150,105,.14)!important;}
+.customer-trust-icon,.quick-finder-tag,.product-filter-btn.is-active,.catalog-filter-btn.is-active{
+  background:rgba(5,150,105,.10)!important;
+  color:#064e3b!important;
+  border-color:rgba(5,150,105,.14)!important;
+}
+.animal-card-premium:hover,.pro-card:hover{box-shadow:0 24px 70px -46px rgba(5,150,105,.34)!important;}
+.section-kicker,.kicker,.badge-kicker{color:#059669!important;}
+
+@media (max-width:767px){
+  #navbar .abatez-floating-logo-link,
+  #navbar.navbar--compact .abatez-floating-logo-link{
+    width:var(--abatez-logo-card-w,126px)!important;
+    height:var(--abatez-logo-card-h,94px)!important;
+    padding:var(--abatez-logo-card-pad,7px)!important;
+  }
+  #navbar .abatez-floating-logo-link:before,
+  #navbar.navbar--compact .abatez-floating-logo-link:before{width:3px!important;}
+  #navbar .nav-mobile-toggle,
+  html.legacy-static #navbar .nav-mobile-toggle{
+    background:rgba(255,255,255,.94)!important;
+    color:#064e3b!important;
+    border-color:rgba(5,150,105,.18)!important;
+  }
+}
+
+/* =========================================================
+   abatez v25 - Ajuste final de navegación y logo móvil
+   - Desktop: navegación siempre a la derecha.
+   - Mobile: logo centrado en el espacio superior del hero.
+   - Mantiene compatibilidad con Mac/Safari antiguo.
+   ========================================================= */
+@media (min-width:768px){
+  #navbar .flex.justify-between.items-center.h-full{
+    justify-content:flex-end!important;
+  }
+  #navbar .nav-desktop,
+  #navbar.navbar--compact .nav-desktop,
+  html:not(.legacy-static) #navbar .nav-desktop,
+  html.legacy-static #navbar .nav-desktop,
+  #navbar .hidden.md\:flex.nav-desktop{
+    margin-left:auto!important;
+    margin-right:0!important;
+    padding-left:0!important;
+    justify-content:flex-end!important;
+    text-align:right!important;
+    transform:none!important;
+    right:0!important;
+    left:auto!important;
+  }
+  #navbar .abatez-floating-logo-link,
+  #navbar.navbar--compact .abatez-floating-logo-link{
+    left:1rem!important;
+    transform:translate3d(0,var(--abatez-logo-card-y,0px),0)!important;
+  }
+}
+
+@media (max-width:767px){
+  /* En celular el logo deja de ir pegado al borde: queda centrado sobre el hero, en el espacio libre superior. */
+  #navbar .abatez-floating-logo-link,
+  #navbar.navbar--compact .abatez-floating-logo-link{
+    left:50%!important;
+    right:auto!important;
+    top:var(--abatez-logo-card-top,82px)!important;
+    transform:translate3d(-50%,var(--abatez-logo-card-y,0px),0)!important;
+    width:var(--abatez-logo-card-w,162px)!important;
+    height:var(--abatez-logo-card-h,98px)!important;
+    padding:var(--abatez-logo-card-pad,7px)!important;
+    z-index:82!important;
+  }
+  #navbar.navbar--compact .abatez-floating-logo-link{
+    border-radius:0 0 var(--abatez-logo-card-radius,14px) var(--abatez-logo-card-radius,14px)!important;
+  }
+  #navbar .nav-mobile-toggle,
+  html.legacy-static #navbar .nav-mobile-toggle{
+    margin-left:auto!important;
+    position:relative!important;
+    z-index:96!important;
+  }
+  /* Deja respirar el título para que el logo centrado no choque con el texto. */
+  .home-hero-content{
+    padding-top:4.4rem!important;
+  }
+  .home-hero h1{
+    margin-top:.35rem!important;
+  }
+}
+
+@media (max-width:420px){
+  #navbar .abatez-floating-logo-link,
+  #navbar.navbar--compact .abatez-floating-logo-link{
+    width:var(--abatez-logo-card-w,154px)!important;
+    height:var(--abatez-logo-card-h,92px)!important;
+  }
+  .home-hero-content{padding-top:4.9rem!important;}
+}
+
+
+/* v26: botones sugeridos funcionales en búsqueda rápida */
+.quick-finder-tag{cursor:pointer;appearance:none;-webkit-appearance:none;line-height:1;transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s ease;}
+.quick-finder-tag:hover,.quick-finder-tag:focus{background:rgba(0,151,96,.10)!important;border-color:rgba(0,151,96,.28)!important;color:#005c43!important;outline:none;transform:translateY(-1px);}
+.quick-finder-tag:active{transform:translateY(0);}
+@media (max-width: 640px){.quick-finder-tag{padding:.55rem .72rem!important;font-size:.72rem!important;}}
+
+/* =========================================================
+   abatez v27 - Logo completo sin fondo + mayor presencia
+   - PNG transparente: ya no parece estampa sobre la barra.
+   - Desktop: más grande al inicio, compacto al bajar.
+   - Mobile: centrado y más amplio en el espacio superior del hero.
+   ========================================================= */
+#navbar .abatez-floating-logo-link,
+#navbar.navbar--compact .abatez-floating-logo-link,
+html.legacy-static #navbar .abatez-floating-logo-link,
+html.legacy-static #navbar a[aria-label*="abatez"]{
+  background:transparent!important;
+  border:none!important;
+  box-shadow:none!important;
+  padding:0!important;
+  overflow:visible!important;
+  border-radius:0!important;
+}
+#navbar .abatez-floating-logo-link:before,
+#navbar .abatez-floating-logo-link:after,
+#navbar.navbar--compact .abatez-floating-logo-link:before,
+#navbar.navbar--compact .abatez-floating-logo-link:after,
+html.legacy-static #navbar .abatez-floating-logo-link:before,
+html.legacy-static #navbar .abatez-floating-logo-link:after{
+  display:none!important;
+  opacity:0!important;
+}
+#navbar a.abatez-floating-logo-link > img#logo-abatez.abatez-floating-logo-img,
+#navbar.navbar--compact a.abatez-floating-logo-link > img#logo-abatez.abatez-floating-logo-img,
+#navbar a.abatez-floating-logo-link > img[alt*="abatez"].abatez-floating-logo-img,
+html.legacy-static #navbar .abatez-floating-logo-img,
+html.legacy-static #navbar #logo-abatez,
+html.legacy-static #navbar img[alt*="abatez"]{
+  object-fit:contain!important;
+  object-position:center!important;
+  filter:drop-shadow(0 12px 22px rgba(6,78,59,.16)) drop-shadow(0 1px 0 rgba(255,255,255,.35))!important;
+  background:transparent!important;
+}
+#navbar.navbar--compact a.abatez-floating-logo-link > img#logo-abatez.abatez-floating-logo-img{
+  filter:drop-shadow(0 6px 12px rgba(6,78,59,.12))!important;
+}
+@media (min-width:768px){
+  #navbar .abatez-floating-logo-link,
+  #navbar.navbar--compact .abatez-floating-logo-link{
+    width:var(--abatez-logo-card-w,304px)!important;
+    height:var(--abatez-logo-card-h,226px)!important;
+    top:var(--abatez-logo-card-top,6px)!important;
+    left:1rem!important;
+  }
+  #navbar .nav-desktop,
+  #navbar.navbar--compact .nav-desktop,
+  html:not(.legacy-static) #navbar .nav-desktop,
+  html.legacy-static #navbar .nav-desktop,
+  #navbar .hidden.md\:flex.nav-desktop{
+    margin-left:auto!important;
+    padding-left:18rem!important;
+    justify-content:flex-end!important;
+  }
+}
+@media (min-width:1280px){
+  #navbar .abatez-floating-logo-link,
+  #navbar.navbar--compact .abatez-floating-logo-link{left:0!important;}
+}
+@media (max-width:767px){
+  #navbar .abatez-floating-logo-link,
+  #navbar.navbar--compact .abatez-floating-logo-link{
+    left:50%!important;
+    top:var(--abatez-logo-card-top,72px)!important;
+    width:var(--abatez-logo-card-w,232px)!important;
+    height:var(--abatez-logo-card-h,173px)!important;
+    transform:translate3d(-50%,var(--abatez-logo-card-y,0),0)!important;
+    z-index:84!important;
+  }
+  .home-hero-content{padding-top:6.2rem!important;}
+  #navbar .nav-mobile-toggle,
+  html.legacy-static #navbar .nav-mobile-toggle{z-index:96!important;}
+}
+@media (max-width:420px){
+  #navbar .abatez-floating-logo-link,
+  #navbar.navbar--compact .abatez-floating-logo-link{
+    width:var(--abatez-logo-card-w,220px)!important;
+    height:var(--abatez-logo-card-h,164px)!important;
+  }
+  .home-hero-content{padding-top:6.6rem!important;}
+}
+@media (max-width:360px){
+  #navbar .abatez-floating-logo-link,
+  #navbar.navbar--compact .abatez-floating-logo-link{
+    width:var(--abatez-logo-card-w,200px)!important;
+    height:var(--abatez-logo-card-h,149px)!important;
+  }
+}
+
+/* Legacy Safari: no card, no fondo; mantiene layout de respaldo pero con logo transparente. */
+html.legacy-static #navbar .abatez-floating-logo-link,
+html.legacy-static #navbar a[aria-label*="abatez"]{
+  left:22px!important;
+  top:2px!important;
+  width:215px!important;
+  height:78px!important;
+  padding:0!important;
+  background:transparent!important;
+  border:none!important;
+  box-shadow:none!important;
+}
+@media(max-width:767px){
+  html.legacy-static #navbar .abatez-floating-logo-link,
+  html.legacy-static #navbar a[aria-label*="abatez"]{
+    left:50%!important;
+    top:72px!important;
+    width:210px!important;
+    height:157px!important;
+    -webkit-transform:translateX(-50%)!important;
+    transform:translateX(-50%)!important;
+  }
+}
