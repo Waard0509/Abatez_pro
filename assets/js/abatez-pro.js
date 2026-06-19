@@ -335,18 +335,38 @@ function initSmoothNavbar(){
     var y=window.pageYOffset || document.documentElement.scrollTop || 0;
     var w=window.innerWidth || document.documentElement.clientWidth || 1024;
     var isMobile=w<768;
+    var bodyClass=(document.body && document.body.className) ? String(document.body.className) : '';
+    var isHomePage=bodyClass.indexOf('abatez-home-page')>-1 || !!document.querySelector('.home-hero');
     var raw=clamp(y/330,0,1);
     var value=raw*raw*(3-(2*raw));
 
-    /* v20: el logo ya no cambia de imagen al scrollear. Solo se transforma suavemente. */
-    var navH=isMobile?64:72;
-    /* v24: logo completo, proporción natural y barra con colores antiguos. */
-    /* v25: en celular el logo inicia centrado sobre el hero y se integra suavemente al bajar. */
-    /* v27: logo completo sin fondo tipo PNG; más grande en desktop y centrado en móvil. */
-    var logoW=isMobile?lerp(232,132,value):lerp(304,168,value);
-    var logoH=isMobile?lerp(173,98,value):lerp(226,126,value);
-    var logoTop=isMobile?lerp(72,0,value):lerp(6,0,value);
-    var logoY=isMobile?0:lerp(6,0,value);
+    /* v30: en móvil el logo ya no se monta sobre los heroes internos.
+       Inicio conserva un logo amplio en el área blanca; catálogos/productos usan versión más compacta. */
+    var navH;
+    var logoW;
+    var logoH;
+    var logoTop;
+    var logoY;
+    if(isMobile){
+      if(isHomePage){
+        navH=178;
+        logoW=lerp(220,146,value);
+        logoH=lerp(165,110,value);
+        logoTop=lerp(14,4,value);
+      }else{
+        navH=112;
+        logoW=lerp(166,136,value);
+        logoH=lerp(124,102,value);
+        logoTop=lerp(6,2,value);
+      }
+      logoY=0;
+    }else{
+      navH=72;
+      logoW=lerp(304,168,value);
+      logoH=lerp(226,126,value);
+      logoTop=lerp(6,0,value);
+      logoY=lerp(6,0,value);
+    }
     var logoPad=0;
     var radius=0;
     var bgAlpha=lerp(.90,.985,value);

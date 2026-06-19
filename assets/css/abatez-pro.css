@@ -1647,3 +1647,88 @@ html.legacy-static #navbar img#logo-abatez{
     -webkit-box-shadow:none!important;
   }
 }
+
+/* =========================================================
+   abatez v30 - Ajuste móvil de logo sin encimarse
+   - Inicio: logo transparente centrado dentro del área blanca superior.
+   - Páginas internas: logo más compacto para no tapar títulos ni textos.
+   - Escritorio conserva el comportamiento de la v29.
+   ========================================================= */
+@media (max-width:767px){
+  body.abatez-home-page #navbar{
+    height:var(--abatez-nav-height,178px)!important;
+    min-height:var(--abatez-nav-height,178px)!important;
+  }
+  body.abatez-home-page #navbar .max-w-7xl,
+  body.abatez-home-page #navbar .flex.justify-between.items-center.h-full{
+    height:var(--abatez-nav-height,178px)!important;
+    min-height:var(--abatez-nav-height,178px)!important;
+  }
+  body.abatez-home-page .home-hero{
+    padding-top:calc(var(--abatez-nav-height,178px) + env(safe-area-inset-top))!important;
+  }
+  body.abatez-home-page .home-hero-content{
+    padding-top:.5rem!important;
+  }
+  body.abatez-home-page #navbar a.abatez-floating-logo-link,
+  body.abatez-home-page #navbar.navbar--compact a.abatez-floating-logo-link{
+    left:50%!important;
+    top:var(--abatez-logo-card-top,14px)!important;
+    width:var(--abatez-logo-card-w,220px)!important;
+    height:var(--abatez-logo-card-h,165px)!important;
+    -webkit-transform:translate3d(-50%,var(--abatez-logo-card-y,0),0)!important;
+    transform:translate3d(-50%,var(--abatez-logo-card-y,0),0)!important;
+    background:transparent!important;
+    border:0!important;
+    box-shadow:none!important;
+  }
+  body.abatez-inner-page #navbar{
+    height:var(--abatez-nav-height,112px)!important;
+    min-height:var(--abatez-nav-height,112px)!important;
+  }
+  body.abatez-inner-page #navbar .max-w-7xl,
+  body.abatez-inner-page #navbar .flex.justify-between.items-center.h-full{
+    height:var(--abatez-nav-height,112px)!important;
+    min-height:var(--abatez-nav-height,112px)!important;
+  }
+  body.abatez-inner-page #navbar a.abatez-floating-logo-link,
+  body.abatez-inner-page #navbar.navbar--compact a.abatez-floating-logo-link{
+    left:50%!important;
+    top:var(--abatez-logo-card-top,6px)!important;
+    width:var(--abatez-logo-card-w,166px)!important;
+    height:var(--abatez-logo-card-h,124px)!important;
+    -webkit-transform:translate3d(-50%,var(--abatez-logo-card-y,0),0)!important;
+    transform:translate3d(-50%,var(--abatez-logo-card-y,0),0)!important;
+    background:transparent!important;
+    border:0!important;
+    box-shadow:none!important;
+  }
+  body.abatez-inner-page .catalog-hero,
+  body.abatez-inner-page .pro-hero,
+  body.abatez-inner-page .gallery-hero{
+    padding-top:9.25rem!important;
+  }
+  body.abatez-inner-page main.pt-32{
+    padding-top:8.75rem!important;
+  }
+  body.abatez-inner-page .product-mobile-hero,
+  body.abatez-inner-page .mobile-product-header{
+    margin-top:1rem!important;
+  }
+  body.abatez-inner-page #mobile-menu,
+  body.abatez-home-page #mobile-menu{
+    top:var(--abatez-nav-height,112px)!important;
+  }
+}
+@media (max-width:420px){
+  body.abatez-home-page #navbar a.abatez-floating-logo-link,
+  body.abatez-home-page #navbar.navbar--compact a.abatez-floating-logo-link{
+    width:var(--abatez-logo-card-w,210px)!important;
+    height:var(--abatez-logo-card-h,158px)!important;
+  }
+  body.abatez-inner-page #navbar a.abatez-floating-logo-link,
+  body.abatez-inner-page #navbar.navbar--compact a.abatez-floating-logo-link{
+    width:var(--abatez-logo-card-w,154px)!important;
+    height:var(--abatez-logo-card-h,116px)!important;
+  }
+}
