@@ -1732,3 +1732,167 @@ html.legacy-static #navbar img#logo-abatez{
     height:var(--abatez-logo-card-h,116px)!important;
   }
 }
+
+/* =========================================================
+   abatez v31 - Logo estable y adaptable en cualquier pantalla
+   - Reduce tamaño en escritorio para no invadir el hero.
+   - En móvil queda centrado dentro de la barra blanca, no sobre el texto.
+   - Conserva PNG transparente sin caja/estampa.
+   ========================================================= */
+#navbar a.abatez-floating-logo-link,
+#navbar.navbar--compact a.abatez-floating-logo-link,
+html.legacy-static #navbar a.abatez-floating-logo-link{
+  background:transparent!important;
+  background-color:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  -webkit-box-shadow:none!important;
+  padding:0!important;
+  border-radius:0!important;
+  overflow:visible!important;
+  display:block!important;
+}
+#navbar a.abatez-floating-logo-link:before,
+#navbar a.abatez-floating-logo-link:after,
+#navbar.navbar--compact a.abatez-floating-logo-link:before,
+#navbar.navbar--compact a.abatez-floating-logo-link:after{
+  content:none!important;
+  display:none!important;
+}
+#navbar a.abatez-floating-logo-link img,
+#navbar img.abatez-floating-logo-img,
+#navbar img#logo-abatez{
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  -webkit-box-shadow:none!important;
+  filter:drop-shadow(0 7px 12px rgba(0,0,0,.13))!important;
+}
+
+@media (min-width:768px){
+  #navbar{
+    height:var(--abatez-nav-height,76px)!important;
+    min-height:var(--abatez-nav-height,76px)!important;
+  }
+  #navbar .max-w-7xl,
+  #navbar .flex.justify-between.items-center.h-full{
+    height:var(--abatez-nav-height,76px)!important;
+    min-height:var(--abatez-nav-height,76px)!important;
+  }
+  #navbar .abatez-floating-logo-link,
+  #navbar.navbar--compact .abatez-floating-logo-link,
+  body.abatez-home-page #navbar .abatez-floating-logo-link,
+  body.abatez-home-page #navbar.navbar--compact .abatez-floating-logo-link,
+  body.abatez-inner-page #navbar .abatez-floating-logo-link,
+  body.abatez-inner-page #navbar.navbar--compact .abatez-floating-logo-link{
+    left:clamp(1rem, 7vw, 7.5rem)!important;
+    top:var(--abatez-logo-card-top,0px)!important;
+    width:var(--abatez-logo-card-w,170px)!important;
+    height:var(--abatez-logo-card-h,127px)!important;
+    -webkit-transform:translate3d(0,var(--abatez-logo-card-y,0px),0)!important;
+    transform:translate3d(0,var(--abatez-logo-card-y,0px),0)!important;
+    z-index:70!important;
+  }
+  body.abatez-inner-page #navbar .abatez-floating-logo-link,
+  body.abatez-inner-page #navbar.navbar--compact .abatez-floating-logo-link{
+    width:var(--abatez-logo-card-w,150px)!important;
+    height:var(--abatez-logo-card-h,112px)!important;
+  }
+  #navbar .nav-desktop,
+  #navbar.navbar--compact .nav-desktop,
+  html:not(.legacy-static) #navbar .nav-desktop,
+  html.legacy-static #navbar .nav-desktop,
+  #navbar .hidden.md\:flex.nav-desktop{
+    margin-left:auto!important;
+    margin-right:0!important;
+    justify-content:flex-end!important;
+    text-align:right!important;
+    padding-left:12rem!important;
+    position:relative!important;
+    z-index:90!important;
+  }
+  body.abatez-inner-page #navbar .nav-desktop{padding-left:10rem!important;}
+}
+
+@media (max-width:767px){
+  body.abatez-home-page #navbar{
+    height:var(--abatez-nav-height,124px)!important;
+    min-height:var(--abatez-nav-height,124px)!important;
+  }
+  body.abatez-home-page #navbar .max-w-7xl,
+  body.abatez-home-page #navbar .flex.justify-between.items-center.h-full{
+    height:var(--abatez-nav-height,124px)!important;
+    min-height:var(--abatez-nav-height,124px)!important;
+  }
+  body.abatez-home-page .home-hero{
+    padding-top:calc(var(--abatez-nav-height,124px) + env(safe-area-inset-top))!important;
+  }
+  body.abatez-home-page .home-hero-content{
+    padding-top:.25rem!important;
+  }
+  body.abatez-home-page #navbar a.abatez-floating-logo-link,
+  body.abatez-home-page #navbar.navbar--compact a.abatez-floating-logo-link{
+    left:50%!important;
+    right:auto!important;
+    top:var(--abatez-logo-card-top,7px)!important;
+    width:var(--abatez-logo-card-w,185px)!important;
+    height:var(--abatez-logo-card-h,138px)!important;
+    -webkit-transform:translate3d(-50%,var(--abatez-logo-card-y,0px),0)!important;
+    transform:translate3d(-50%,var(--abatez-logo-card-y,0px),0)!important;
+    z-index:78!important;
+  }
+  body.abatez-inner-page #navbar{
+    height:var(--abatez-nav-height,92px)!important;
+    min-height:var(--abatez-nav-height,92px)!important;
+  }
+  body.abatez-inner-page #navbar .max-w-7xl,
+  body.abatez-inner-page #navbar .flex.justify-between.items-center.h-full{
+    height:var(--abatez-nav-height,92px)!important;
+    min-height:var(--abatez-nav-height,92px)!important;
+  }
+  body.abatez-inner-page #navbar a.abatez-floating-logo-link,
+  body.abatez-inner-page #navbar.navbar--compact a.abatez-floating-logo-link{
+    left:50%!important;
+    right:auto!important;
+    top:var(--abatez-logo-card-top,0px)!important;
+    width:var(--abatez-logo-card-w,138px)!important;
+    height:var(--abatez-logo-card-h,103px)!important;
+    -webkit-transform:translate3d(-50%,var(--abatez-logo-card-y,0px),0)!important;
+    transform:translate3d(-50%,var(--abatez-logo-card-y,0px),0)!important;
+    z-index:78!important;
+  }
+  body.abatez-inner-page .catalog-hero,
+  body.abatez-inner-page .pro-hero,
+  body.abatez-inner-page .gallery-hero{
+    padding-top:7.2rem!important;
+  }
+  body.abatez-inner-page main.pt-32{padding-top:7rem!important;}
+  #navbar .nav-mobile-toggle,
+  html.legacy-static #navbar .nav-mobile-toggle{
+    position:absolute!important;
+    right:1rem!important;
+    top:calc(env(safe-area-inset-top) + .85rem)!important;
+    z-index:96!important;
+  }
+  body.abatez-home-page #mobile-menu{top:var(--abatez-nav-height,124px)!important;}
+  body.abatez-inner-page #mobile-menu{top:var(--abatez-nav-height,92px)!important;}
+}
+
+@media (max-width:420px){
+  body.abatez-home-page #navbar a.abatez-floating-logo-link,
+  body.abatez-home-page #navbar.navbar--compact a.abatez-floating-logo-link{
+    width:var(--abatez-logo-card-w,176px)!important;
+    height:var(--abatez-logo-card-h,131px)!important;
+  }
+  body.abatez-inner-page #navbar a.abatez-floating-logo-link,
+  body.abatez-inner-page #navbar.navbar--compact a.abatez-floating-logo-link{
+    width:var(--abatez-logo-card-w,128px)!important;
+    height:var(--abatez-logo-card-h,96px)!important;
+  }
+}

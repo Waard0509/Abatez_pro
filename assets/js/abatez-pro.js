@@ -348,24 +348,31 @@ function initSmoothNavbar(){
     var logoTop;
     var logoY;
     if(isMobile){
+      var baseMobileW = clamp(w * 0.50, 150, 198);
       if(isHomePage){
-        navH=178;
-        logoW=lerp(220,146,value);
-        logoH=lerp(165,110,value);
-        logoTop=lerp(14,4,value);
+        navH=lerp(124,82,value);
+        logoW=lerp(baseMobileW,128,value);
+        logoH=lerp(baseMobileW * 0.746,96,value);
+        logoTop=lerp(7,0,value);
       }else{
-        navH=112;
-        logoW=lerp(166,136,value);
-        logoH=lerp(124,102,value);
-        logoTop=lerp(6,2,value);
+        navH=lerp(92,76,value);
+        logoW=lerp(138,118,value);
+        logoH=lerp(103,88,value);
+        logoTop=lerp(0,-4,value);
       }
       logoY=0;
     }else{
-      navH=72;
-      logoW=lerp(304,168,value);
-      logoH=lerp(226,126,value);
-      logoTop=lerp(6,0,value);
-      logoY=lerp(6,0,value);
+      navH=76;
+      if(isHomePage){
+        logoW=lerp(218,150,value);
+        logoH=lerp(163,112,value);
+        logoTop=lerp(4,0,value);
+      }else{
+        logoW=lerp(158,128,value);
+        logoH=lerp(118,96,value);
+        logoTop=lerp(0,-3,value);
+      }
+      logoY=0;
     }
     var logoPad=0;
     var radius=0;
