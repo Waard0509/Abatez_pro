@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth legacy-static">
+
+<html class="scroll-smooth legacy-static" lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  
-    <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<script>
 (function(d){
   try {
     if (window.CSS && CSS.supports && CSS.supports('display','grid') && CSS.supports('display','flex') && CSS.supports('object-fit','cover')) {
@@ -14,103 +14,100 @@
 })(document);
 </script>
 <title>Catálogo Ovino | abatez</title>
-  <meta name="description" content="Producto oficial abatez para ovinos en engorda de corral.">
-  <link rel="icon" type="image/png" href="img/loguito.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
+<meta content="Producto oficial abatez para ovinos en engorda de corral." name="description"/>
+<link href="img/loguito.png" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
     tailwind.config = { theme: { extend: { fontFamily: { sans: ['Poppins','sans-serif'] }, colors: { marca: { light:'#D7B354', DEFAULT:'#355E3B', dark:'#183B2A' }, acento: { DEFAULT:'#B9782C' } } } } }
   </script>
-  <link rel="stylesheet" href="assets/css/abatez-pro.css">
-<link rel="stylesheet" href="assets/css/mac-compat.css">
-<link rel="stylesheet" href="assets/css/legacy-static.css">
+<link href="assets/css/abatez-pro.css" rel="stylesheet"/>
+<link href="assets/css/mac-compat.css" rel="stylesheet"/>
+<link href="assets/css/legacy-static.css" rel="stylesheet"/>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased selection:bg-marca selection:text-white">
-<a href="#inicio" class="skip-link">Saltar al contenido</a>
-
-<nav id="navbar" class="fixed w-full z-50 bg-white/92 backdrop-blur-md h-24 shadow-sm transition-all duration-500"><div id="scroll-progress" aria-hidden="true"></div>
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-    <div class="flex justify-between items-center h-full">
-      <a href="index.html" class="h-full py-2 flex items-center"><img src="img/Logo.png" data-logo-full="img/Logo.png" data-logo-compact="img/Logo.png" alt="Logo abatez" class="h-full w-auto object-contain"></a>
-      <div class="hidden md:flex nav-desktop space-x-8"><a href="index.html#inicio" class="text-gray-700 hover:text-marca font-medium pro-transition">Inicio</a>
-<a href="index.html#categorias" class="text-marca font-bold pro-transition">Productos</a>
-<a href="index.html#nosotros" class="text-gray-700 hover:text-marca font-medium pro-transition">Nosotros</a><a href="galeria-testimonios.html" class="text-gray-700 hover:text-marca font-medium pro-transition">Galería</a>
-<a href="index.html#contacto" class="text-gray-700 hover:text-marca font-medium pro-transition">Contacto</a></div>
-      <button id="mobile-menu-btn" aria-label="Abrir menú" class="md:hidden text-gray-700 hover:text-marca focus:outline-none nav-mobile-toggle" aria-label="Abrir menú"><i class="fas fa-bars text-2xl"></i></button>
-    </div>
-  </div>
-  <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t"><a href="index.html#inicio" class="block px-4 py-3 text-gray-700 hover:bg-gray-50">Inicio</a>
-<a href="index.html#categorias" class="block px-4 py-3 text-marca font-bold bg-marca/5">Productos</a>
-<a href="index.html#nosotros" class="block px-4 py-3 text-gray-700 hover:bg-gray-50">Nosotros</a><a href="galeria-testimonios.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50">Galería y testimonios</a>
-<a href="index.html#contacto" class="block px-4 py-3 text-gray-700 hover:bg-gray-50">Contacto</a></div>
+<a class="skip-link" href="#inicio">Saltar al contenido</a>
+<nav class="fixed w-full z-50 bg-white/92 backdrop-blur-md h-24 shadow-sm transition-all duration-500" id="navbar"><div aria-hidden="true" id="scroll-progress"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+<div class="flex justify-between items-center h-full">
+<a aria-label="Ir al inicio de abatez" class="h-full py-2 flex items-center abatez-floating-logo-link" href="index.html"><img alt="Logo abatez" class="h-full w-auto object-contain abatez-floating-logo-img" data-logo-compact="img/Logo.png" data-logo-full="img/Logo.png" src="img/Logo.png"/></a>
+<div class="hidden md:flex nav-desktop space-x-8"><a class="text-gray-700 hover:text-marca font-medium pro-transition" href="index.html#inicio">Inicio</a>
+<a class="text-marca font-bold pro-transition" href="index.html#categorias">Productos</a>
+<a class="text-gray-700 hover:text-marca font-medium pro-transition" href="index.html#nosotros">Nosotros</a><a class="text-gray-700 hover:text-marca font-medium pro-transition" href="galeria-testimonios.html">Galería</a>
+<a class="text-gray-700 hover:text-marca font-medium pro-transition" href="index.html#contacto">Contacto</a></div>
+<button aria-label="Abrir menú" class="md:hidden text-gray-700 hover:text-marca focus:outline-none nav-mobile-toggle" id="mobile-menu-btn"><i class="fas fa-bars text-2xl"></i></button>
+</div>
+</div>
+<div class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t" id="mobile-menu"><a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="index.html#inicio">Inicio</a>
+<a class="block px-4 py-3 text-marca font-bold bg-marca/5" href="index.html#categorias">Productos</a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="index.html#nosotros">Nosotros</a><a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="galeria-testimonios.html">Galería y testimonios</a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="index.html#contacto">Contacto</a></div>
 </nav>
-
-<section id="inicio" class="catalog-hero relative pro-hero pt-36 pb-24 lg:pt-44 lg:pb-32 bg-gray-900 overflow-hidden">
-  <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('img/borregos.jpg');"></div>
-  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <span class="inline-flex items-center gap-2 text-marca-light font-bold tracking-wider uppercase text-sm mb-4"><i class="fas fa-certificate"></i>Nutrición para ovinos</span>
-    <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">Línea ovina abatez</h1>
-    <p class="text-lg md:text-xl text-gray-100 max-w-3xl leading-relaxed">Opción para corderos en engorda de corral. Consulta ficha, presentación y disponibilidad con atención directa.</p>
-  </div>
+<section class="catalog-hero relative pro-hero pt-36 pb-24 lg:pt-44 lg:pb-32 bg-gray-900 overflow-hidden" id="inicio">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image:url('img/borregos.jpg');"></div>
+<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-flex items-center gap-2 text-marca-light font-bold tracking-wider uppercase text-sm mb-4"><i class="fas fa-certificate"></i>Nutrición para ovinos</span>
+<h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">Línea ovina abatez</h1>
+<p class="text-lg md:text-xl text-gray-100 max-w-3xl leading-relaxed">Opción para corderos en engorda de corral. Consulta ficha, presentación y disponibilidad con atención directa.</p>
+</div>
 </section>
 <main class="py-20"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  <div class="grid lg:grid-cols-3 gap-8 mb-12">
-    <div class="lg:col-span-2 bg-white rounded-3xl p-8 pro-card"><span class="badge-oficial text-xs font-bold px-3 py-1 rounded-full">Guía de compra</span><h2 class="text-3xl font-extrabold text-gray-900 mt-4 mb-3">Opción disponible para engorda ovina</h2><p class="text-gray-600 leading-relaxed">Revisa la información resumida del producto, descarga la ficha y solicita cotización por WhatsApp. Para casos específicos, comparte etapa, peso aproximado y sistema de alimentación.</p></div>
-    <div class="bg-acento/10 border border-acento/20 rounded-3xl p-8"><h3 class="font-bold text-acento mb-3"><i class="fas fa-clock mr-2"></i>Próximas fichas</h3><p class="text-sm text-gray-700">Nuestro equipo puede orientarte sobre presentación, disponibilidad y forma de uso según tu rebaño.</p></div>
-  </div>
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="grid lg:grid-cols-3 gap-8 mb-12">
+<div class="lg:col-span-2 bg-white rounded-3xl p-8 pro-card"><span class="badge-oficial text-xs font-bold px-3 py-1 rounded-full">Guía de compra</span><h2 class="text-3xl font-extrabold text-gray-900 mt-4 mb-3">Opción disponible para engorda ovina</h2><p class="text-gray-600 leading-relaxed">Revisa la información resumida del producto, descarga la ficha y solicita cotización por WhatsApp. Para casos específicos, comparte etapa, peso aproximado y sistema de alimentación.</p></div>
+<div class="bg-acento/10 border border-acento/20 rounded-3xl p-8"><h3 class="font-bold text-acento mb-3"><i class="fas fa-clock mr-2"></i>Próximas fichas</h3><p class="text-sm text-gray-700">Nuestro equipo puede orientarte sobre presentación, disponibilidad y forma de uso según tu rebaño.</p></div>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 <article class="bg-white rounded-3xl overflow-hidden pro-card pro-transition flex flex-col">
-  <a href="producto-ovino-14.html" class="block product-thumb h-64 p-4 overflow-hidden">
-    <img src="assets/productos/ovino-14.jpg" loading="lazy" alt="Ovino 14" class="w-full h-full object-contain hover:scale-105 pro-transition">
-  </a>
-  <div class="p-6 flex flex-col flex-grow">
-    <div class="flex items-center justify-between gap-3 mb-3">
-      <span class="badge-oficial text-xs font-bold px-3 py-1 rounded-full">Ficha oficial</span>
-      <span class="text-xs text-gray-500">Engorda ovina</span>
-    </div>
-    <h3 class="text-2xl font-extrabold text-gray-900 mb-2">Ovino 14</h3>
-    <p class="text-gray-600 text-sm leading-relaxed mb-5 flex-grow">Alimento completo con Bovatec para corderos en engorda de corral.</p>
-    <div class="flex flex-col sm:flex-row gap-3 mt-auto">
-      <a href="producto-ovino-14.html" class="inline-flex justify-center items-center bg-marca hover:bg-marca-dark text-white font-bold py-3 px-4 rounded-xl pro-transition">Ver ficha</a>
-      <button onclick="cotizarProducto('Ovino 14')" class="inline-flex justify-center items-center border border-marca text-marca hover:bg-marca hover:text-white font-bold py-3 px-4 rounded-xl pro-transition">Cotizar</button>
-    </div>
-  </div>
+<a class="block product-thumb h-64 p-4 overflow-hidden" href="producto-ovino-14.html">
+<img alt="Ovino 14" class="w-full h-full object-contain hover:scale-105 pro-transition" loading="lazy" src="assets/productos/ovino-14.jpg"/>
+</a>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex items-center justify-between gap-3 mb-3">
+<span class="badge-oficial text-xs font-bold px-3 py-1 rounded-full">Ficha oficial</span>
+<span class="text-xs text-gray-500">Engorda ovina</span>
+</div>
+<h3 class="text-2xl font-extrabold text-gray-900 mb-2">Ovino 14</h3>
+<p class="text-gray-600 text-sm leading-relaxed mb-5 flex-grow">Alimento completo con Bovatec para corderos en engorda de corral.</p>
+<div class="flex flex-col sm:flex-row gap-3 mt-auto">
+<a class="inline-flex justify-center items-center bg-marca hover:bg-marca-dark text-white font-bold py-3 px-4 rounded-xl pro-transition" href="producto-ovino-14.html">Ver ficha</a>
+<button class="inline-flex justify-center items-center border border-marca text-marca hover:bg-marca hover:text-white font-bold py-3 px-4 rounded-xl pro-transition" onclick="cotizarProducto('Ovino 14')">Cotizar</button>
+</div>
+</div>
 </article></div>
 </div></main>
-<button onclick="consultarDisponibilidad('alimentos abatez')" class="fixed bottom-6 right-6 z-50 w-14 h-14 md:w-16 md:h-16 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-2xl flex items-center justify-center text-3xl pro-transition hover:scale-110" aria-label="Contactar por WhatsApp"><i class="fab fa-whatsapp"></i></button>
-
+<button aria-label="Contactar por WhatsApp" class="fixed bottom-6 right-6 z-50 w-14 h-14 md:w-16 md:h-16 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-2xl flex items-center justify-center text-3xl pro-transition hover:scale-110" onclick="consultarDisponibilidad('alimentos abatez')"><i class="fab fa-whatsapp"></i></button>
 <footer class="bg-gray-950 text-white pt-14 pb-8">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-10">
-    <div>
-      <p class="text-gray-400 text-sm leading-relaxed">Alimentos balanceados, soluciones para nutrición animal y marcas aliadas seleccionadas para productores y mascotas.</p>
-    </div>
-    <div>
-      <h3 class="font-bold text-lg mb-4">Catálogos</h3>
-      <ul class="space-y-2 text-gray-400 text-sm">
-        <li><a class="hover:text-white" href="catalogo-bovino.html">Línea bovina</a></li>
-        <li><a class="hover:text-white" href="catalogo-ovino.html">Línea ovina</a></li>
-        <li><a class="hover:text-white" href="catalogo-porcino.html">Línea porcina</a></li>
-        <li><a class="hover:text-white" href="catalogo-equino.html">Línea equina</a></li>
-        <li><a class="hover:text-white" href="catalogo-canino.html">Alimentos para perro</a></li>
-        <li><a class="hover:text-white" href="catalogo-felino.html">Alimentos para gato</a></li>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-10">
+<div>
+<p class="text-gray-400 text-sm leading-relaxed">Alimentos balanceados, soluciones para nutrición animal y marcas aliadas seleccionadas para productores y mascotas.</p>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-4">Catálogos</h3>
+<ul class="space-y-2 text-gray-400 text-sm">
+<li><a class="hover:text-white" href="catalogo-bovino.html">Línea bovina</a></li>
+<li><a class="hover:text-white" href="catalogo-ovino.html">Línea ovina</a></li>
+<li><a class="hover:text-white" href="catalogo-porcino.html">Línea porcina</a></li>
+<li><a class="hover:text-white" href="catalogo-equino.html">Línea equina</a></li>
+<li><a class="hover:text-white" href="catalogo-canino.html">Alimentos para perro</a></li>
+<li><a class="hover:text-white" href="catalogo-felino.html">Alimentos para gato</a></li>
 <li><a class="hover:text-white" href="galeria-testimonios.html">Galería y testimonios</a></li>
-      </ul>
-    </div>
-    <div>
-      <h3 class="font-bold text-lg mb-4">Contacto</h3>
-      <div class="text-gray-400 text-sm mb-4 space-y-2">
-        <p>Cotizaciones, disponibilidad y recomendaciones por etapa productiva.</p>
-        <p><i class="fab fa-whatsapp text-marca mr-2"></i>+52 231 312 0797</p>
-        <p><i class="fas fa-location-dot text-marca mr-2"></i>Av. J. R. Gavilán 206, San Diego, 73965 Teziutlán, Puebla</p>
-        <p><i class="fas fa-clock text-marca mr-2"></i>Lunes a viernes de 9:00 a.m. a 6:00 p.m. · Sábados de 9:00 a.m. a 2:00 p.m.</p>
-      </div>
-      <button onclick="consultarDisponibilidad('productos abatez')" class="inline-flex items-center gap-2 bg-marca hover:bg-marca-dark text-white font-bold py-3 px-5 rounded-full pro-transition"><i class="fab fa-whatsapp"></i> Contactar por WhatsApp</button>
-    </div>
-  </div>
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 pt-6 border-t border-white/10 text-center text-gray-500 text-xs">© 2026 abatez. Nutrición animal, asesoría y disponibilidad bajo consulta. <span class="mx-2 text-gray-700">|</span> <a class="hover:text-white underline underline-offset-4" href="aviso-privacidad.html">Aviso de privacidad</a></div>
+</ul>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-4">Contacto</h3>
+<div class="text-gray-400 text-sm mb-4 space-y-2">
+<p>Cotizaciones, disponibilidad y recomendaciones por etapa productiva.</p>
+<p><i class="fab fa-whatsapp text-marca mr-2"></i>+52 231 312 0797</p>
+<p><i class="fas fa-location-dot text-marca mr-2"></i>Av. J. R. Gavilán 206, San Diego, 73965 Teziutlán, Puebla</p>
+<p><i class="fas fa-clock text-marca mr-2"></i>Lunes a viernes de 9:00 a.m. a 6:00 p.m. · Sábados de 9:00 a.m. a 2:00 p.m.</p>
+</div>
+<button class="inline-flex items-center gap-2 bg-marca hover:bg-marca-dark text-white font-bold py-3 px-5 rounded-full pro-transition" onclick="consultarDisponibilidad('productos abatez')"><i class="fab fa-whatsapp"></i> Contactar por WhatsApp</button>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 pt-6 border-t border-white/10 text-center text-gray-500 text-xs">© 2026 abatez. Nutrición animal, asesoría y disponibilidad bajo consulta. <span class="mx-2 text-gray-700">|</span> <a class="hover:text-white underline underline-offset-4" href="aviso-privacidad.html">Aviso de privacidad</a></div>
 </footer>
 <script src="assets/js/abatez-pro.js"></script>
 </body>
