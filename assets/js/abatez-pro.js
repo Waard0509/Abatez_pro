@@ -352,15 +352,17 @@ function initSmoothNavbar(){
     if(isMobile){
       var baseMobileW = clamp(w * 0.50, 150, 198);
       if(isHomePage){
-        navH=lerp(124,82,value);
-        logoW=lerp(baseMobileW,128,value);
-        logoH=lerp(baseMobileW * 0.746,96,value);
-        logoTop=lerp(7,0,value);
+        // v35: en móvil el logo debe ocupar el espacio superior solo al inicio.
+        // Al bajar se vuelve realmente compacto para no quedarse flotando sobre el contenido.
+        navH=lerp(124,78,value);
+        logoW=lerp(baseMobileW,96,value);
+        logoH=lerp(baseMobileW * 0.746,72,value);
+        logoTop=lerp(7,5,value);
       }else{
-        navH=lerp(92,76,value);
-        logoW=lerp(138,118,value);
-        logoH=lerp(103,88,value);
-        logoTop=lerp(0,-4,value);
+        navH=lerp(92,74,value);
+        logoW=lerp(132,88,value);
+        logoH=lerp(99,66,value);
+        logoTop=lerp(0,5,value);
       }
       logoY=0;
     }else{
