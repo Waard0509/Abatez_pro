@@ -1896,3 +1896,38 @@ html.legacy-static #navbar a.abatez-floating-logo-link{
     height:var(--abatez-logo-card-h,96px)!important;
   }
 }
+
+/* =========================================================
+   abatez v32 - Ajuste fino de logo escritorio
+   Mueve el logo ligeramente hacia la izquierda para que no tape el título
+   del hero, manteniendo el comportamiento móvil de la v31.
+   ========================================================= */
+@media (min-width:768px){
+  #navbar .abatez-floating-logo-link,
+  #navbar.navbar--compact .abatez-floating-logo-link,
+  body.abatez-home-page #navbar .abatez-floating-logo-link,
+  body.abatez-home-page #navbar.navbar--compact .abatez-floating-logo-link,
+  body.abatez-inner-page #navbar .abatez-floating-logo-link,
+  body.abatez-inner-page #navbar.navbar--compact .abatez-floating-logo-link,
+  html.legacy-static #navbar .abatez-floating-logo-link{
+    left:clamp(.35rem, 3.2vw, 4.25rem)!important;
+  }
+  #navbar .nav-desktop,
+  #navbar.navbar--compact .nav-desktop,
+  html:not(.legacy-static) #navbar .nav-desktop,
+  html.legacy-static #navbar .nav-desktop,
+  #navbar .hidden.md\:flex.nav-desktop{
+    padding-left:10rem!important;
+  }
+}
+@media (min-width:1280px){
+  #navbar .abatez-floating-logo-link,
+  #navbar.navbar--compact .abatez-floating-logo-link,
+  body.abatez-home-page #navbar .abatez-floating-logo-link,
+  body.abatez-home-page #navbar.navbar--compact .abatez-floating-logo-link,
+  body.abatez-inner-page #navbar .abatez-floating-logo-link,
+  body.abatez-inner-page #navbar.navbar--compact .abatez-floating-logo-link,
+  html.legacy-static #navbar .abatez-floating-logo-link{
+    left:clamp(.5rem, 3vw, 3.75rem)!important;
+  }
+}
