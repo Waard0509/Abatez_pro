@@ -334,7 +334,9 @@ function initSmoothNavbar(){
     ticking=false;
     var y=window.pageYOffset || document.documentElement.scrollTop || 0;
     var w=window.innerWidth || document.documentElement.clientWidth || 1024;
-    var isMobile=w<768;
+    var isTouch=false;
+    try{ isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints && navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints && navigator.msMaxTouchPoints > 0); }catch(e){ isTouch=false; }
+    var isMobile = (w < 900) || (isTouch && w < 1100);
     var bodyClass=(document.body && document.body.className) ? String(document.body.className) : '';
     var isHomePage=bodyClass.indexOf('abatez-home-page')>-1 || !!document.querySelector('.home-hero');
     var raw=clamp(y/330,0,1);
