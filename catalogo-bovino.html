@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth legacy-static">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  
+    <script>
+(function(d){
+  try {
+    if (window.CSS && CSS.supports && CSS.supports('display','grid') && CSS.supports('display','flex') && CSS.supports('object-fit','cover')) {
+      d.documentElement.className = d.documentElement.className.replace(/\blegacy-static\b/g, '').replace(/\s+/g, ' ');
+    }
+  } catch(e) {}
+})(document);
+</script>
+<title>Catálogo Bovino | abatez</title>
+  <meta name="description" content="Productos oficiales abatez para bovinos: becerros, lechería, engorda, pastoreo y reproducción.">
+  <link rel="icon" type="image/png" href="img/loguito.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { fontFamily: { sans: ['Poppins','sans-serif'] }, colors: { marca: { light:'#D7B354', DEFAULT:'#355E3B', dark:'#183B2A' }, acento: { DEFAULT:'#B9782C' } } } } }
+  </script>
+  <link rel="stylesheet" href="assets/css/abatez-pro.css">
+<link rel="stylesheet" href="assets/css/mac-compat.css">
+<link rel="stylesheet" href="assets/css/legacy-static.css">
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-marca selection:text-white">
+<a href="#inicio" class="skip-link">Saltar al contenido</a>
+
+<nav id="navbar" class="fixed w-full z-50 bg-white/92 backdrop-blur-md h-24 shadow-sm transition-all duration-500"><div id="scroll-progress" aria-hidden="true"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+    <div class="flex justify-between items-center h-full">
+      <a href="index.html" class="h-full py-2 flex items-center"><img src="img/Logo.png" data-logo-full="img/Logo.png" data-logo-compact="img/Logo.png" alt="Logo abatez" class="h-full w-auto object-contain"></a>
+      <div class="hidden md:flex nav-desktop space-x-8"><a href="index.html#inicio" class="text-gray-700 hover:text-marca font-medium pro-transition">Inicio</a>
+<a href="index.html#categorias" class="text-marca font-bold pro-transition">Productos</a>
+<a href="index.html#nosotros" class="text-gray-700 hover:text-marca font-medium pro-transition">Nosotros</a><a href="galeria-testimonios.html" class="text-gray-700 hover:text-marca font-medium pro-transition">Galería</a>
+<a href="index.html#contacto" class="text-gray-700 hover:text-marca font-medium pro-transition">Contacto</a></div>
+      <button id="mobile-menu-btn" aria-label="Abrir menú" class="md:hidden text-gray-700 hover:text-marca focus:outline-none nav-mobile-toggle" aria-label="Abrir menú"><i class="fas fa-bars text-2xl"></i></button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t"><a href="index.html#inicio" class="block px-4 py-3 text-gray-700 hover:bg-gray-50">Inicio</a>
+<a href="index.html#categorias" class="block px-4 py-3 text-marca font-bold bg-marca/5">Productos</a>
+<a href="index.html#nosotros" class="block px-4 py-3 text-gray-700 hover:bg-gray-50">Nosotros</a><a href="galeria-testimonios.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50">Galería y testimonios</a>
+<a href="index.html#contacto" class="block px-4 py-3 text-gray-700 hover:bg-gray-50">Contacto</a></div>
+</nav>
+
+<section id="inicio" class="catalog-hero relative pro-hero pt-36 pb-24 lg:pt-44 lg:pb-32 bg-gray-900 overflow-hidden">
+  <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('img/becerros.jpg');"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <span class="inline-flex items-center gap-2 text-marca-light font-bold tracking-wider uppercase text-sm mb-4"><i class="fas fa-certificate"></i>Línea para productores</span>
+    <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">Línea bovina abatez</h1>
+    <p class="text-lg md:text-xl text-gray-100 max-w-3xl leading-relaxed">Opciones para becerros, producción lechera, engorda, pastoreo y reproducción. Revisa información técnica, descarga fichas y cotiza por WhatsApp.</p>
+  </div>
+</section>
+<section class="bg-marca-dark py-8"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-3 gap-4"><div class="bg-white/10 border border-white/15 rounded-2xl p-5"><div class="text-3xl font-extrabold text-white">10</div><div class="text-sm text-gray-200">fichas consultables</div></div><div class="bg-white/10 border border-white/15 rounded-2xl p-5"><div class="text-3xl font-extrabold text-white">5</div><div class="text-sm text-gray-200">usos principales</div></div><div class="bg-white/10 border border-white/15 rounded-2xl p-5"><div class="text-3xl font-extrabold text-white">WhatsApp</div><div class="text-sm text-gray-200">cotización directa</div></div></div></section>
+<main class="py-20"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div data-catalog-filter class="catalog-filter-panel rounded-3xl p-5 md:p-6 mb-10">
+    <div class="grid lg:grid-cols-[1fr_auto] gap-4 items-center">
+      <div class="relative">
+        <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-marca"></i>
+        <input data-catalog-search class="catalog-filter-input" placeholder="Filtra por producto, etapa o necesidad...">
+      </div>
+      <div class="flex flex-wrap gap-2">
+        <button class="catalog-filter-chip" data-catalog-chip="becerros">Becerros</button>
+        <button class="catalog-filter-chip" data-catalog-chip="leche">Leche</button>
+        <button class="catalog-filter-chip" data-catalog-chip="engorda">Engorda</button>
+        <button class="catalog-filter-chip" data-catalog-chip="pastoreo">Pastoreo</button>
+        <button class="catalog-filter-chip" data-catalog-chip="reproducción">Reproducción</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white rounded-3xl p-6 md:p-8 pro-card mb-14 border border-gray-100">
+    <div class="grid lg:grid-cols-[1.5fr_.9fr] gap-8 items-center">
+      <div><span class="badge-oficial text-xs font-bold px-3 py-1 rounded-full">Guía de compra</span><h2 class="text-2xl md:text-4xl font-extrabold text-gray-900 mt-4 mb-3">Encuentra la opción para tu etapa productiva</h2><p class="text-gray-600 leading-relaxed">Explora las opciones por uso: becerros, leche, engorda, pastoreo y reproducción. Cada ficha resume lo más importante y permite pedir cotización directa.</p></div>
+      <div class="bg-gray-50 rounded-2xl p-5"><h3 class="font-bold text-gray-900 mb-3">Antes de cotizar</h3><ul class="space-y-2 text-sm text-gray-600"><li><i class="fas fa-check text-marca mr-2"></i>Identifica especie y etapa</li><li><i class="fas fa-check text-marca mr-2"></i>Revisa beneficios y análisis garantizado</li><li><i class="fas fa-check text-marca mr-2"></i>Consulta presentación, precio y disponibilidad</li></ul></div>
+    </div>
+  </div>
+  <section class="mb-16"><div class="flex items-center gap-3 mb-7"><span class="w-10 h-10 rounded-full bg-marca/10 text-marca flex items-center justify-center"><i class="fas fa-layer-group"></i></span><h2 class="text-2xl md:text-3xl font-extrabold text-marca-dark">Becerros</h2></div><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<article class="bg-white rounded-3xl overflow-hidden pro-card pro-transition flex flex-col">
+  <a href="producto-becerro-20-r.html" class="block product-thumb h-64 p-4 overflow-hidden">
+    <img src="assets/productos/becerro-20-r.jpg" loading="lazy" alt="Becerro 20 R" class="w-full h-full object-contain hover:scale-105 pro-transition">
+  </a>
+  <div class="p-6 flex flex-col flex-grow">
+    <div class="flex items-center justify-between gap-3 mb-3">
+      <span class="badge-oficial text-xs font-bold px-3 py-1 rounded-full">Ficha oficial</span>
+      <span class="text-xs text-gray-500">Becerros</span>
+    </div>
+    <h3 class="text-2xl font-extrabold text-gray-900 mb-2">Becerro 20 R</h3>
+    <p class="text-gray-600 text-sm leading-relaxed mb-5 flex-grow">Iniciador con 20% de proteína cruda para becerros antes del destete.</p>
+    <div class="flex flex-col sm:flex-row gap-3 mt-auto">
+      <a href="producto-becerro-20-r.html" class="inline-flex justify-center items-center bg-marca hover:bg-marca-dark text-white font-bold py-3 px-4 rounded-xl pro-transition">Ver ficha</a>
+      <button onclick="cotizarProducto('Becerro 20 R')" class="inline-flex justify-center items-center border border-marca text-marca hover:bg-marca hover:text-white font-bold py-3 px-4 rounded-xl pro-transition">Cotizar</button>
+    </div>
+  </div>
+</article>
+<article class="bg-white rounded-3xl overflow-hidden pro-card pro-transition flex flex-col">
+  <a href="producto-becerro-recepcion.html" class="block product-thumb h-64 p-4 overflow-hidden">
+    <img src="assets/productos/becerro-recepcion.jpg" loading="lazy" alt="Becerro Recepción 20" class="w-full h-full object-contain hover:scale-105 pro-transition">
+  </a>
+  <div class="p-6 flex flex-col flex-grow">
+    <div class="flex items-center justify-between gap-3 mb-3">
+      <span class="badge-oficial text-xs font-bold px-3 py-1 rounded-full">Ficha oficial</span>
+      <span class="text-xs text-gray-500">Becerros</span>
+    </div>
+    <h3 class="text-2xl font-extrabold text-gray-900 mb-2">Becerro Recepción 20</h3>
+    <p class="text-gray-600 text-sm leading-relaxed mb-5 flex-grow">Suplemento con 20% de proteína cruda para becerros después del destete.</p>
+    <div class="flex flex-col sm:flex-row gap-3 mt-auto">
+      <a href="producto-becerro-recepcion.html" class="inline-flex justify-center items-center bg-marca hover:bg-marca-dark text-white font-bold py-3 px-4 rounded-xl pro-transition">Ver ficha</a>
+      <button onclick="cotizarProducto('Becerro Recepción 20')" class="inline-flex justify-center items-center border border-marca text-marca hover:bg-marca hover:text-white font-bold py-3 px-4 rounded-xl pro-transition">Cotizar</button>
+    </div>
+  </div>
+</article></div></section><section class="mb-16"><div class="flex items-center gap-3 mb-7"><span class="w-10 h-10 rounded-full bg-marca/10 text-marca flex items-center justify-center"><i class="fas fa-layer-group"></i></span><h2 class="text-2xl md:text-3xl font-extrabold text-marca-dark">Producción de leche</h2></div><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<article class="bg-white rounded-3xl overflow-hidden pro-card pro-transition flex flex-col">
+  <a href="producto-lechero-20.html" class="block product-thumb h-64 p-4 overflow-hidden">
+    <img src="img/Concentrado-Lechero.jpg" loading="lazy" alt="Lechero 20" class="w-full h-full object-contain hover:scale-105 pro-transition">
+  </a>
+  <div class="p-6 flex flex-col flex-grow">
+    <div class="flex items-center justify-between gap-3 mb-3">
+      <span class="badge-oficial text-xs font-bold px-3 py-1 rounded-full">Ficha oficial</span>
+      <span class="text-xs text-gray-500">Producción de leche</span>
+    </div>
+    <h3 class="text-2xl font-extrabold text-gray-900 mb-2">Lechero 20</h3>
+    <p class="text-gray-600 text-sm leading-relaxed mb-5 flex-grow">Concentrado medicado con monensina sódica para bovinos productores de leche.</p>
+    <div class="flex flex-col sm:flex-row gap-3 mt-auto">
+      <a href="producto-lechero-20.html" class="inline-flex justify-center items-center bg-marca hover:bg-marca-dark text-white font-bold py-3 px-4 rounded-xl pro-transition">Ver ficha</a>
+      <button onclick="cotizarProducto('Lechero 20')" class="inline-flex justify-center items-center border border-marca text-marca hover:bg-marca hover:text-white font-bold py-3 px-4 rounded-xl pro-transition">Cotizar</button>
+    </div>
+  </div>
+</article></div></section><section class="mb-16"><div class="flex items-center gap-3 mb-7"><span class="w-10 h-10 rounded-full bg-marca/10 text-marca flex items-center justify-center"><i class="fas fa-layer-group"></i></span><h2 class="text-2xl md:text-3xl font-extrabold text-marca-dark">Engorda</h2></div><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<article class="bg-white rounded-3xl overflow-hidden pro-card pro-transition flex flex-col">
+  <a href="producto-novillo-14.html" class="block product-thumb h-64 p-4 overflow-hidden">
+    <img src="img/Engorda-Bovino.jpg" loading="lazy" alt="Novillo 14" class="w-full h-full object-contain hover:scale-105 pro-transition">
+  </a>
+  <div class="p-6 flex flex-col flex-grow">
+    <div class="flex items-center justify-between gap-3 mb-3">
+      <span class="badge-oficial text-xs font-bold px-3 py-1 rounded-full">Ficha oficial</span>
+      <span class="text-xs text-gray-500">Engorda</span>
+    </div>
+    <h3 class="text-2xl font-extrabold text-gray-900 mb-2">Novillo 14</h3>
+    <p class="text-gray-600 text-sm leading-relaxed mb-5 flex-grow">Concentrado con 14% de proteína para bovinos de engorda en corral.</p>
+    <div class="flex flex-col sm:flex-row gap-3 mt-auto">
+      <a href="producto-novillo-14.html" class="inline-flex justify-center items-center bg-marca hover:bg-marca-dark text-white font-bold py-3 px-4 rounded-xl pro-transition">Ver ficha</a>
+      <button onclick="cotizarProducto('Novillo 14')" class="inline-flex justify-center items-center border border-marca text-marca hover:bg-marca hover:text-white font-bold py-3 px-4 rounded-xl pro-transition">Cotizar</button>
+    </div>
+  </div>
+</article></div></section><section class="mb-16"><div class="flex items-center gap-3 mb-7"><span class="w-10 h-10 rounded-full bg-marca/10 text-marca flex items-center justify-center"><i class="fas fa-layer-group"></i></span><h2 class="text-2xl md:text-3xl font-extrabold text-marca-dark">Engorda y exposición</h2></div><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<article class="bg-white rounded-3xl overflow-hidden pro-card pro-transition flex flex-col">
+  <a href="producto-expo-16.html" class="block product-thumb h-64 p-4 overflow-hidden">
+    <img src="assets/productos/expo-16.jpg" loading="lazy" alt="Expo 16" class="w-full h-full object-contain hover:scale-105 pro-transition">
+  </a>
+  <div class="p-6 flex flex-col flex-grow">
+    <div class="flex items-center justify-between gap-3 mb-3">
+      <span class="badge-oficial text-xs font-bold px-3 py-1 rounded-full">Ficha oficial</span>
+      <span class="text-xs text-gray-500">Engorda y exposición</span>
+    </div>
+    <h3 class="text-2xl font-extrabold text-gray-900 mb-2">Expo 16</h3>
+    <p class="text-gray-600 text-sm leading-relaxed mb-5 flex-grow">Concentrado para becerros y toretes en pruebas de comportamiento y exposición.</p>
+    <div class="flex flex-col sm:flex-row gap-3 mt-auto">
+      <a href="producto-expo-16.html" class="inline-flex justify-center items-center bg-marca hover:bg-marca-dark text-white font-bold py-3 px-4 rounded-xl pro-transition">Ver ficha</a>
+      <button onclick="cotizarProducto('Expo 16')" class="inline-flex justify-center items-center border border-marca text-marca hover:bg-marca hover:text-white font-bold py-3 px-4 rounded-xl pro-transition">Cotizar</button>
+    </div>
+  </div>
+</article></div></section><section class="mb-16"><div class="flex items-center gap-3 mb-7"><span class="w-10 h-10 rounded-full bg-marca/10 text-marca flex items-center justify-center"><i class="fas fa-layer-group"></i></span><h2 class="text-2xl md:text-3xl font-extrabold text-marca-dark">Reproducción</h2></div><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<article class="bg-white rounded-3xl overflow-hidden pro-card pro-transition flex flex-col">
+  <a href="producto-flushing-24.html" class="block product-thumb h-64 p-4 overflow-hidden">
+    <img src="assets/productos/flushing-24.jpg" loading="lazy" alt="Flushing 24" class="w-full h-full object-contain hover:scale-105 pro-transition">
+  </a>
+  <div class="p-6 flex flex-col flex-grow">
+    <div class="flex items-center justify-between gap-3 mb-3">
+      <span class="badge-oficial text-xs font-bold px-3 py-1 rounded-full">Ficha oficial</span>
+      <span class="text-xs text-gray-500">Reproducción</span>
+    </div>
+    <h3 class="text-2xl font-extrabold text-gray-900 mb-2">Flushing 24</h3>
+    <p class="text-gray-600 text-sm leading-relaxed mb-5 flex-grow">Suplemento energético-proteico para vacas de cría en pastoreo.</p>
+    <div class="flex flex-col sm:flex-row gap-3 mt-auto">
+      <a href="producto-flushing-24.html" class="inline-flex justify-center items-center bg-marca hover:bg-marca-dark text-white font-bold py-3 px-4 rounded-xl pro-transition">Ver ficha</a>
+      <button onclick="cotizarProducto('Flushing 24')" class="inline-flex justify-center items-center border border-marca text-marca hover:bg-marca hover:text-white font-bold py-3 px-4 rounded-xl pro-transition">Cotizar</button>
+    </div>
+  </div>
+</article></div></section><section class="mb-16"><div class="flex items-center gap-3 mb-7"><span class="w-10 h-10 rounded-full bg-marca/10 text-marca flex items-center justify-center"><i class="fas fa-layer-group"></i></span><h2 class="text-2xl md:text-3xl font-extrabold text-marca-dark">Pastoreo</h2></div><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<article class="bg-white rounded-3xl overflow-hidden pro-card pro-transition flex flex-col">
+  <a href="producto-pasto-mas-24.html" class="block product-thumb h-64 p-4 overflow-hidden">
+    <img src="assets/productos/pasto-mas-24.jpg" loading="lazy" alt="Pasto Más 24" class="w-full h-full object-contain hover:scale-105 pro-transition">
+  </a>
+  <div class="p-6 flex flex-col flex-grow">
+    <div class="flex items-center justify-between gap-3 mb-3">
+      <span class="badge-oficial text-xs font-bold px-3 py-1 rounded-full">Ficha oficial</span>
+      <span class="text-xs text-gray-500">Pastoreo</span>
+    </div>
+    <h3 class="text-2xl font-extrabold text-gray-900 mb-2">Pasto Más 24</h3>
+    <p class="text-gray-600 text-sm leading-relaxed mb-5 flex-grow">Suplemento para ganado en pastoreo que aporta proteína, macrominerales y minerales traza.</p>
+    <div class="flex flex-col sm:flex-row gap-3 mt-auto">
+      <a href="producto-pasto-mas-24.html" class="inline-flex justify-center items-center bg-marca hover:bg-marca-dark text-white font-bold py-3 px-4 rounded-xl pro-transition">Ver ficha</a>
+      <button onclick="cotizarProducto('Pasto Más 24')" class="inline-flex justify-center items-center border border-marca text-marca hover:bg-marca hover:text-white font-bold py-3 px-4 rounded-xl pro-transition">Cotizar</button>
+    </div>
+  </div>
+</article>
+<article class="bg-white rounded-3xl overflow-hidden pro-card pro-transition flex flex-col">
+  <a href="producto-pasto-mas-30.html" class="block product-thumb h-64 p-4 overflow-hidden">
+    <img src="assets/productos/pasto-mas-30.jpg" loading="lazy" alt="Pasto Más 30" class="w-full h-full object-contain hover:scale-105 pro-transition">
+  </a>
+  <div class="p-6 flex flex-col flex-grow">
+    <div class="flex items-center justify-between gap-3 mb-3">
+      <span class="badge-oficial text-xs font-bold px-3 py-1 rounded-full">Ficha oficial</span>
+      <span class="text-xs text-gray-500">Pastoreo</span>
+    </div>
+    <h3 class="text-2xl font-extrabold text-gray-900 mb-2">Pasto Más 30</h3>
+    <p class="text-gray-600 text-sm leading-relaxed mb-5 flex-grow">Suplemento para ganado en pastoreo con enfoque en digestibilidad de forrajes y ganancia de peso.</p>
+    <div class="flex flex-col sm:flex-row gap-3 mt-auto">
+      <a href="producto-pasto-mas-30.html" class="inline-flex justify-center items-center bg-marca hover:bg-marca-dark text-white font-bold py-3 px-4 rounded-xl pro-transition">Ver ficha</a>
+      <button onclick="cotizarProducto('Pasto Más 30')" class="inline-flex justify-center items-center border border-marca text-marca hover:bg-marca hover:text-white font-bold py-3 px-4 rounded-xl pro-transition">Cotizar</button>
+    </div>
+  </div>
+</article></div></section><section class="mb-16"><div class="flex items-center gap-3 mb-7"><span class="w-10 h-10 rounded-full bg-marca/10 text-marca flex items-center justify-center"><i class="fas fa-layer-group"></i></span><h2 class="text-2xl md:text-3xl font-extrabold text-marca-dark">Pastoreo y reproducción</h2></div><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<article class="bg-white rounded-3xl overflow-hidden pro-card pro-transition flex flex-col">
+  <a href="producto-pasto-mas-4-40.html" class="block product-thumb h-64 p-4 overflow-hidden">
+    <img src="assets/productos/pasto-mas-4-40.jpg" loading="lazy" alt="Pasto Más 4:40" class="w-full h-full object-contain hover:scale-105 pro-transition">
+  </a>
+  <div class="p-6 flex flex-col flex-grow">
+    <div class="flex items-center justify-between gap-3 mb-3">
+      <span class="badge-oficial text-xs font-bold px-3 py-1 rounded-full">Ficha oficial</span>
+      <span class="text-xs text-gray-500">Pastoreo y reproducción</span>
+    </div>
+    <h3 class="text-2xl font-extrabold text-gray-900 mb-2">Pasto Más 4:40</h3>
+    <p class="text-gray-600 text-sm leading-relaxed mb-5 flex-grow">Suplemento mineral-proteico con 4% de fósforo y 40% de proteína de sobrepaso ruminal.</p>
+    <div class="flex flex-col sm:flex-row gap-3 mt-auto">
+      <a href="producto-pasto-mas-4-40.html" class="inline-flex justify-center items-center bg-marca hover:bg-marca-dark text-white font-bold py-3 px-4 rounded-xl pro-transition">Ver ficha</a>
+      <button onclick="cotizarProducto('Pasto Más 4:40')" class="inline-flex justify-center items-center border border-marca text-marca hover:bg-marca hover:text-white font-bold py-3 px-4 rounded-xl pro-transition">Cotizar</button>
+    </div>
+  </div>
+</article>
+<article class="bg-white rounded-3xl overflow-hidden pro-card pro-transition flex flex-col">
+  <a href="producto-pasto-mas-8-30.html" class="block product-thumb h-64 p-4 overflow-hidden">
+    <img src="assets/productos/pasto-mas-8-30.jpg" loading="lazy" alt="Pasto Más 8:30 LD" class="w-full h-full object-contain hover:scale-105 pro-transition">
+  </a>
+  <div class="p-6 flex flex-col flex-grow">
+    <div class="flex items-center justify-between gap-3 mb-3">
+      <span class="badge-oficial text-xs font-bold px-3 py-1 rounded-full">Ficha oficial</span>
+      <span class="text-xs text-gray-500">Pastoreo y reproducción</span>
+    </div>
+    <h3 class="text-2xl font-extrabold text-gray-900 mb-2">Pasto Más 8:30 LD</h3>
+    <p class="text-gray-600 text-sm leading-relaxed mb-5 flex-grow">Suplemento mineral-proteico alto en proteína medicado con lasalocid sódico.</p>
+    <div class="flex flex-col sm:flex-row gap-3 mt-auto">
+      <a href="producto-pasto-mas-8-30.html" class="inline-flex justify-center items-center bg-marca hover:bg-marca-dark text-white font-bold py-3 px-4 rounded-xl pro-transition">Ver ficha</a>
+      <button onclick="cotizarProducto('Pasto Más 8:30 LD')" class="inline-flex justify-center items-center border border-marca text-marca hover:bg-marca hover:text-white font-bold py-3 px-4 rounded-xl pro-transition">Cotizar</button>
+    </div>
+  </div>
+</article></div></section>
+</div></main>
+<button onclick="consultarDisponibilidad('alimentos abatez')" class="fixed bottom-6 right-6 z-50 w-14 h-14 md:w-16 md:h-16 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-2xl flex items-center justify-center text-3xl pro-transition hover:scale-110" aria-label="Contactar por WhatsApp"><i class="fab fa-whatsapp"></i></button>
+
+<footer class="bg-gray-950 text-white pt-14 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-10">
+    <div>
+      <p class="text-gray-400 text-sm leading-relaxed">Alimentos balanceados, soluciones para nutrición animal y marcas aliadas seleccionadas para productores y mascotas.</p>
+    </div>
+    <div>
+      <h3 class="font-bold text-lg mb-4">Catálogos</h3>
+      <ul class="space-y-2 text-gray-400 text-sm">
+        <li><a class="hover:text-white" href="catalogo-bovino.html">Línea bovina</a></li>
+        <li><a class="hover:text-white" href="catalogo-ovino.html">Línea ovina</a></li>
+        <li><a class="hover:text-white" href="catalogo-porcino.html">Línea porcina</a></li>
+        <li><a class="hover:text-white" href="catalogo-equino.html">Línea equina</a></li>
+        <li><a class="hover:text-white" href="catalogo-canino.html">Alimentos para perro</a></li>
+        <li><a class="hover:text-white" href="catalogo-felino.html">Alimentos para gato</a></li>
+<li><a class="hover:text-white" href="galeria-testimonios.html">Galería y testimonios</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-bold text-lg mb-4">Contacto</h3>
+      <div class="text-gray-400 text-sm mb-4 space-y-2">
+        <p>Cotizaciones, disponibilidad y recomendaciones por etapa productiva.</p>
+        <p><i class="fab fa-whatsapp text-marca mr-2"></i>+52 231 312 0797</p>
+        <p><i class="fas fa-location-dot text-marca mr-2"></i>Av. J. R. Gavilán 206, San Diego, 73965 Teziutlán, Puebla</p>
+        <p><i class="fas fa-clock text-marca mr-2"></i>Lunes a viernes de 9:00 a.m. a 6:00 p.m. · Sábados de 9:00 a.m. a 2:00 p.m.</p>
+      </div>
+      <button onclick="consultarDisponibilidad('productos abatez')" class="inline-flex items-center gap-2 bg-marca hover:bg-marca-dark text-white font-bold py-3 px-5 rounded-full pro-transition"><i class="fab fa-whatsapp"></i> Contactar por WhatsApp</button>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 pt-6 border-t border-white/10 text-center text-gray-500 text-xs">© 2026 abatez. Nutrición animal, asesoría y disponibilidad bajo consulta. <span class="mx-2 text-gray-700">|</span> <a class="hover:text-white underline underline-offset-4" href="aviso-privacidad.html">Aviso de privacidad</a></div>
+</footer>
+<script src="assets/js/abatez-pro.js"></script>
+</body>
+</html>

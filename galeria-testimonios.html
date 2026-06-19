@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth legacy-static">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <script>
+(function(d){
+  try {
+    if (window.CSS && CSS.supports && CSS.supports('display','grid') && CSS.supports('display','flex') && CSS.supports('object-fit','cover')) {
+      d.documentElement.className = d.documentElement.className.replace(/\blegacy-static\b/g, '').replace(/\s+/g, ' ');
+    }
+  } catch(e) {}
+})(document);
+</script>
+<title>Galería y testimonios | abatez</title>
+<meta name="description" content="Galería de abatez: espacio para fotografías autorizadas, experiencias de clientes y resultados de campo con alimentos balanceados y marcas disponibles.">
+<meta property="og:title" content="Galería y testimonios | abatez">
+<meta property="og:description" content="Fotografías autorizadas, experiencias de clientes y resultados de campo.">
+<meta property="og:image" content="img/Logo.png">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="img/loguito.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { theme: { extend: { fontFamily: { sans: ['Poppins','sans-serif'] }, colors: { marca: { light:'#D7B354', DEFAULT:'#355E3B', dark:'#183B2A' }, acento:{ DEFAULT:'#B9782C' } } } } };
+</script>
+<link rel="stylesheet" href="assets/css/abatez-pro.css">
+<link rel="stylesheet" href="assets/css/mac-compat.css">
+<link rel="stylesheet" href="assets/css/legacy-static.css">
+</head><body class="bg-[#fffaf1] text-gray-800 antialiased selection:bg-marca selection:text-white">
+<a href="#contenido" class="skip-link">Saltar al contenido</a>
+<nav id="navbar" class="fixed w-full z-50 bg-white/92 backdrop-blur-md h-24 shadow-sm transition-all duration-500"><div id="scroll-progress" aria-hidden="true"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+    <div class="flex justify-between items-center h-full">
+      <a href="index.html" class="h-full py-2 flex items-center" aria-label="Ir al inicio de abatez"><img src="img/Logo.png" data-logo-full="img/Logo.png" data-logo-compact="img/Logo.png" alt="Logo abatez" class="h-full w-auto object-contain"></a>
+      <div class="hidden md:flex nav-desktop space-x-8">
+        <a href="index.html#inicio" class="text-gray-700 hover:text-marca font-medium pro-transition">Inicio</a>
+        <a href="index.html#categorias" class="text-gray-700 hover:text-marca font-medium pro-transition">Productos</a>
+        <a href="index.html#nosotros" class="text-gray-700 hover:text-marca font-medium pro-transition">Nosotros</a>
+        <a href="galeria-testimonios.html" class="text-marca font-bold pro-transition">Galería</a>
+        <a href="index.html#contacto" class="text-gray-700 hover:text-marca font-medium pro-transition">Contacto</a>
+      </div>
+      <button id="mobile-menu-btn" aria-label="Abrir menú" class="md:hidden text-gray-700 hover:text-marca focus:outline-none nav-mobile-toggle"><i class="fas fa-bars text-2xl"></i></button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t">
+    <a href="index.html#inicio" class="block px-4 py-3 text-gray-700 hover:bg-gray-50">Inicio</a>
+    <a href="index.html#categorias" class="block px-4 py-3 text-gray-700 hover:bg-gray-50">Productos</a>
+    <a href="index.html#nosotros" class="block px-4 py-3 text-gray-700 hover:bg-gray-50">Nosotros</a>
+    <a href="galeria-testimonios.html" class="block px-4 py-3 text-marca font-bold bg-marca/5">Galería y testimonios</a>
+    <a href="index.html#contacto" class="block px-4 py-3 text-gray-700 hover:bg-gray-50">Contacto</a>
+  </div>
+</nav>
+<main id="contenido" class="pt-32 pb-20">
+  <section class="gallery-hero relative overflow-hidden bg-marca-dark text-white">
+    <div class="absolute inset-0 opacity-25 bg-cover bg-center" style="background-image:url('img/fondo2.jpg')"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-marca-dark via-marca-dark/80 to-black/35"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      <span class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 text-xs font-extrabold uppercase tracking-wider"><i class="fas fa-images text-acento"></i> Galería y experiencias</span>
+      <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mt-6 max-w-4xl">Resultados de campo, animales y experiencias de clientes</h1>
+      <p class="text-white/82 text-lg md:text-xl leading-relaxed max-w-3xl mt-5">Esta página está preparada para reunir fotografías autorizadas, comentarios reales y evidencias de uso de productos abatez. Así el cliente puede revisar experiencias sin saturar la página principal.</p>
+      <div class="flex flex-col sm:flex-row gap-3 mt-8">
+        <button onclick="consultarDisponibilidad('quiero compartir o consultar experiencias de abatez')" class="inline-flex items-center justify-center gap-2 bg-acento hover:bg-white hover:text-marca-dark text-white font-extrabold py-3 px-6 rounded-full pro-transition"><i class="fab fa-whatsapp"></i> Compartir experiencia</button>
+        <a href="index.html#categorias" class="inline-flex items-center justify-center gap-2 border border-white/35 text-white hover:bg-white hover:text-marca-dark font-extrabold py-3 px-6 rounded-full pro-transition"><i class="fas fa-paw"></i> Ver catálogo</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-[#fffaf1]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-10" data-aos="fade-up">
+        <span class="text-marca font-bold uppercase tracking-wider text-xs">Galería preparada para material real</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-950 mt-3">Fotografías autorizadas</h2>
+        <p class="text-gray-600 leading-relaxed mt-4">Cuando la empresa reciba imágenes reales de animales, entregas o costales en campo, se podrán colocar aquí sin modificar la estructura del sitio.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="gallery-card group bg-white rounded-3xl overflow-hidden pro-card" data-aos="fade-up"><img src="img/becerros.jpg" alt="Becerros" class="w-full h-56 object-cover"><div class="p-5"><span class="text-xs font-extrabold text-acento uppercase tracking-wider">Bovinos</span><h3 class="font-extrabold text-xl text-gray-950 mt-1">Desarrollo y engorda</h3><p class="text-sm text-gray-600 mt-2 leading-relaxed">Espacio para fotografías reales de becerros, novillos o ganado alimentado con productos disponibles.</p></div></article>
+        <article class="gallery-card group bg-white rounded-3xl overflow-hidden pro-card" data-aos="fade-up" data-aos-delay="70"><img src="img/borregos.jpg" alt="Ovinos" class="w-full h-56 object-cover"><div class="p-5"><span class="text-xs font-extrabold text-acento uppercase tracking-wider">Ovinos</span><h3 class="font-extrabold text-xl text-gray-950 mt-1">Rebaños y resultados</h3><p class="text-sm text-gray-600 mt-2 leading-relaxed">Sección para mostrar animales y experiencias de productores con autorización previa.</p></div></article>
+        <article class="gallery-card group bg-white rounded-3xl overflow-hidden pro-card" data-aos="fade-up" data-aos-delay="140"><img src="img/cerdos.jpg" alt="Porcinos" class="w-full h-56 object-cover"><div class="p-5"><span class="text-xs font-extrabold text-acento uppercase tracking-wider">Porcinos</span><h3 class="font-extrabold text-xl text-gray-950 mt-1">Granjas y alimentación</h3><p class="text-sm text-gray-600 mt-2 leading-relaxed">Área lista para añadir fotografías de corrales, etapas productivas y entregas.</p></div></article>
+        <article class="gallery-card group bg-white rounded-3xl overflow-hidden pro-card" data-aos="fade-up"><img src="img/caballos.jpg" alt="Equinos" class="w-full h-56 object-cover"><div class="p-5"><span class="text-xs font-extrabold text-acento uppercase tracking-wider">Equinos</span><h3 class="font-extrabold text-xl text-gray-950 mt-1">Condición y manejo</h3><p class="text-sm text-gray-600 mt-2 leading-relaxed">Espacio para evidencias visuales de cuidado, condición corporal y alimentación.</p></div></article>
+        <article class="gallery-card group bg-white rounded-3xl overflow-hidden pro-card" data-aos="fade-up" data-aos-delay="70"><img src="img/perros.jpg" alt="Perros" class="w-full h-56 object-cover"><div class="p-5"><span class="text-xs font-extrabold text-acento uppercase tracking-wider">Mascotas</span><h3 class="font-extrabold text-xl text-gray-950 mt-1">Productos de distribución</h3><p class="text-sm text-gray-600 mt-2 leading-relaxed">Galería para clientes que compartan fotos de mascotas y productos adquiridos.</p></div></article>
+        <article class="gallery-card group bg-white rounded-3xl overflow-hidden pro-card" data-aos="fade-up" data-aos-delay="140"><img src="img/Fabrica.jpg" alt="abatez" class="w-full h-56 object-cover"><div class="p-5"><span class="text-xs font-extrabold text-acento uppercase tracking-wider">abatez</span><h3 class="font-extrabold text-xl text-gray-950 mt-1">Fábrica y atención</h3><p class="text-sm text-gray-600 mt-2 leading-relaxed">Aquí se puede integrar la foto real de fábrica, bodega, entregas y equipo de trabajo.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-[.8fr_1.2fr] gap-8 items-start">
+        <div data-aos="fade-right">
+          <span class="text-marca font-bold uppercase tracking-wider text-xs">Testimonios reales</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-gray-950 mt-3">Opiniones de clientes</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">Para mantener la página seria, esta sección está pensada únicamente para comentarios autorizados por clientes reales. No se agregaron testimonios inventados.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <article class="testimonial-empty bg-[#fffaf1] border border-acento/20 rounded-3xl p-6" data-aos="fade-up"><i class="fas fa-quote-left text-acento text-2xl"></i><h3 class="font-extrabold text-gray-950 mt-4">Testimonio autorizado</h3><p class="text-sm text-gray-600 leading-relaxed mt-2">Espacio reservado para opinión real de productor o cliente, con nombre, zona y autorización de publicación.</p></article>
+          <article class="testimonial-empty bg-[#fffaf1] border border-marca/20 rounded-3xl p-6" data-aos="fade-up" data-aos-delay="80"><i class="fas fa-camera text-marca text-2xl"></i><h3 class="font-extrabold text-gray-950 mt-4">Foto con permiso</h3><p class="text-sm text-gray-600 leading-relaxed mt-2">Área para colocar fotos de animales, costales o entregas compartidas por clientes.</p></article>
+          <article class="testimonial-empty bg-[#fffaf1] border border-marca/20 rounded-3xl p-6" data-aos="fade-up"><i class="fas fa-location-dot text-marca text-2xl"></i><h3 class="font-extrabold text-gray-950 mt-4">Zona o rancho</h3><p class="text-sm text-gray-600 leading-relaxed mt-2">Se puede incluir localidad general sin exponer datos privados del cliente.</p></article>
+          <article class="testimonial-empty bg-[#fffaf1] border border-acento/20 rounded-3xl p-6" data-aos="fade-up" data-aos-delay="80"><i class="fas fa-shield-heart text-acento text-2xl"></i><h3 class="font-extrabold text-gray-950 mt-4">Publicación responsable</h3><p class="text-sm text-gray-600 leading-relaxed mt-2">Ideal para evitar contenido falso y mantener confianza profesional.</p></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-14 bg-marca-dark text-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-extrabold">¿Quieres cotizar o compartir una experiencia?</h2>
+      <p class="text-white/75 leading-relaxed mt-4 max-w-2xl mx-auto">Nuestro equipo puede recibir tu solicitud por WhatsApp para productos, disponibilidad, presentaciones o autorización de fotografías/testimonios.</p>
+      <button onclick="consultarDisponibilidad('catálogo, galería o testimonios abatez')" class="mt-7 inline-flex items-center justify-center gap-2 bg-acento hover:bg-white hover:text-marca-dark text-white font-extrabold py-3 px-7 rounded-full pro-transition"><i class="fab fa-whatsapp"></i> Contactar por WhatsApp</button>
+    </div>
+  </section>
+</main>
+<footer class="bg-gray-950 text-white pt-14 pb-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-10">
+<div>
+<h3 class="text-2xl font-extrabold text-white mb-3">abatez</h3>
+<p class="text-gray-400 text-sm leading-relaxed">Alimentos balanceados, soluciones para nutrición animal y marcas aliadas seleccionadas para productores y mascotas.</p></div>
+<div><h3 class="font-bold text-lg mb-4">Catálogos</h3><ul class="space-y-2 text-gray-400 text-sm"><li><a class="hover:text-white" href="catalogo-bovino.html">Línea bovina</a></li><li><a class="hover:text-white" href="catalogo-ovino.html">Línea ovina</a></li><li><a class="hover:text-white" href="catalogo-porcino.html">Línea porcina</a></li><li><a class="hover:text-white" href="catalogo-equino.html">Línea equina</a></li><li><a class="hover:text-white" href="catalogo-canino.html">Alimentos para perro</a></li><li><a class="hover:text-white" href="catalogo-felino.html">Alimentos para gato</a></li><li><a class="hover:text-white" href="galeria-testimonios.html">Galería y testimonios</a></li></ul></div>
+<div><h3 class="font-bold text-lg mb-4">Contacto</h3><div class="text-gray-400 text-sm mb-4 space-y-2"><p>Cotizaciones, disponibilidad y recomendaciones por etapa productiva.</p><p><i class="fab fa-whatsapp text-marca mr-2"></i>+52 231 312 0797</p><p><i class="fas fa-location-dot text-marca mr-2"></i>Av. J. R. Gavilán 206, San Diego, 73965 Teziutlán, Puebla</p><p><i class="fas fa-clock text-marca mr-2"></i>Lunes a viernes de 9:00 a.m. a 6:00 p.m. · Sábados de 9:00 a.m. a 2:00 p.m.</p></div><button class="inline-flex items-center gap-2 bg-marca hover:bg-marca-dark text-white font-bold py-3 px-5 rounded-full pro-transition" onclick="consultarDisponibilidad('productos abatez')"><i class="fab fa-whatsapp"></i> Contactar por WhatsApp</button></div>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 pt-6 border-t border-white/10 text-center text-gray-500 text-xs">© 2026 abatez. Nutrición animal, asesoría y disponibilidad bajo consulta. <span class="mx-2 text-gray-700">|</span> <a class="hover:text-white underline underline-offset-4" href="aviso-privacidad.html">Aviso de privacidad</a></div>
+</footer>
+<button aria-label="Contactar por WhatsApp" class="fixed bottom-6 right-6 z-50 w-14 h-14 md:w-16 md:h-16 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-2xl flex items-center justify-center text-3xl pro-transition hover:scale-110" onclick="consultarDisponibilidad('galería y productos abatez')"><i class="fab fa-whatsapp"></i></button>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="assets/js/abatez-pro.js"></script>
+</body>
+</html>

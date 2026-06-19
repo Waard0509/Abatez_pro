@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://tusitio.com/index.html</loc></url>
+  <url><loc>https://tusitio.com/catalogo-bovino.html</loc></url>
+  <url><loc>https://tusitio.com/catalogo-ovino.html</loc></url>
+  <url><loc>https://tusitio.com/catalogo-porcino.html</loc></url>
+  <url><loc>https://tusitio.com/catalogo-equino.html</loc></url>
+  <url><loc>https://tusitio.com/catalogo-canino.html</loc></url>
+  <url><loc>https://tusitio.com/catalogo-felino.html</loc></url>
+  <url><loc>https://tusitio.com/producto-becerro-20-r.html</loc></url>
+  <url><loc>https://tusitio.com/producto-becerro-recepcion.html</loc></url>
+  <url><loc>https://tusitio.com/producto-lechero-20.html</loc></url>
+  <url><loc>https://tusitio.com/producto-novillo-14.html</loc></url>
+  <url><loc>https://tusitio.com/producto-expo-16.html</loc></url>
+  <url><loc>https://tusitio.com/producto-flushing-24.html</loc></url>
+  <url><loc>https://tusitio.com/producto-pasto-mas-24.html</loc></url>
+  <url><loc>https://tusitio.com/producto-pasto-mas-30.html</loc></url>
+  <url><loc>https://tusitio.com/producto-pasto-mas-4-40.html</loc></url>
+  <url><loc>https://tusitio.com/producto-pasto-mas-8-30.html</loc></url>
+  <url><loc>https://tusitio.com/producto-ovino-14.html</loc></url>
+  <url><loc>https://tusitio.com/producto-laika-premium.html</loc></url>
+  <url><loc>https://tusitio.com/producto-perrazo-cachorro-adulto.html</loc></url>
+  <url><loc>https://tusitio.com/producto-ringo-adulto.html</loc></url>
+  <url><loc>https://tusitio.com/producto-felicette-premium.html</loc></url>
+  <url>
+    <loc>https://tusitio.com/aviso-privacidad.html</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://tusitio.com/galeria-testimonios.html</loc>
+    <priority>0.70</priority>
+  </url>
+</urlset>
