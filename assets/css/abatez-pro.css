@@ -2111,3 +2111,319 @@ html.legacy-static #navbar a.abatez-floating-logo-link{
     height:var(--abatez-logo-card-h, 104px)!important;
   }
 }
+
+/* =========================================================
+   abatez v38 - Separadores por etapa en catálogo bovino
+   Mejora lectura entre grupos de producto sin afectar fichas.
+   ========================================================= */
+.catalog-stage-section{
+  position:relative;
+}
+.catalog-stage-section + .catalog-stage-section{
+  padding-top:2.35rem;
+  margin-top:1.15rem;
+}
+.catalog-stage-section + .catalog-stage-section:before{
+  content:"";
+  display:block;
+  width:min(100%, 920px);
+  height:1px;
+  margin:0 0 2.35rem 0;
+  background:linear-gradient(90deg, rgba(53,94,59,0), rgba(53,94,59,.20), rgba(16,185,129,.38), rgba(53,94,59,.20), rgba(53,94,59,0));
+}
+.catalog-stage-heading{
+  position:relative;
+}
+.catalog-stage-heading:after{
+  content:"";
+  display:block;
+  position:absolute;
+  left:3.25rem;
+  right:0;
+  bottom:-.85rem;
+  height:3px;
+  border-radius:999px;
+  background:linear-gradient(90deg, rgba(16,185,129,.75), rgba(53,94,59,.24), rgba(53,94,59,0));
+  pointer-events:none;
+}
+
+@media (max-width: 767px){
+  .catalog-stage-section{
+    text-align:center;
+  }
+  .catalog-stage-section + .catalog-stage-section{
+    padding-top:1.65rem;
+    margin-top:.85rem;
+  }
+  .catalog-stage-section + .catalog-stage-section:before{
+    width:min(72vw, 280px);
+    height:3px;
+    margin:0 auto 1.5rem auto;
+    border-radius:999px;
+    background:linear-gradient(90deg, rgba(53,94,59,0), rgba(53,94,59,.28), rgba(16,185,129,.70), rgba(53,94,59,.28), rgba(53,94,59,0));
+  }
+  .catalog-stage-heading{
+    justify-content:center!important;
+    flex-direction:column!important;
+    gap:.55rem!important;
+    margin-bottom:1.4rem!important;
+  }
+  .catalog-stage-heading span{
+    width:2.25rem!important;
+    height:2.25rem!important;
+  }
+  .catalog-stage-heading h2{
+    font-size:1.55rem!important;
+    line-height:1.15!important;
+  }
+  .catalog-stage-heading:after{
+    left:50%;
+    right:auto;
+    bottom:-.65rem;
+    width:min(48vw, 190px);
+    height:3px;
+    -webkit-transform:translateX(-50%);
+    transform:translateX(-50%);
+    background:linear-gradient(90deg, rgba(53,94,59,0), rgba(16,185,129,.82), rgba(53,94,59,0));
+  }
+}
+
+/* =========================================================
+   abatez v39 - Fondos degradados por etapa en catálogo bovino
+   Cada bloque de etapa tiene identidad visual propia y mantiene
+   separación clara entre grupos de productos.
+   ========================================================= */
+.catalog-stage-section{
+  position:relative;
+  padding:2.15rem;
+  border-radius:2rem;
+  border:1px solid rgba(15,23,42,.075);
+  box-shadow:0 18px 45px rgba(15,23,42,.055);
+  overflow:hidden;
+}
+.catalog-stage-section:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.92;
+  z-index:0;
+}
+.catalog-stage-section:after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:5px;
+  pointer-events:none;
+  z-index:1;
+}
+.catalog-stage-section > *{
+  position:relative;
+  z-index:2;
+}
+.catalog-stage-section + .catalog-stage-section{
+  padding-top:2.15rem;
+  margin-top:2.15rem;
+}
+.catalog-stage-section + .catalog-stage-section:before{
+  display:none;
+}
+.catalog-stage-heading{
+  position:relative;
+  padding:.65rem 0 .9rem 0;
+  margin-bottom:1.45rem!important;
+}
+.catalog-stage-heading .stage-icon{
+  box-shadow:0 10px 25px rgba(15,23,42,.08);
+}
+.catalog-stage-heading:after{
+  left:3.25rem;
+  right:auto;
+  bottom:0;
+  width:min(430px, calc(100% - 4rem));
+  height:4px;
+  border-radius:999px;
+}
+.catalog-stage-section .pro-card{
+  box-shadow:0 18px 42px rgba(15,23,42,.07);
+}
+.catalog-stage-section.stage-becerros:before{
+  background:linear-gradient(135deg, rgba(255,247,237,.96) 0%, rgba(254,243,199,.72) 48%, rgba(255,255,255,.88) 100%);
+}
+.catalog-stage-section.stage-becerros:after,
+.catalog-stage-section.stage-becerros .catalog-stage-heading:after{
+  background:linear-gradient(90deg, #f59e0b, rgba(245,158,11,.35), rgba(245,158,11,0));
+}
+.catalog-stage-section.stage-becerros .stage-icon{
+  background:rgba(245,158,11,.14)!important;
+  color:#b45309!important;
+}
+.catalog-stage-section.stage-leche:before{
+  background:linear-gradient(135deg, rgba(239,246,255,.97) 0%, rgba(219,234,254,.72) 52%, rgba(255,255,255,.9) 100%);
+}
+.catalog-stage-section.stage-leche:after,
+.catalog-stage-section.stage-leche .catalog-stage-heading:after{
+  background:linear-gradient(90deg, #3b82f6, rgba(59,130,246,.34), rgba(59,130,246,0));
+}
+.catalog-stage-section.stage-leche .stage-icon{
+  background:rgba(59,130,246,.12)!important;
+  color:#1d4ed8!important;
+}
+.catalog-stage-section.stage-engorda:before{
+  background:linear-gradient(135deg, rgba(236,253,245,.97) 0%, rgba(187,247,208,.58) 48%, rgba(255,255,255,.9) 100%);
+}
+.catalog-stage-section.stage-engorda:after,
+.catalog-stage-section.stage-engorda .catalog-stage-heading:after{
+  background:linear-gradient(90deg, #059669, rgba(5,150,105,.35), rgba(5,150,105,0));
+}
+.catalog-stage-section.stage-engorda .stage-icon{
+  background:rgba(5,150,105,.12)!important;
+  color:#047857!important;
+}
+.catalog-stage-section.stage-expo:before{
+  background:linear-gradient(135deg, rgba(255,247,237,.98) 0%, rgba(254,215,170,.62) 50%, rgba(255,255,255,.88) 100%);
+}
+.catalog-stage-section.stage-expo:after,
+.catalog-stage-section.stage-expo .catalog-stage-heading:after{
+  background:linear-gradient(90deg, #ea580c, rgba(234,88,12,.35), rgba(234,88,12,0));
+}
+.catalog-stage-section.stage-expo .stage-icon{
+  background:rgba(234,88,12,.12)!important;
+  color:#c2410c!important;
+}
+.catalog-stage-section.stage-reproduccion:before{
+  background:linear-gradient(135deg, rgba(250,245,255,.98) 0%, rgba(233,213,255,.68) 50%, rgba(255,255,255,.9) 100%);
+}
+.catalog-stage-section.stage-reproduccion:after,
+.catalog-stage-section.stage-reproduccion .catalog-stage-heading:after{
+  background:linear-gradient(90deg, #9333ea, rgba(147,51,234,.34), rgba(147,51,234,0));
+}
+.catalog-stage-section.stage-reproduccion .stage-icon{
+  background:rgba(147,51,234,.12)!important;
+  color:#7e22ce!important;
+}
+.catalog-stage-section.stage-pastoreo:before{
+  background:linear-gradient(135deg, rgba(247,254,231,.98) 0%, rgba(217,249,157,.62) 52%, rgba(255,255,255,.9) 100%);
+}
+.catalog-stage-section.stage-pastoreo:after,
+.catalog-stage-section.stage-pastoreo .catalog-stage-heading:after{
+  background:linear-gradient(90deg, #65a30d, rgba(101,163,13,.34), rgba(101,163,13,0));
+}
+.catalog-stage-section.stage-pastoreo .stage-icon{
+  background:rgba(101,163,13,.13)!important;
+  color:#4d7c0f!important;
+}
+.catalog-stage-section.stage-pastoreo-repro:before{
+  background:linear-gradient(135deg, rgba(240,253,250,.98) 0%, rgba(153,246,228,.46) 42%, rgba(254,249,195,.48) 100%);
+}
+.catalog-stage-section.stage-pastoreo-repro:after,
+.catalog-stage-section.stage-pastoreo-repro .catalog-stage-heading:after{
+  background:linear-gradient(90deg, #0f766e, rgba(245,158,11,.45), rgba(15,118,110,0));
+}
+.catalog-stage-section.stage-pastoreo-repro .stage-icon{
+  background:rgba(15,118,110,.12)!important;
+  color:#0f766e!important;
+}
+
+@media (max-width: 767px){
+  .catalog-stage-section{
+    padding:1.35rem 1rem 1.55rem;
+    border-radius:1.55rem;
+    text-align:center;
+  }
+  .catalog-stage-section + .catalog-stage-section{
+    padding-top:1.35rem;
+    margin-top:1.35rem;
+  }
+  .catalog-stage-heading{
+    justify-content:center!important;
+    flex-direction:column!important;
+    gap:.55rem!important;
+    margin-bottom:1.25rem!important;
+    padding:.3rem 0 .85rem 0;
+  }
+  .catalog-stage-heading span,
+  .catalog-stage-heading .stage-icon{
+    width:2.45rem!important;
+    height:2.45rem!important;
+  }
+  .catalog-stage-heading h2{
+    font-size:1.42rem!important;
+    line-height:1.16!important;
+  }
+  .catalog-stage-heading:after{
+    left:50%!important;
+    right:auto!important;
+    bottom:0;
+    width:min(58vw, 230px)!important;
+    height:4px;
+    -webkit-transform:translateX(-50%);
+    transform:translateX(-50%);
+  }
+}
+
+/* =========================================================
+   abatez v40 - Bloques de etapa con fondo completo por color
+   Refuerza que TODAS las etapas se vean como Becerros:
+   bloque completo, degradado propio, borde suave y título centrado en móvil.
+   ========================================================= */
+.catalog-stage-section{
+  background:#fff!important;
+  border:1px solid rgba(15,23,42,.08)!important;
+  box-shadow:0 22px 55px rgba(15,23,42,.06)!important;
+}
+.catalog-stage-section.stage-becerros{
+  background:linear-gradient(135deg,#fff7ed 0%,#fef3c7 46%,#fffdf4 100%)!important;
+  border-color:rgba(245,158,11,.23)!important;
+}
+.catalog-stage-section.stage-leche{
+  background:linear-gradient(135deg,#eff6ff 0%,#dbeafe 46%,#f8fbff 100%)!important;
+  border-color:rgba(59,130,246,.22)!important;
+}
+.catalog-stage-section.stage-engorda{
+  background:linear-gradient(135deg,#ecfdf5 0%,#bbf7d0 44%,#f7fff9 100%)!important;
+  border-color:rgba(5,150,105,.22)!important;
+}
+.catalog-stage-section.stage-expo{
+  background:linear-gradient(135deg,#fff7ed 0%,#fed7aa 45%,#fffaf5 100%)!important;
+  border-color:rgba(234,88,12,.23)!important;
+}
+.catalog-stage-section.stage-reproduccion{
+  background:linear-gradient(135deg,#faf5ff 0%,#e9d5ff 47%,#fffaff 100%)!important;
+  border-color:rgba(147,51,234,.20)!important;
+}
+.catalog-stage-section.stage-pastoreo{
+  background:linear-gradient(135deg,#f7fee7 0%,#d9f99d 45%,#fbfff3 100%)!important;
+  border-color:rgba(101,163,13,.24)!important;
+}
+.catalog-stage-section.stage-pastoreo-repro{
+  background:linear-gradient(135deg,#f0fdfa 0%,#99f6e4 42%,#fef9c3 100%)!important;
+  border-color:rgba(15,118,110,.22)!important;
+}
+.catalog-stage-section:before{
+  background:radial-gradient(circle at 12% 0%,rgba(255,255,255,.76),rgba(255,255,255,0) 34%), radial-gradient(circle at 100% 100%,rgba(255,255,255,.58),rgba(255,255,255,0) 30%)!important;
+  opacity:1!important;
+}
+.catalog-stage-section .catalog-stage-heading h2{
+  text-shadow:0 1px 0 rgba(255,255,255,.45);
+}
+.catalog-stage-section.stage-becerros .catalog-stage-heading h2{ color:#0f5132!important; }
+.catalog-stage-section.stage-leche .catalog-stage-heading h2{ color:#1e3a8a!important; }
+.catalog-stage-section.stage-engorda .catalog-stage-heading h2{ color:#064e3b!important; }
+.catalog-stage-section.stage-expo .catalog-stage-heading h2{ color:#7c2d12!important; }
+.catalog-stage-section.stage-reproduccion .catalog-stage-heading h2{ color:#581c87!important; }
+.catalog-stage-section.stage-pastoreo .catalog-stage-heading h2{ color:#365314!important; }
+.catalog-stage-section.stage-pastoreo-repro .catalog-stage-heading h2{ color:#134e4a!important; }
+@media (max-width: 767px){
+  .catalog-stage-section{
+    margin-left:auto!important;
+    margin-right:auto!important;
+    width:100%!important;
+  }
+  .catalog-stage-section .catalog-stage-heading{
+    text-align:center!important;
+    align-items:center!important;
+  }
+}
