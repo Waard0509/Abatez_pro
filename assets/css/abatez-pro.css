@@ -2427,3 +2427,118 @@ html.legacy-static #navbar a.abatez-floating-logo-link{
     align-items:center!important;
   }
 }
+
+/* =========================================================
+   abatez v41 - Separadores por etapa tipo cinta verde
+   Regresa los productos a fondo limpio y usa una cinta con
+   degradado únicamente en el encabezado de cada etapa.
+   ========================================================= */
+.catalog-stage-section,
+.catalog-stage-section.stage-becerros,
+.catalog-stage-section.stage-leche,
+.catalog-stage-section.stage-engorda,
+.catalog-stage-section.stage-expo,
+.catalog-stage-section.stage-reproduccion,
+.catalog-stage-section.stage-pastoreo,
+.catalog-stage-section.stage-pastoreo-repro{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  border-radius:0!important;
+  padding:0!important;
+  overflow:visible!important;
+}
+.catalog-stage-section:before,
+.catalog-stage-section:after{
+  display:none!important;
+  content:none!important;
+}
+.catalog-stage-section + .catalog-stage-section{
+  margin-top:3.1rem!important;
+  padding-top:0!important;
+}
+.catalog-stage-section .catalog-stage-heading{
+  width:min(760px, 100%)!important;
+  min-height:4.6rem!important;
+  margin:0 0 2rem 0!important;
+  padding:1rem 1.6rem 1rem 1.1rem!important;
+  border-radius:0 999px 999px 0!important;
+  border-left:6px solid #355E3B!important;
+  background:linear-gradient(90deg, rgba(53,94,59,.18) 0%, rgba(16,185,129,.11) 44%, rgba(255,255,255,0) 100%)!important;
+  box-shadow:0 14px 35px rgba(24,59,42,.055)!important;
+  position:relative!important;
+  display:flex!important;
+  align-items:center!important;
+}
+.catalog-stage-section .catalog-stage-heading:before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:1px;
+  background:linear-gradient(90deg, rgba(53,94,59,.28), rgba(16,185,129,.24), rgba(255,255,255,0));
+  pointer-events:none;
+}
+.catalog-stage-section .catalog-stage-heading:after{
+  display:none!important;
+  content:none!important;
+}
+.catalog-stage-section .catalog-stage-heading .stage-icon,
+.catalog-stage-section.stage-becerros .stage-icon,
+.catalog-stage-section.stage-leche .stage-icon,
+.catalog-stage-section.stage-engorda .stage-icon,
+.catalog-stage-section.stage-expo .stage-icon,
+.catalog-stage-section.stage-reproduccion .stage-icon,
+.catalog-stage-section.stage-pastoreo .stage-icon,
+.catalog-stage-section.stage-pastoreo-repro .stage-icon{
+  background:rgba(53,94,59,.12)!important;
+  color:#355E3B!important;
+  box-shadow:none!important;
+  flex:0 0 auto!important;
+}
+.catalog-stage-section .catalog-stage-heading h2,
+.catalog-stage-section.stage-becerros .catalog-stage-heading h2,
+.catalog-stage-section.stage-leche .catalog-stage-heading h2,
+.catalog-stage-section.stage-engorda .catalog-stage-heading h2,
+.catalog-stage-section.stage-expo .catalog-stage-heading h2,
+.catalog-stage-section.stage-reproduccion .catalog-stage-heading h2,
+.catalog-stage-section.stage-pastoreo .catalog-stage-heading h2,
+.catalog-stage-section.stage-pastoreo-repro .catalog-stage-heading h2{
+  color:#183B2A!important;
+  text-shadow:none!important;
+}
+.catalog-stage-section .pro-card{
+  box-shadow:0 18px 42px rgba(15,23,42,.055)!important;
+}
+@media (max-width: 767px){
+  .catalog-stage-section + .catalog-stage-section{
+    margin-top:2.15rem!important;
+  }
+  .catalog-stage-section .catalog-stage-heading{
+    width:min(92vw, 360px)!important;
+    min-height:auto!important;
+    margin:0 auto 1.45rem auto!important;
+    padding:.9rem 1.1rem!important;
+    border-left:0!important;
+    border-radius:999px!important;
+    justify-content:center!important;
+    align-items:center!important;
+    flex-direction:row!important;
+    text-align:center!important;
+    background:linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(53,94,59,.16) 18%, rgba(16,185,129,.12) 50%, rgba(53,94,59,.16) 82%, rgba(255,255,255,0) 100%)!important;
+    box-shadow:0 10px 24px rgba(24,59,42,.045)!important;
+  }
+  .catalog-stage-section .catalog-stage-heading:before{
+    background:linear-gradient(90deg, rgba(255,255,255,0), rgba(53,94,59,.24), rgba(255,255,255,0));
+  }
+  .catalog-stage-section .catalog-stage-heading span,
+  .catalog-stage-section .catalog-stage-heading .stage-icon{
+    width:2.15rem!important;
+    height:2.15rem!important;
+  }
+  .catalog-stage-section .catalog-stage-heading h2{
+    font-size:1.35rem!important;
+    line-height:1.1!important;
+  }
+}
