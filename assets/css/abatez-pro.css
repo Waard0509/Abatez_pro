@@ -2556,3 +2556,82 @@ html.legacy-static #navbar a.abatez-floating-logo-link{
     filter: drop-shadow(0 10px 18px rgba(15,23,42,.14));
   }
 }
+
+
+/* =========================================================
+   abatez v45 - Logo 10% más grande + favicon actualizado
+   Conserva el logo transparente, centrado en móvil y menú a la derecha.
+   ========================================================= */
+@media (min-width:768px){
+  #navbar .abatez-floating-logo-link,
+  #navbar.navbar--compact .abatez-floating-logo-link,
+  body.abatez-home-page #navbar .abatez-floating-logo-link,
+  body.abatez-home-page #navbar.navbar--compact .abatez-floating-logo-link{
+    width:187px!important;
+    height:140px!important;
+  }
+  body.abatez-inner-page #navbar .abatez-floating-logo-link,
+  body.abatez-inner-page #navbar.navbar--compact .abatez-floating-logo-link{
+    width:165px!important;
+    height:123px!important;
+  }
+}
+@media (max-width: 899px), (hover: none) and (pointer: coarse) and (max-width: 1100px){
+  body.abatez-home-page #navbar{height:var(--abatez-nav-height,136px)!important;min-height:var(--abatez-nav-height,136px)!important;}
+  body.abatez-home-page #navbar a.abatez-floating-logo-link,
+  body.abatez-home-page #navbar.navbar--compact a.abatez-floating-logo-link{
+    left:50%!important;right:auto!important;
+    width:var(--abatez-logo-card-w,172px)!important;
+    height:var(--abatez-logo-card-h,128px)!important;
+    -webkit-transform:translate3d(-50%,var(--abatez-logo-card-y,0),0)!important;
+    transform:translate3d(-50%,var(--abatez-logo-card-y,0),0)!important;
+  }
+  body.abatez-inner-page #navbar a.abatez-floating-logo-link,
+  body.abatez-inner-page #navbar.navbar--compact a.abatez-floating-logo-link{
+    left:50%!important;right:auto!important;
+    width:var(--abatez-logo-card-w,145px)!important;
+    height:var(--abatez-logo-card-h,109px)!important;
+    -webkit-transform:translate3d(-50%,var(--abatez-logo-card-y,0),0)!important;
+    transform:translate3d(-50%,var(--abatez-logo-card-y,0),0)!important;
+  }
+}
+
+/* =========================================================
+   abatez v46 - Restaura animación del logo + favicon clásico
+   - Mantiene el logo 10% más grande gracias al JS.
+   - Vuelve a usar variables dinámicas para que el logo se encoja suave al scroll.
+   - No afecta centrado móvil ni compatibilidad Safari/Mac antiguo.
+   ========================================================= */
+@media (min-width:768px){
+  #navbar .abatez-floating-logo-link,
+  #navbar.navbar--compact .abatez-floating-logo-link,
+  body.abatez-home-page #navbar .abatez-floating-logo-link,
+  body.abatez-home-page #navbar.navbar--compact .abatez-floating-logo-link,
+  body.abatez-inner-page #navbar .abatez-floating-logo-link,
+  body.abatez-inner-page #navbar.navbar--compact .abatez-floating-logo-link,
+  html.legacy-static #navbar .abatez-floating-logo-link{
+    width:var(--abatez-logo-card-w,187px)!important;
+    height:var(--abatez-logo-card-h,140px)!important;
+    top:var(--abatez-logo-card-top,0px)!important;
+    -webkit-transform:translate3d(0,var(--abatez-logo-card-y,0px),0)!important;
+    transform:translate3d(0,var(--abatez-logo-card-y,0px),0)!important;
+    transition:width .18s linear,height .18s linear,top .18s linear,transform .18s linear!important;
+  }
+  body.abatez-inner-page #navbar .abatez-floating-logo-link,
+  body.abatez-inner-page #navbar.navbar--compact .abatez-floating-logo-link{
+    width:var(--abatez-logo-card-w,165px)!important;
+    height:var(--abatez-logo-card-h,123px)!important;
+  }
+}
+@media (max-width: 899px), (hover: none) and (pointer: coarse) and (max-width: 1100px){
+  body.abatez-home-page #navbar a.abatez-floating-logo-link,
+  body.abatez-home-page #navbar.navbar--compact a.abatez-floating-logo-link,
+  body.abatez-inner-page #navbar a.abatez-floating-logo-link,
+  body.abatez-inner-page #navbar.navbar--compact a.abatez-floating-logo-link,
+  html.legacy-static #navbar a.abatez-floating-logo-link{
+    width:var(--abatez-logo-card-w,172px)!important;
+    height:var(--abatez-logo-card-h,128px)!important;
+    top:calc(env(safe-area-inset-top) + var(--abatez-logo-card-top,6px))!important;
+    transition:width .18s linear,height .18s linear,top .18s linear,transform .18s linear!important;
+  }
+}

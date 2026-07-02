@@ -341,6 +341,8 @@ function initSmoothNavbar(){
     var isHomePage=bodyClass.indexOf('abatez-home-page')>-1 || !!document.querySelector('.home-hero');
     var raw=clamp(y/330,0,1);
     var value=raw*raw*(3-(2*raw));
+    // v45: logo 10% más grande, manteniendo centrado y compatibilidad móvil/legacy.
+    var logoBoost=1.10;
 
     /* v30: en móvil el logo ya no se monta sobre los heroes internos.
        Inicio conserva un logo amplio en el área blanca; catálogos/productos usan versión más compacta. */
@@ -354,12 +356,12 @@ function initSmoothNavbar(){
       if(isHomePage){
         // v35: en móvil el logo debe ocupar el espacio superior solo al inicio.
         // Al bajar se vuelve realmente compacto para no quedarse flotando sobre el contenido.
-        navH=lerp(124,78,value);
+        navH=lerp(136,82,value);
         logoW=lerp(baseMobileW,96,value);
         logoH=lerp(baseMobileW * 0.746,72,value);
         logoTop=lerp(7,5,value);
       }else{
-        navH=lerp(92,74,value);
+        navH=lerp(100,78,value);
         logoW=lerp(132,88,value);
         logoH=lerp(99,66,value);
         logoTop=lerp(0,5,value);
@@ -378,6 +380,8 @@ function initSmoothNavbar(){
       }
       logoY=0;
     }
+    logoW = logoW * logoBoost;
+    logoH = logoH * logoBoost;
     var logoPad=0;
     var radius=0;
     var bgAlpha=lerp(.90,.985,value);
