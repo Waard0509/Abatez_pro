@@ -212,21 +212,31 @@ function toggleDetalles(idSeccion, idIcono){
 }
 
 var productosBusquedaAbatez = [
-  {nombre:'Becerro 20 R', linea:'Bovinos', etapa:'Becerros', objetivo:'Destete y desarrollo inicial', url:'producto-becerro-20-r.html'},
-  {nombre:'Becerro Recepción 20', linea:'Bovinos', etapa:'Recepción', objetivo:'Adaptación después del destete', url:'producto-becerro-recepcion.html'},
-  {nombre:'Lechero 20', linea:'Bovinos', etapa:'Lactancia', objetivo:'Producción de leche', url:'producto-lechero-20.html'},
-  {nombre:'Novillo 14', linea:'Bovinos', etapa:'Engorda', objetivo:'Ganancia de peso y conversión', url:'producto-novillo-14.html'},
-  {nombre:'Expo 16', linea:'Bovinos', etapa:'Engorda / exposición', objetivo:'Condición y finalización', url:'producto-expo-16.html'},
-  {nombre:'Flushing 24', linea:'Bovinos', etapa:'Reproducción', objetivo:'Condición corporal y preparación', url:'producto-flushing-24.html'},
-  {nombre:'Pasto Más 24', linea:'Bovinos', etapa:'Pastoreo', objetivo:'Suplementación en campo', url:'producto-pasto-mas-24.html'},
-  {nombre:'Pasto Más 30', linea:'Bovinos', etapa:'Pastoreo', objetivo:'Suplementación proteica', url:'producto-pasto-mas-30.html'},
-  {nombre:'Pasto Más 4:40', linea:'Bovinos', etapa:'Pastoreo', objetivo:'Mineral/proteico', url:'producto-pasto-mas-4-40.html'},
-  {nombre:'Pasto Más 8:30', linea:'Bovinos', etapa:'Pastoreo', objetivo:'Mineral/proteico', url:'producto-pasto-mas-8-30.html'},
-  {nombre:'Ovino 14', linea:'Ovinos', etapa:'Engorda', objetivo:'Corderos en corral', url:'producto-ovino-14.html'},
-  {nombre:'Laika Premium', linea:'Caninos', etapa:'Cachorro / adulto / razas pequeñas', objetivo:'Alimento para perro', url:'producto-laika-premium.html'},
-  {nombre:'Perrazo Cachorro y Adulto', linea:'Caninos', etapa:'Cachorro / adulto', objetivo:'Alimento para perro', url:'producto-perrazo-cachorro-adulto.html'},
-  {nombre:'Ringo Adulto', linea:'Caninos', etapa:'Adulto', objetivo:'Alimento para perro adulto', url:'producto-ringo-adulto.html'},
-  {nombre:'Félicette Premium', linea:'Felinos', etapa:'Adulto', objetivo:'Alimento para gato', url:'producto-felicette-premium.html'}
+  {nombre:'Becerro 20 R', linea:'Bovinos', etapa:'Becerros', objetivo:'Destete y desarrollo inicial', url:'producto-becerro-20-r.html', tags:'bovino bovinos becerro becerros ternero inicio'},
+  {nombre:'Becerro Recepción 20', linea:'Bovinos', etapa:'Recepción', objetivo:'Adaptación después del destete', url:'producto-becerro-recepcion.html', tags:'bovino bovinos becerro becerros recepcion destete'},
+  {nombre:'Lechero 20', linea:'Bovinos', etapa:'Lactancia', objetivo:'Producción de leche', url:'producto-lechero-20.html', tags:'bovino bovinos vaca vacas leche lechero produccion'},
+  {nombre:'Novillo 14', linea:'Bovinos', etapa:'Engorda', objetivo:'Ganancia de peso y conversión', url:'producto-novillo-14.html', tags:'bovino bovinos novillo novillos engorda peso conversion corral'},
+  {nombre:'Expo 16', linea:'Bovinos', etapa:'Engorda / exposición', objetivo:'Condición y finalización', url:'producto-expo-16.html', tags:'bovino bovinos engorda expo exposicion finalizacion'},
+  {nombre:'Flushing 24', linea:'Bovinos', etapa:'Reproducción', objetivo:'Condición corporal y preparación', url:'producto-flushing-24.html', tags:'bovino bovinos reproduccion vacas condicion'},
+  {nombre:'Pasto Más 24', linea:'Bovinos', etapa:'Pastoreo', objetivo:'Suplementación en campo', url:'producto-pasto-mas-24.html', tags:'bovino bovinos pasto pastoreo campo suplemento'},
+  {nombre:'Pasto Más 30', linea:'Bovinos', etapa:'Pastoreo', objetivo:'Suplementación proteica', url:'producto-pasto-mas-30.html', tags:'bovino bovinos pasto pastoreo proteina suplemento'},
+  {nombre:'Pasto Más 4:40', linea:'Bovinos', etapa:'Pastoreo', objetivo:'Mineral/proteico', url:'producto-pasto-mas-4-40.html', tags:'bovino bovinos pasto pastoreo mineral proteico suplemento'},
+  {nombre:'Pasto Más 8:30', linea:'Bovinos', etapa:'Pastoreo', objetivo:'Mineral/proteico', url:'producto-pasto-mas-8-30.html', tags:'bovino bovinos pasto pastoreo mineral proteico suplemento'},
+  {nombre:'Ovino 14', linea:'Ovinos', etapa:'Engorda', objetivo:'Corderos en corral', url:'producto-ovino-14.html', tags:'ovino ovinos borrego borregos cordero corderos engorda'},
+  {nombre:'Preinicio Fase 1', linea:'Porcinos', etapa:'Preinicio', objetivo:'Lechones de 7 a 28 días', url:'producto-porcino-preinicio-fase-1.html', tags:'cerdo cerdos porcino porcinos puerco puercos lechon lechones preinicio fase 1'},
+  {nombre:'Preinicio Fase 2', linea:'Porcinos', etapa:'Preinicio', objetivo:'Lechones de 28 a 45 días', url:'producto-porcino-preinicio-fase-2.html', tags:'cerdo cerdos porcino porcinos puerco puercos lechon lechones preinicio fase 2'},
+  {nombre:'Iniciador', linea:'Porcinos', etapa:'Inicio', objetivo:'Lechones de 12 a 30 kg', url:'producto-porcino-iniciador.html', tags:'cerdo cerdos porcino porcinos puerco puercos lechon lechones iniciacion iniciador inicio'},
+  {nombre:'Crecimiento', linea:'Porcinos', etapa:'Crecimiento', objetivo:'Cerdos de 30 a 50 kg', url:'producto-porcino-crecimiento.html', tags:'cerdo cerdos porcino porcinos puerco puercos crecimiento 30 50 kg'},
+  {nombre:'Desarrollo', linea:'Porcinos', etapa:'Desarrollo', objetivo:'Cerdos de 50 a 70 kg', url:'producto-porcino-desarrollo.html', tags:'cerdo cerdos porcino porcinos puerco puercos desarrollo 50 70 kg'},
+  {nombre:'Engorda', linea:'Porcinos', etapa:'Engorda', objetivo:'Engorda porcina y ganancia de peso', url:'producto-porcino-engorda.html', tags:'cerdo cerdos porcino porcinos puerco puercos engorda peso finalizacion'},
+  {nombre:'Final 10 ppm', linea:'Porcinos', etapa:'Finalización', objetivo:'Etapa final con recomendación técnica', url:'producto-porcino-final-10-ppm.html', tags:'cerdo cerdos porcino porcinos puerco puercos final finalizacion engorda ractopamina 10 ppm'},
+  {nombre:'Cerda Gestante', linea:'Porcinos', etapa:'Reproducción', objetivo:'Cerdas reproductoras en gestación', url:'producto-porcino-cerda-gestante.html', tags:'cerdo cerdos porcino porcinos puerco puercos cerda cerdas gestante gestacion reproduccion'},
+  {nombre:'Cerda Lactante', linea:'Porcinos', etapa:'Reproducción', objetivo:'Cerdas reproductoras en lactancia', url:'producto-porcino-cerda-lactante.html', tags:'cerdo cerdos porcino porcinos puerco puercos cerda cerdas lactante lactancia reproduccion'},
+  {nombre:'Reemplazos', linea:'Porcinos', etapa:'Reproducción', objetivo:'Futuras reproductoras', url:'producto-porcino-reemplazos.html', tags:'cerdo cerdos porcino porcinos puerco puercos cerda cerdas reemplazos futuras reproductoras reproduccion'},
+  {nombre:'Laika Premium', linea:'Caninos', etapa:'Cachorro / adulto / razas pequeñas', objetivo:'Alimento para perro', url:'producto-laika-premium.html', tags:'canino caninos perro perros cachorro adulto'},
+  {nombre:'Perrazo Cachorro y Adulto', linea:'Caninos', etapa:'Cachorro / adulto', objetivo:'Alimento para perro', url:'producto-perrazo-cachorro-adulto.html', tags:'canino caninos perro perros cachorro adulto'},
+  {nombre:'Ringo Adulto', linea:'Caninos', etapa:'Adulto', objetivo:'Alimento para perro adulto', url:'producto-ringo-adulto.html', tags:'canino caninos perro perros adulto'},
+  {nombre:'Félicette Premium', linea:'Felinos', etapa:'Adulto', objetivo:'Alimento para gato', url:'producto-felicette-premium.html', tags:'felino felinos gato gatos adulto'}
 ];
 function normalizarTextoAbatez(texto){
   var t = String(texto || '');
@@ -254,12 +264,12 @@ function initProductFinder(){
     var terms = q.split(/\s+/), matches=[];
     for(var i=0;i<productosBusquedaAbatez.length;i++){
       var p = productosBusquedaAbatez[i];
-      var hay = normalizarTextoAbatez(p.nombre + ' ' + p.linea + ' ' + p.etapa + ' ' + p.objetivo);
+      var hay = normalizarTextoAbatez(p.nombre + ' ' + p.linea + ' ' + p.etapa + ' ' + p.objetivo + ' ' + (p.tags || ''));
       var score=0;
       for(var j=0;j<terms.length;j++){ if(terms[j] && hay.indexOf(terms[j])>-1) score++; }
-      if(score>0) matches.push({p:p, score:score});
+      if(score>0) matches.push({p:p, score:score, orden:i});
     }
-    matches.sort(function(a,b){ return b.score-a.score || a.p.nombre.localeCompare(b.p.nombre); });
+    matches.sort(function(a,b){ return b.score-a.score || a.orden-b.orden || a.p.nombre.localeCompare(b.p.nombre); });
     var out=[]; for(var k=0;k<matches.length;k++){ out.push(matches[k].p); }
     render(out, valor);
   }
