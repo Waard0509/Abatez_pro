@@ -82,6 +82,16 @@ var productosDiagnostico = {
   'pasto-mas-4-40': {nombre:'Pasto Más 4:40', url:'producto-pasto-mas-4-40.html', tipo:'Ficha técnica disponible', nota:'Mineral-proteico con fósforo y proteína de sobrepaso ruminal.'},
   'pasto-mas-8-30': {nombre:'Pasto Más 8:30 LD', url:'producto-pasto-mas-8-30.html', tipo:'Ficha técnica disponible', nota:'Mineral-proteico alto en proteína medicado con lasalocid sódico.'},
   'ovino-14': {nombre:'Ovino 14', url:'producto-ovino-14.html', tipo:'Ficha técnica disponible', nota:'Producto disponible para la línea ovina.'},
+  'porcino-preinicio-fase-1': {nombre:'Preinicio Fase 1', url:'producto-porcino-preinicio-fase-1.html', tipo:'Línea porcina', nota:'Para lechones de 7 a 28 días de edad. Etapa temprana de adaptación y arranque.'},
+  'porcino-preinicio-fase-2': {nombre:'Preinicio Fase 2', url:'producto-porcino-preinicio-fase-2.html', tipo:'Línea porcina', nota:'Para lechones de 28 a 45 días de edad; etapa de transición posterior al preinicio.'},
+  'porcino-iniciador': {nombre:'Iniciador', url:'producto-porcino-iniciador.html', tipo:'Línea porcina', nota:'Para lechones de 12 a 30 kg de peso vivo; etapa de iniciación.'},
+  'porcino-crecimiento': {nombre:'Crecimiento', url:'producto-porcino-crecimiento.html', tipo:'Línea porcina', nota:'Para cerdos de 30 a 50 kg de peso vivo, ofrecido a libre acceso.'},
+  'porcino-desarrollo': {nombre:'Desarrollo', url:'producto-porcino-desarrollo.html', tipo:'Línea porcina', nota:'Para cerdos de 50 a 70 kg de peso vivo, etapa previa a la finalización.'},
+  'porcino-engorda': {nombre:'Engorda', url:'producto-porcino-engorda.html', tipo:'Línea porcina', nota:'Alimento de engorda porcina con proteína, minerales y energía disponible.'},
+  'porcino-final-10-ppm': {nombre:'Final 10 ppm', url:'producto-porcino-final-10-ppm.html', tipo:'Línea porcina', nota:'Para etapa final, alrededor de 70 a 105 kg de peso vivo; uso bajo recomendación técnica.'},
+  'porcino-cerda-gestante': {nombre:'Cerda Gestante', url:'producto-porcino-cerda-gestante.html', tipo:'Línea porcina', nota:'Alimento para cerdas en gestación, con guía de consumo por días de gestación.'},
+  'porcino-cerda-lactante': {nombre:'Cerda Lactante', url:'producto-porcino-cerda-lactante.html', tipo:'Línea porcina', nota:'Alimento para cerdas lactantes, con recomendación según número de lechones.'},
+  'porcino-reemplazos': {nombre:'Reemplazos', url:'producto-porcino-reemplazos.html', tipo:'Línea porcina', nota:'Opción para futuras reproductoras. Confirmar recomendación según edad, peso y condición corporal.'},
   'laika-premium': {nombre:'Laika Premium', url:'producto-laika-premium.html', tipo:'Marca aliada', nota:'Opciones para cachorro, adulto y razas pequeñas.'},
   'perrazo-cachorro-adulto': {nombre:'Perrazo Cachorro y Adulto', url:'producto-perrazo-cachorro-adulto.html', tipo:'Marca aliada', nota:'Alimento para perro cachorro y adulto, con guía por talla.'},
   'ringo-adulto': {nombre:'Ringo Adulto', url:'producto-ringo-adulto.html', tipo:'Marca aliada', nota:'Para perros adultos de todas las razas y tamaños.'},
@@ -109,7 +119,18 @@ function recomendacionDiagnostico(animal, etapa, objetivo){
   } else if(a.indexOf('borrego')>-1 || a.indexOf('ovino')>-1){
     rec.etiqueta='Ovinos · ruta sugerida'; rec.keys=['ovino-14']; rec.titulo='Ruta recomendada para ovinos'; rec.resumen='Para ovinos, la opción disponible más cercana es Ovino 14. Se recomienda confirmar presentación, disponibilidad y uso con el asesor.'; rec.confianza=86; rec.siguientePaso='Indicar etapa del animal, peso y si el sistema es pastoreo o corral.';
   } else if(a.indexOf('cerdo')>-1 || a.indexOf('porcino')>-1){
-    rec.etiqueta='Porcinos · asesoría personalizada'; rec.titulo='Recomendación porcina bajo consulta'; rec.resumen='Para porcinos, lo más conveniente es confirmar etapa, peso y disponibilidad para sugerir una opción adecuada.'; rec.nota='La recomendación se afina mejor con datos de edad, peso y objetivo productivo.'; rec.confianza=58; rec.siguientePaso='Indicar etapa, peso aproximado y objetivo: arranque, desarrollo, engorda o gestación.';
+    rec.etiqueta='Porcinos · ruta sugerida'; rec.confianza=84;
+    if(e.indexOf('preinicio')>-1 || e.indexOf('destete')>-1 || o.indexOf('arranque')>-1){
+      rec.keys=['porcino-preinicio-fase-1','porcino-preinicio-fase-2','porcino-iniciador']; rec.titulo='Ruta recomendada para lechones'; rec.resumen='Para lechones y etapas iniciales conviene revisar Preinicio Fase 1, Preinicio Fase 2 e Iniciador.'; rec.siguientePaso='Indicar edad, peso aproximado y si ya está en transición de alimento.';
+    } else if(e.indexOf('crecimiento')>-1 || o.indexOf('crecimiento')>-1){
+      rec.keys=['porcino-crecimiento','porcino-desarrollo']; rec.titulo='Ruta recomendada para crecimiento'; rec.resumen='Para crecimiento y desarrollo, las opciones cercanas son Crecimiento y Desarrollo.'; rec.siguientePaso='Indicar peso actual, consumo esperado y número de animales.';
+    } else if(e.indexOf('engorda')>-1 || e.indexOf('final')>-1 || o.indexOf('peso')>-1){
+      rec.keys=['porcino-engorda','porcino-final-10-ppm']; rec.titulo='Ruta recomendada para engorda'; rec.resumen='Para ganancia de peso y salida a mercado, revisa Engorda y Final 10 ppm.'; rec.siguientePaso='Indicar peso inicial, peso objetivo y tiempo estimado a mercado.';
+    } else if(e.indexOf('gest')>-1 || e.indexOf('lact')>-1 || o.indexOf('reprodu')>-1){
+      rec.keys=['porcino-cerda-gestante','porcino-cerda-lactante','porcino-reemplazos']; rec.titulo='Ruta recomendada para reproducción'; rec.resumen='Para cerdas en reproducción, las opciones del catálogo son Cerda Gestante, Cerda Lactante y Reemplazos.'; rec.siguientePaso='Indicar etapa reproductiva, número de lechones o condición corporal.';
+    } else {
+      rec.keys=['porcino-crecimiento','porcino-engorda','porcino-final-10-ppm']; rec.titulo='Ruta porcina sugerida'; rec.resumen='Según la etapa, se puede revisar crecimiento, engorda o finalización.'; rec.siguientePaso='Indicar peso aproximado, objetivo y cantidad de animales.';
+    }
   } else if(a.indexOf('caballo')>-1 || a.indexOf('equino')>-1){
     rec.etiqueta='Equinos · asesoría personalizada'; rec.titulo='Recomendación equina bajo consulta'; rec.resumen='Para equinos, conviene definir actividad, condición corporal y etapa antes de elegir una opción de alimentación.'; rec.nota='La recomendación se afina con actividad, edad, condición y objetivo del caballo.'; rec.confianza=55; rec.siguientePaso='Confirmar si es mantenimiento, trabajo, gestación o crecimiento antes de recomendar.';
   } else if(a.indexOf('mascota')>-1 || a.indexOf('perro')>-1 || a.indexOf('gato')>-1){
