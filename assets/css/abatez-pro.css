@@ -2635,3 +2635,13 @@ html.legacy-static #navbar a.abatez-floating-logo-link{
     transition:width .18s linear,height .18s linear,top .18s linear,transform .18s linear!important;
   }
 }
+
+
+/* ===============================
+   abatez v55 - Carrusel hero con video
+   =============================== */
+#carrusel-hero .diapositiva{overflow:hidden;background-size:cover;background-position:center;}
+#carrusel-hero .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
+@media (prefers-reduced-motion: reduce){
+  #carrusel-hero .hero-video{display:none!important;}
+}
