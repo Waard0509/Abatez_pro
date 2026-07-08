@@ -2645,3 +2645,11 @@ html.legacy-static #navbar a.abatez-floating-logo-link{
 @media (prefers-reduced-motion: reduce){
   #carrusel-hero .hero-video{display:none!important;}
 }
+
+
+/* V56: ajuste de videos del carrusel para móvil */
+#carrusel-hero .hero-video{max-width:none;}
+@media (max-width: 640px){
+  #carrusel-hero .hero-video{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center center!important;}
+  #carrusel-hero .diapositiva{background-position:center center!important;background-size:cover!important;}
+}
