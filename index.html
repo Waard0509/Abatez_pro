@@ -161,9 +161,21 @@
 <section class="home-hero relative h-screen flex items-center justify-center overflow-hidden" id="inicio">
 <!-- Contenedor del Carrusel -->
 <div class="absolute inset-0 z-0" id="carrusel-hero">
-<div class="diapositiva absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-100" style="background-image: url('img/fondo1.jpg');"></div>
-<div class="diapositiva absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image: url('img/fondo2.jpg');"></div>
-<div class="diapositiva absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image: url('img/fondo3.jpg');"></div>
+<div class="diapositiva absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-100" style="background-image: url('assets/videos/produccion-abatez-01-poster.jpg');">
+<video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/videos/produccion-abatez-01-poster.jpg" aria-hidden="true">
+<source src="assets/videos/produccion-abatez-01.mp4" type="video/mp4">
+</video>
+</div>
+<div class="diapositiva absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image: url('assets/videos/produccion-abatez-02-poster.jpg');">
+<video class="hero-video" muted loop playsinline preload="metadata" poster="assets/videos/produccion-abatez-02-poster.jpg" aria-hidden="true">
+<source src="assets/videos/produccion-abatez-02.mp4" type="video/mp4">
+</video>
+</div>
+<div class="diapositiva absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image: url('assets/videos/produccion-abatez-03-poster.jpg');">
+<video class="hero-video" muted loop playsinline preload="metadata" poster="assets/videos/produccion-abatez-03-poster.jpg" aria-hidden="true">
+<source src="assets/videos/produccion-abatez-03.mp4" type="video/mp4">
+</video>
+</div>
 </div>
 <!-- OVERLAY: Capa oscura al 60% para asegurar el contraste de las letras -->
 <div class="hero-mobile-overlay absolute inset-0 bg-black/60 z-10"></div>
@@ -748,6 +760,29 @@
                 var puntos = document.querySelectorAll('.punto-carrusel');
                 if(!diapositivas || diapositivas.length === 0) return;
                 var slideActual = 0;
+                function controlarVideoActivo(index){
+                    var i;
+                    for(i=0;i<diapositivas.length;i++){
+                        var videos = diapositivas[i].getElementsByTagName('video');
+                        if(videos && videos[0]){
+                            if(i === index){
+                                try{
+                                    videos[0].muted = true;
+                                    videos[0].playsInline = true;
+                                    var intento = videos[0].play();
+                                    if(intento && typeof intento.catch === 'function'){
+                                        intento.catch(function(){});
+                                    }
+                                }catch(e){}
+                            }else{
+                                try{
+                                    videos[0].pause();
+                                    videos[0].currentTime = 0;
+                                }catch(e){}
+                            }
+                        }
+                    }
+                }
                 function cambiarDiapositiva(index){
                     var i;
                     for(i=0;i<diapositivas.length;i++){
@@ -764,7 +799,9 @@
                         puntos[index].classList.remove('bg-white/50');
                         puntos[index].classList.add('bg-marca-light');
                     }
+                    controlarVideoActivo(index);
                 }
+                controlarVideoActivo(0);
                 window.setInterval(function(){
                     slideActual = (slideActual + 1) % diapositivas.length;
                     cambiarDiapositiva(slideActual);
