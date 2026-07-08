@@ -1,0 +1,29 @@
+VALIDACIÓN ABATEZ V58
+
+Base utilizada:
+- Abatez_GitHub_Esencial_v57_fotos_categorias_actualizadas.zip
+
+Cambios aplicados:
+- Se agregaron dos videos nuevos al hero principal.
+- Los videos se convirtieron a MP4 H.264, 1280x720, sin audio.
+- Duración de videos nuevos:
+  - produccion-abatez-05.mp4: 6 segundos aprox.
+  - produccion-abatez-06.mp4: 6 segundos aprox.
+- Se agregaron posters JPG de respaldo para los dos videos nuevos.
+- El hero ahora tiene 6 diapositivas y 6 indicadores.
+- Se reemplazó la imagen de bovinos en categoría y cabecera de catálogo:
+  - img/becerro.jpg
+  - img/becerros.jpg
+
+Compatibilidad revisada:
+- Autoplay configurado con muted + loop + playsinline.
+- Videos con preload=metadata excepto el primero.
+- Solo se reproduce el video activo del carrusel.
+- Imagen bovina optimizada en JPG 1600x900.
+
+No se tocaron:
+- Fichas PDF existentes.
+- Productos porcinos/bovinos/ovinos/equinos.
+- Buscador rápido.
+- Asesor inteligente.
+- Tipografías, tamaños generales, navegación o estructura base.

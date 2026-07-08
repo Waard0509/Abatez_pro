@@ -181,6 +181,16 @@
 <source src="assets/videos/produccion-abatez-04.mp4" type="video/mp4">
 </video>
 </div>
+<div class="diapositiva absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image: url('assets/videos/produccion-abatez-05-poster.jpg');">
+<video class="hero-video hero-video-bovinos-campo" muted loop playsinline preload="metadata" poster="assets/videos/produccion-abatez-05-poster.jpg" aria-hidden="true">
+<source src="assets/videos/produccion-abatez-05.mp4" type="video/mp4">
+</video>
+</div>
+<div class="diapositiva absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image: url('assets/videos/produccion-abatez-06-poster.jpg');">
+<video class="hero-video hero-video-bovinos-corral" muted loop playsinline preload="metadata" poster="assets/videos/produccion-abatez-06-poster.jpg" aria-hidden="true">
+<source src="assets/videos/produccion-abatez-06.mp4" type="video/mp4">
+</video>
+</div>
 </div>
 <!-- OVERLAY: Capa oscura al 60% para asegurar el contraste de las letras -->
 <div class="hero-mobile-overlay absolute inset-0 bg-black/60 z-10"></div>
@@ -219,9 +229,12 @@
 </div>
 <!-- Controles del carrusel (Puntitos indicadores) -->
 <div class="absolute bottom-10 z-20 flex space-x-3">
-<button class="punto-carrusel w-3 h-3 rounded-full bg-marca-light transition-colors"></button>
-<button class="punto-carrusel w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
-<button class="punto-carrusel w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
+<button class="punto-carrusel w-3 h-3 rounded-full bg-marca-light transition-colors" aria-label="Ver video 1"></button>
+<button class="punto-carrusel w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors" aria-label="Ver video 2"></button>
+<button class="punto-carrusel w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors" aria-label="Ver video 3"></button>
+<button class="punto-carrusel w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors" aria-label="Ver video 4"></button>
+<button class="punto-carrusel w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors" aria-label="Ver video 5"></button>
+<button class="punto-carrusel w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors" aria-label="Ver video 6"></button>
 </div>
 <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20 translate-y-[1px]">
 <svg class="relative block w-full h-[50px] md:h-[80px]" data-name="Layer 1" preserveaspectratio="none" viewbox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
@@ -810,7 +823,7 @@
                 window.setInterval(function(){
                     slideActual = (slideActual + 1) % diapositivas.length;
                     cambiarDiapositiva(slideActual);
-                }, 5000);
+                }, 8500);
                 for(var i=0;i<puntos.length;i++){
                     (function(pos){
                         puntos[pos].addEventListener('click', function(){
