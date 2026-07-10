@@ -162,32 +162,32 @@
 <!-- Contenedor del Carrusel -->
 <div class="absolute inset-0 z-0" id="carrusel-hero">
 <div class="diapositiva absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-100" style="background-image: url('assets/videos/produccion-abatez-01-poster.jpg');">
-<video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/videos/produccion-abatez-01-poster.jpg" aria-hidden="true">
+<video class="hero-video" muted playsinline webkit-playsinline preload="auto" poster="assets/videos/produccion-abatez-01-poster.jpg" aria-hidden="true" disablepictureinpicture>
 <source src="assets/videos/produccion-abatez-01.mp4" type="video/mp4">
 </video>
 </div>
 <div class="diapositiva absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image: url('assets/videos/produccion-abatez-02-poster.jpg');">
-<video class="hero-video" muted loop playsinline preload="metadata" poster="assets/videos/produccion-abatez-02-poster.jpg" aria-hidden="true">
+<video class="hero-video" muted playsinline webkit-playsinline preload="metadata" poster="assets/videos/produccion-abatez-02-poster.jpg" aria-hidden="true" disablepictureinpicture>
 <source src="assets/videos/produccion-abatez-02.mp4" type="video/mp4">
 </video>
 </div>
 <div class="diapositiva absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image: url('assets/videos/produccion-abatez-03-poster.jpg');">
-<video class="hero-video" muted loop playsinline preload="metadata" poster="assets/videos/produccion-abatez-03-poster.jpg" aria-hidden="true">
+<video class="hero-video" muted playsinline webkit-playsinline preload="metadata" poster="assets/videos/produccion-abatez-03-poster.jpg" aria-hidden="true" disablepictureinpicture>
 <source src="assets/videos/produccion-abatez-03.mp4" type="video/mp4">
 </video>
 </div>
 <div class="diapositiva absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image: url('assets/videos/produccion-abatez-04-poster.jpg');">
-<video class="hero-video hero-video-bovinos" muted loop playsinline preload="metadata" poster="assets/videos/produccion-abatez-04-poster.jpg" aria-hidden="true">
+<video class="hero-video hero-video-bovinos" muted playsinline webkit-playsinline preload="metadata" poster="assets/videos/produccion-abatez-04-poster.jpg" aria-hidden="true" disablepictureinpicture>
 <source src="assets/videos/produccion-abatez-04.mp4" type="video/mp4">
 </video>
 </div>
 <div class="diapositiva absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image: url('assets/videos/produccion-abatez-05-poster.jpg');">
-<video class="hero-video hero-video-bovinos-campo" muted loop playsinline preload="metadata" poster="assets/videos/produccion-abatez-05-poster.jpg" aria-hidden="true">
+<video class="hero-video hero-video-bovinos-campo" muted playsinline webkit-playsinline preload="metadata" poster="assets/videos/produccion-abatez-05-poster.jpg" aria-hidden="true" disablepictureinpicture>
 <source src="assets/videos/produccion-abatez-05.mp4" type="video/mp4">
 </video>
 </div>
 <div class="diapositiva absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image: url('assets/videos/produccion-abatez-06-poster.jpg');">
-<video class="hero-video hero-video-bovinos-corral" muted loop playsinline preload="metadata" poster="assets/videos/produccion-abatez-06-poster.jpg" aria-hidden="true">
+<video class="hero-video hero-video-bovinos-corral" muted playsinline webkit-playsinline preload="metadata" poster="assets/videos/produccion-abatez-06-poster.jpg" aria-hidden="true" disablepictureinpicture>
 <source src="assets/videos/produccion-abatez-06.mp4" type="video/mp4">
 </video>
 </div>
@@ -767,7 +767,7 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>if(window.AOS){AOS.init({once:true,offset:100});}</script>
 <script>
-        // Carrusel compatible con Safari antiguo.
+        // Carrusel de video sincronizado con la duracion real de cada clip.
         (function(){
             function ready(fn){
                 if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
@@ -778,30 +778,94 @@
                 var puntos = document.querySelectorAll('.punto-carrusel');
                 if(!diapositivas || diapositivas.length === 0) return;
                 var slideActual = 0;
-                function controlarVideoActivo(index){
+                var temporizadorRespaldo = null;
+                var cambioEnCurso = 0;
+                var heroVisible = true;
+                var paginaVisible = !document.hidden;
+                var VELOCIDAD_REPRODUCCION = 0.90;
+                var DURACION_POSTER_RESPALDO = 6500;
+                var DURACION_FUNDIDO = 1100;
+                var movimientoReducido = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+                function obtenerVideo(index){
+                    var videos = diapositivas[index].getElementsByTagName('video');
+                    return videos && videos[0] ? videos[0] : null;
+                }
+
+                function cancelarRespaldo(){
+                    if(temporizadorRespaldo){
+                        window.clearTimeout(temporizadorRespaldo);
+                        temporizadorRespaldo = null;
+                    }
+                }
+
+                function programarSiguiente(video, token){
+                    cancelarRespaldo();
+                    var espera = DURACION_POSTER_RESPALDO;
+                    if(video && isFinite(video.duration) && video.duration > 0){
+                        espera = Math.min(13000, Math.max(8500, (video.duration / VELOCIDAD_REPRODUCCION) * 1000 + 2200));
+                    }
+                    temporizadorRespaldo = window.setTimeout(function(){
+                        if(token === cambioEnCurso && paginaVisible && heroVisible){
+                            cambiarDiapositiva((slideActual + 1) % diapositivas.length);
+                        }
+                    }, espera);
+                }
+
+                function pausarVideosExcepto(index){
                     var i;
                     for(i=0;i<diapositivas.length;i++){
-                        var videos = diapositivas[i].getElementsByTagName('video');
-                        if(videos && videos[0]){
-                            if(i === index){
-                                try{
-                                    videos[0].muted = true;
-                                    videos[0].playsInline = true;
-                                    var intento = videos[0].play();
-                                    if(intento && typeof intento.catch === 'function'){
-                                        intento.catch(function(){});
-                                    }
-                                }catch(e){}
-                            }else{
-                                try{
-                                    videos[0].pause();
-                                    videos[0].currentTime = 0;
-                                }catch(e){}
-                            }
+                        if(i === index) continue;
+                        var video = obtenerVideo(i);
+                        if(video){
+                            try{ video.pause(); }catch(e){}
                         }
                     }
                 }
-                function cambiarDiapositiva(index){
+
+                function prepararSiguiente(index){
+                    var siguiente = obtenerVideo((index + 1) % diapositivas.length);
+                    if(siguiente){
+                        try{ siguiente.preload = 'auto'; }catch(e){}
+                    }
+                }
+
+                function iniciarVideo(index, reiniciar){
+                    var video = obtenerVideo(index);
+                    var token = cambioEnCurso;
+                    if(!video || movimientoReducido){
+                        programarSiguiente(null, token);
+                        return;
+                    }
+                    try{
+                        video.loop = false;
+                        video.muted = true;
+                        video.defaultMuted = true;
+                        video.playsInline = true;
+                        video.setAttribute('playsinline', '');
+                        video.setAttribute('webkit-playsinline', '');
+                        video.defaultPlaybackRate = VELOCIDAD_REPRODUCCION;
+                        video.playbackRate = VELOCIDAD_REPRODUCCION;
+                        if(reiniciar || video.ended){ video.currentTime = 0; }
+                        video.preload = 'auto';
+                        var intento = video.play();
+                        programarSiguiente(video, token);
+                        if(intento && typeof intento.catch === 'function'){
+                            intento.catch(function(){
+                                if(token === cambioEnCurso) programarSiguiente(null, token);
+                            });
+                        }
+                        prepararSiguiente(index);
+                    }catch(e){
+                        programarSiguiente(null, token);
+                    }
+                }
+
+                function cambiarDiapositiva(index, esInicio){
+                    if(index < 0 || index >= diapositivas.length) return;
+                    cancelarRespaldo();
+                    cambioEnCurso += 1;
+                    slideActual = index;
                     var i;
                     for(i=0;i<diapositivas.length;i++){
                         diapositivas[i].classList.remove('opacity-100');
@@ -817,21 +881,85 @@
                         puntos[index].classList.remove('bg-white/50');
                         puntos[index].classList.add('bg-marca-light');
                     }
-                    controlarVideoActivo(index);
+                    pausarVideosExcepto(index);
+                    if(paginaVisible && heroVisible){
+                        iniciarVideo(index, esInicio !== false);
+                    }
+                    var token = cambioEnCurso;
+                    window.setTimeout(function(){
+                        var j;
+                        for(j=0;j<diapositivas.length;j++){
+                            if(j === slideActual) continue;
+                            var videoAnterior = obtenerVideo(j);
+                            if(videoAnterior){
+                                try{
+                                    videoAnterior.pause();
+                                    videoAnterior.currentTime = 0;
+                                    videoAnterior.classList.remove('hero-video-ready');
+                                }catch(e){}
+                            }
+                        }
+                    }, esInicio ? 0 : DURACION_FUNDIDO);
                 }
-                controlarVideoActivo(0);
-                window.setInterval(function(){
-                    slideActual = (slideActual + 1) % diapositivas.length;
-                    cambiarDiapositiva(slideActual);
-                }, 8500);
+
+                for(var v=0;v<diapositivas.length;v++){
+                    (function(pos){
+                        var video = obtenerVideo(pos);
+                        if(!video) return;
+                        video.addEventListener('playing', function(){
+                            try{ video.playbackRate = VELOCIDAD_REPRODUCCION; }catch(e){}
+                            video.classList.add('hero-video-ready');
+                        });
+                        video.addEventListener('loadedmetadata', function(){
+                            try{
+                                video.defaultPlaybackRate = VELOCIDAD_REPRODUCCION;
+                                video.playbackRate = VELOCIDAD_REPRODUCCION;
+                            }catch(e){}
+                        });
+                        video.addEventListener('ended', function(){
+                            if(pos === slideActual && paginaVisible && heroVisible){
+                                cambiarDiapositiva((slideActual + 1) % diapositivas.length);
+                            }
+                        });
+                        video.addEventListener('error', function(){
+                            if(pos === slideActual) programarSiguiente(null, cambioEnCurso);
+                        });
+                    })(v);
+                }
+
                 for(var i=0;i<puntos.length;i++){
                     (function(pos){
                         puntos[pos].addEventListener('click', function(){
-                            slideActual = pos;
-                            cambiarDiapositiva(slideActual);
+                            cambiarDiapositiva(pos);
                         });
                     })(i);
                 }
+
+                document.addEventListener('visibilitychange', function(){
+                    paginaVisible = !document.hidden;
+                    cancelarRespaldo();
+                    if(!paginaVisible){
+                        pausarVideosExcepto(-1);
+                    }else if(heroVisible){
+                        iniciarVideo(slideActual, false);
+                    }
+                });
+
+                var seccionHero = document.getElementById('inicio');
+                if('IntersectionObserver' in window && seccionHero){
+                    var observadorHero = new IntersectionObserver(function(entries){
+                        heroVisible = !!(entries[0] && entries[0].isIntersecting);
+                        cancelarRespaldo();
+                        if(!heroVisible){
+                            pausarVideosExcepto(-1);
+                        }else if(paginaVisible){
+                            iniciarVideo(slideActual, false);
+                        }
+                    }, {threshold: 0.05});
+                    observadorHero.observe(seccionHero);
+                }
+
+                cambiarDiapositiva(0, true);
             });
         })();
     </script>
