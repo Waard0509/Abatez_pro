@@ -2996,6 +2996,16 @@ main article.pro-card .card-actions{
     box-shadow:0 16px 34px -26px rgba(15,23,42,.9)!important;
     transform:none!important;
   }
+  body.abatez-home-page .hero-cta button:last-child{
+    color:#064e3b!important;
+    background:#fff!important;
+    border-color:rgba(215,179,84,.78)!important;
+  }
+  body.abatez-home-page .hero-cta button:last-child i,
+  body.abatez-home-page .hero-cta button:last-child span{
+    color:#064e3b!important;
+    opacity:1!important;
+  }
 
   body.abatez-home-page .hero-cta i{
     margin-right:.2rem!important;
