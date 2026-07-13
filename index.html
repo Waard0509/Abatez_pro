@@ -162,7 +162,7 @@
 <!-- Contenedor del Carrusel -->
 <div class="absolute inset-0 z-0" id="carrusel-hero">
 <div class="diapositiva absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-100" style="background-image: url('assets/videos/produccion-abatez-01-poster.jpg');">
-<video class="hero-video" muted playsinline webkit-playsinline preload="auto" poster="assets/videos/produccion-abatez-01-poster.jpg" aria-hidden="true" disablepictureinpicture>
+<video class="hero-video" autoplay muted playsinline webkit-playsinline preload="auto" poster="assets/videos/produccion-abatez-01-poster.jpg" aria-hidden="true" disablepictureinpicture>
 <source src="assets/videos/produccion-abatez-01.mp4" type="video/mp4">
 </video>
 </div>
@@ -238,7 +238,7 @@
 </div>
 </div>
 <!-- Controles del carrusel (Puntitos indicadores) -->
-<div class="absolute bottom-10 z-20 flex space-x-3">
+<div class="hero-carousel-dots absolute bottom-10 z-20 flex space-x-3">
 <button class="punto-carrusel w-3 h-3 rounded-full bg-marca-light transition-colors" aria-label="Ver video 1"></button>
 <button class="punto-carrusel w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors" aria-label="Ver video 2"></button>
 <button class="punto-carrusel w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors" aria-label="Ver video 3"></button>
@@ -248,7 +248,7 @@
 <button class="punto-carrusel w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors" aria-label="Ver video 7"></button>
 <button class="punto-carrusel w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors" aria-label="Ver video 8"></button>
 </div>
-<div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20 translate-y-[1px]">
+<div class="hero-wave absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20 translate-y-[1px]">
 <svg class="relative block w-full h-[50px] md:h-[80px]" data-name="Layer 1" preserveaspectratio="none" viewbox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
 <path class="fill-gray-900" d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C-17.14,96.15,25.4,101.44,83.9,97.35,145.4,93.06,252.88,69.2,321.39,56.44Z"></path>
 </svg>
@@ -798,6 +798,8 @@
                 var DURACION_POSTER_RESPALDO = 6500;
                 var DURACION_FUNDIDO = 1100;
                 var movimientoReducido = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                var esperaInteraccionVideo = false;
+                var escuchaInteraccionVideo = false;
 
                 function obtenerVideo(index){
                     var videos = diapositivas[index].getElementsByTagName('video');
@@ -842,6 +844,22 @@
                     }
                 }
 
+                function reintentarVideoConInteraccion(){
+                    if(!esperaInteraccionVideo || !paginaVisible || !heroVisible) return;
+                    esperaInteraccionVideo = false;
+                    iniciarVideo(slideActual, false);
+                }
+
+                function registrarReintentoVideo(){
+                    esperaInteraccionVideo = true;
+                    if(escuchaInteraccionVideo) return;
+                    escuchaInteraccionVideo = true;
+                    var opciones = {passive:true};
+                    document.addEventListener('touchstart', reintentarVideoConInteraccion, opciones);
+                    document.addEventListener('pointerdown', reintentarVideoConInteraccion, opciones);
+                    document.addEventListener('click', reintentarVideoConInteraccion, opciones);
+                }
+
                 function iniciarVideo(index, reiniciar){
                     var video = obtenerVideo(index);
                     var token = cambioEnCurso;
@@ -853,6 +871,8 @@
                         video.loop = false;
                         video.muted = true;
                         video.defaultMuted = true;
+                        video.setAttribute('muted', '');
+                        video.setAttribute('autoplay', '');
                         video.playsInline = true;
                         video.setAttribute('playsinline', '');
                         video.setAttribute('webkit-playsinline', '');
@@ -860,15 +880,21 @@
                         video.playbackRate = VELOCIDAD_REPRODUCCION;
                         if(reiniciar || video.ended){ video.currentTime = 0; }
                         video.preload = 'auto';
+                        if(video.readyState < 2 && typeof video.load === 'function'){ video.load(); }
                         var intento = video.play();
                         programarSiguiente(video, token);
                         if(intento && typeof intento.catch === 'function'){
                             intento.catch(function(){
-                                if(token === cambioEnCurso) programarSiguiente(null, token);
+                                if(token === cambioEnCurso){
+                                    video.classList.remove('hero-video-ready');
+                                    registrarReintentoVideo();
+                                    programarSiguiente(null, token);
+                                }
                             });
                         }
                         prepararSiguiente(index);
                     }catch(e){
+                        registrarReintentoVideo();
                         programarSiguiente(null, token);
                     }
                 }
