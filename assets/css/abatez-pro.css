@@ -2654,3 +2654,509 @@ html.legacy-static #navbar a.abatez-floating-logo-link{
   #carrusel-hero .hero-video{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center center!important;}
   #carrusel-hero .diapositiva{background-position:center center!important;background-size:cover!important;}
 }
+
+
+/* =========================================================
+   abatez v64 - Hover más suave en tarjetas de producto
+   Movimiento corto, aceleración natural y zoom discreto.
+   ========================================================= */
+main article.pro-card{
+  transform:translate3d(0,0,0);
+  backface-visibility:hidden;
+  transition:
+    transform .58s cubic-bezier(.16,1,.3,1),
+    box-shadow .58s cubic-bezier(.16,1,.3,1),
+    border-color .42s ease,
+    background-color .42s ease!important;
+}
+main article.pro-card .product-thumb{
+  transition:background-color .55s ease;
+}
+main article.pro-card .product-thumb img{
+  transform:translate3d(0,0,0) scale(1);
+  transform-origin:center;
+  backface-visibility:hidden;
+  transition:
+    transform .72s cubic-bezier(.16,1,.3,1),
+    filter .58s ease!important;
+}
+main article.pro-card a,
+main article.pro-card button{
+  transition-duration:.42s!important;
+  transition-timing-function:cubic-bezier(.22,1,.36,1)!important;
+}
+@media (hover:hover) and (pointer:fine){
+  main article.pro-card:hover{
+    transform:translate3d(0,-4px,0) scale(1.003);
+    box-shadow:0 28px 68px -44px rgba(31,41,55,.52),0 12px 28px -24px rgba(125,49,39,.22)!important;
+  }
+  main article.pro-card:hover .product-thumb img{
+    transform:translate3d(0,-1px,0) scale(1.028)!important;
+    filter:drop-shadow(0 20px 28px rgba(15,23,42,.16)) saturate(1.025);
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  main article.pro-card,
+  main article.pro-card .product-thumb,
+  main article.pro-card .product-thumb img,
+  main article.pro-card a,
+  main article.pro-card button{
+    animation:none!important;
+    transition-duration:.01ms!important;
+  }
+  main article.pro-card:hover,
+  main article.pro-card:hover .product-thumb img{
+    transform:none!important;
+  }
+}
+
+
+/* =========================================================
+   abatez v65 - Hover de productos más fluido y vivo
+   - Más recorrido y sombra progresiva.
+   - Imagen con respiración suave mientras el cursor está encima.
+   - También aplica a tarjetas relacionadas en páginas de producto.
+   ========================================================= */
+.pro-transition{
+  transition-property:color,background-color,border-color,opacity,box-shadow,transform,filter!important;
+  transition-duration:.52s!important;
+  transition-timing-function:cubic-bezier(.16,1,.3,1)!important;
+}
+main article.pro-card{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  transform:translate3d(0,0,0) scale(1);
+  will-change:transform,box-shadow;
+  transition:
+    transform .78s cubic-bezier(.16,1,.3,1),
+    box-shadow .78s cubic-bezier(.16,1,.3,1),
+    border-color .58s ease,
+    background-color .58s ease!important;
+}
+main article.pro-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  opacity:0;
+  transform:scale(.96);
+  background:
+    radial-gradient(circle at 18% 0%,rgba(185,120,44,.16),transparent 34%),
+    radial-gradient(circle at 82% 12%,rgba(53,94,59,.14),transparent 34%),
+    linear-gradient(180deg,rgba(255,255,255,0),rgba(53,94,59,.035));
+  transition:opacity .78s cubic-bezier(.16,1,.3,1),transform .78s cubic-bezier(.16,1,.3,1);
+  pointer-events:none;
+}
+main article.pro-card .product-thumb{
+  position:relative;
+  overflow:hidden;
+  transition:
+    background-color .72s cubic-bezier(.16,1,.3,1),
+    transform .72s cubic-bezier(.16,1,.3,1)!important;
+}
+main article.pro-card .product-thumb::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  opacity:0;
+  background:
+    linear-gradient(120deg,transparent 15%,rgba(255,255,255,.36) 42%,transparent 68%),
+    radial-gradient(circle at 50% 20%,rgba(255,255,255,.35),transparent 45%);
+  transform:translateX(-16%) skewX(-8deg);
+  transition:opacity .72s ease,transform 1.05s cubic-bezier(.16,1,.3,1);
+  pointer-events:none;
+}
+main article.pro-card .product-thumb img{
+  transform:translate3d(0,0,0) scale(1);
+  transform-origin:center bottom;
+  will-change:transform,filter;
+  transition:
+    transform .96s cubic-bezier(.16,1,.3,1),
+    filter .78s ease!important;
+}
+main article.pro-card h3,
+main article.pro-card h2,
+main article.pro-card p,
+main article.pro-card .card-actions{
+  transition:transform .72s cubic-bezier(.16,1,.3,1),color .42s ease,opacity .42s ease;
+}
+.mt-12 a.block.bg-white.rounded-2xl{
+  transition:
+    transform .68s cubic-bezier(.16,1,.3,1),
+    box-shadow .68s cubic-bezier(.16,1,.3,1),
+    border-color .5s ease,
+    background-color .5s ease!important;
+}
+@media (hover:hover) and (pointer:fine){
+  main article.pro-card:hover{
+    transform:translate3d(0,-11px,0) scale(1.012);
+    box-shadow:
+      0 36px 90px -52px rgba(15,23,42,.92),
+      0 18px 42px -34px rgba(125,49,39,.42)!important;
+  }
+  main article.pro-card:hover::before{
+    opacity:1;
+    transform:scale(1);
+  }
+  main article.pro-card:hover .product-thumb{
+    transform:translate3d(0,-2px,0);
+    background-color:#f8faf7;
+    animation:abatezThumbBreath 2.9s ease-in-out .12s infinite alternate;
+  }
+  main article.pro-card:hover .product-thumb::after{
+    opacity:1;
+    transform:translateX(18%) skewX(-8deg);
+  }
+  main article.pro-card:hover .product-thumb img{
+    transform:translate3d(0,-5px,0) scale(1.07)!important;
+    filter:drop-shadow(0 25px 30px rgba(15,23,42,.20)) saturate(1.055) contrast(1.025);
+    animation:abatezProductBreath 2.8s ease-in-out .12s infinite alternate;
+  }
+  main article.pro-card:hover h3,
+  main article.pro-card:hover h2{
+    transform:translate3d(0,-2px,0);
+  }
+  main article.pro-card:hover p{
+    transform:translate3d(0,-1px,0);
+  }
+  main article.pro-card:hover .card-actions{
+    transform:translate3d(0,-3px,0);
+  }
+  .mt-12 a.block.bg-white.rounded-2xl:hover{
+    transform:translate3d(0,-7px,0) scale(1.01);
+    border-color:rgba(53,94,59,.52)!important;
+    background:linear-gradient(180deg,#fff,#f8faf7);
+    box-shadow:0 26px 60px -42px rgba(15,23,42,.82);
+  }
+}
+@keyframes abatezProductBreath{
+  0%{transform:translate3d(0,-5px,0) scale(1.065);}
+  100%{transform:translate3d(0,-9px,0) scale(1.082);}
+}
+@keyframes abatezThumbBreath{
+  0%{transform:translate3d(0,-2px,0);}
+  100%{transform:translate3d(0,-5px,0);}
+}
+@media (prefers-reduced-motion:reduce){
+  main article.pro-card,
+  main article.pro-card::before,
+  main article.pro-card .product-thumb,
+  main article.pro-card .product-thumb::after,
+  main article.pro-card .product-thumb img,
+  main article.pro-card h3,
+  main article.pro-card h2,
+  main article.pro-card p,
+  main article.pro-card .card-actions,
+  .mt-12 a.block.bg-white.rounded-2xl{
+    animation:none!important;
+    transition-duration:.01ms!important;
+  }
+}
+
+
+/* =========================================================
+   abatez v66 - Animaciones fluidas en páginas individuales
+   Las fichas producto-*.html usan product-media-panel y
+   product-info-panel, no article.pro-card como el catálogo.
+   ========================================================= */
+body.abatez-inner-page .product-media-panel,
+body.abatez-inner-page .product-mobile-media-panel,
+body.abatez-inner-page .product-info-panel > .bg-white,
+body.abatez-inner-page .product-info-panel details,
+body.abatez-inner-page .product-info-panel .mt-12 a{
+  transform:translate3d(0,0,0);
+  backface-visibility:hidden;
+  will-change:transform,box-shadow;
+  transition:
+    transform .78s cubic-bezier(.16,1,.3,1),
+    box-shadow .78s cubic-bezier(.16,1,.3,1),
+    border-color .58s ease,
+    background-color .58s ease,
+    filter .58s ease!important;
+}
+body.abatez-inner-page .product-media-panel{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+}
+body.abatez-inner-page .product-media-panel::before,
+body.abatez-inner-page .product-mobile-media-panel::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  opacity:0;
+  transform:scale(.96);
+  background:
+    radial-gradient(circle at 20% 0%,rgba(185,120,44,.18),transparent 34%),
+    radial-gradient(circle at 82% 15%,rgba(53,94,59,.14),transparent 36%),
+    linear-gradient(180deg,rgba(255,255,255,0),rgba(53,94,59,.045));
+  transition:opacity .82s cubic-bezier(.16,1,.3,1),transform .82s cubic-bezier(.16,1,.3,1);
+  pointer-events:none;
+}
+body.abatez-inner-page .product-detail-thumb,
+body.abatez-inner-page .product-mobile-thumb{
+  position:relative;
+  overflow:hidden;
+  transform:translate3d(0,0,0);
+  transition:
+    transform .82s cubic-bezier(.16,1,.3,1),
+    background-color .72s cubic-bezier(.16,1,.3,1)!important;
+}
+body.abatez-inner-page .product-detail-thumb::after,
+body.abatez-inner-page .product-mobile-thumb::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  opacity:0;
+  background:
+    linear-gradient(120deg,transparent 12%,rgba(255,255,255,.42) 44%,transparent 70%),
+    radial-gradient(circle at 50% 22%,rgba(255,255,255,.35),transparent 48%);
+  transform:translateX(-18%) skewX(-8deg);
+  transition:opacity .72s ease,transform 1.08s cubic-bezier(.16,1,.3,1);
+  pointer-events:none;
+}
+body.abatez-inner-page .product-detail-thumb img,
+body.abatez-inner-page .product-mobile-thumb img{
+  transform:translate3d(0,0,0) scale(1);
+  transform-origin:center bottom;
+  will-change:transform,filter;
+  transition:
+    transform .96s cubic-bezier(.16,1,.3,1),
+    filter .78s ease!important;
+}
+body.abatez-inner-page .product-media-panel button,
+body.abatez-inner-page .product-media-panel a,
+body.abatez-inner-page .product-mobile-actions button,
+body.abatez-inner-page .product-mobile-actions a,
+body.abatez-inner-page footer button,
+body.abatez-inner-page .fixed.bottom-6{
+  transition:
+    transform .55s cubic-bezier(.16,1,.3,1),
+    box-shadow .55s cubic-bezier(.16,1,.3,1),
+    background-color .42s ease,
+    color .42s ease,
+    border-color .42s ease!important;
+}
+body.abatez-inner-page .product-info-panel > .bg-white h2,
+body.abatez-inner-page .product-info-panel > .bg-white h3,
+body.abatez-inner-page .product-info-panel details summary,
+body.abatez-inner-page .product-info-panel .mt-12 h4,
+body.abatez-inner-page .product-info-panel .mt-12 p{
+  transition:transform .68s cubic-bezier(.16,1,.3,1),color .42s ease,opacity .42s ease;
+}
+@media (hover:hover) and (pointer:fine){
+  body.abatez-inner-page .product-media-panel:hover{
+    transform:translate3d(0,-10px,0) scale(1.012);
+    box-shadow:
+      0 36px 92px -54px rgba(15,23,42,.92),
+      0 18px 42px -34px rgba(125,49,39,.40)!important;
+  }
+  body.abatez-inner-page .product-media-panel:hover::before,
+  body.abatez-inner-page .product-mobile-media-panel:hover::before{
+    opacity:1;
+    transform:scale(1);
+  }
+  body.abatez-inner-page .product-media-panel:hover .product-detail-thumb,
+  body.abatez-inner-page .product-mobile-media-panel:hover .product-mobile-thumb{
+    transform:translate3d(0,-4px,0);
+    background-color:#f8faf7;
+    animation:abatezDetailThumbBreath 2.9s ease-in-out .12s infinite alternate;
+  }
+  body.abatez-inner-page .product-media-panel:hover .product-detail-thumb::after,
+  body.abatez-inner-page .product-mobile-media-panel:hover .product-mobile-thumb::after{
+    opacity:1;
+    transform:translateX(20%) skewX(-8deg);
+  }
+  body.abatez-inner-page .product-media-panel:hover .product-detail-thumb img,
+  body.abatez-inner-page .product-mobile-media-panel:hover .product-mobile-thumb img{
+    transform:translate3d(0,-7px,0) scale(1.074)!important;
+    filter:drop-shadow(0 28px 34px rgba(15,23,42,.22)) saturate(1.055) contrast(1.025)!important;
+    animation:abatezDetailProductBreath 2.8s ease-in-out .12s infinite alternate;
+  }
+  body.abatez-inner-page .product-media-panel button:hover,
+  body.abatez-inner-page .product-media-panel a:hover,
+  body.abatez-inner-page .product-mobile-actions button:hover,
+  body.abatez-inner-page .product-mobile-actions a:hover{
+    transform:translate3d(0,-4px,0);
+    box-shadow:0 18px 34px -24px rgba(24,59,42,.65);
+  }
+  body.abatez-inner-page .product-info-panel > .bg-white:hover,
+  body.abatez-inner-page .product-info-panel details:hover{
+    transform:translate3d(0,-6px,0) scale(1.004);
+    border-color:rgba(53,94,59,.24)!important;
+    box-shadow:0 24px 64px -46px rgba(15,23,42,.72)!important;
+  }
+  body.abatez-inner-page .product-info-panel > .bg-white:hover h2,
+  body.abatez-inner-page .product-info-panel > .bg-white:hover h3,
+  body.abatez-inner-page .product-info-panel details:hover summary{
+    transform:translate3d(0,-2px,0);
+  }
+  body.abatez-inner-page .product-info-panel .mt-12 a:hover{
+    transform:translate3d(0,-7px,0) scale(1.012);
+    border-color:rgba(53,94,59,.52)!important;
+    background:linear-gradient(180deg,#fff,#f8faf7);
+    box-shadow:0 26px 60px -42px rgba(15,23,42,.82)!important;
+  }
+  body.abatez-inner-page .product-info-panel .mt-12 a:hover h4{
+    transform:translate3d(0,-2px,0);
+  }
+  body.abatez-inner-page .product-info-panel .mt-12 a:hover p{
+    transform:translate3d(0,-1px,0);
+  }
+  body.abatez-inner-page .fixed.bottom-6:hover{
+    transform:translate3d(0,-4px,0) scale(1.08)!important;
+  }
+}
+@keyframes abatezDetailProductBreath{
+  0%{transform:translate3d(0,-6px,0) scale(1.072);}
+  100%{transform:translate3d(0,-12px,0) scale(1.09);}
+}
+@keyframes abatezDetailThumbBreath{
+  0%{transform:translate3d(0,-3px,0);}
+  100%{transform:translate3d(0,-6px,0);}
+}
+@media (prefers-reduced-motion:reduce){
+  body.abatez-inner-page .product-media-panel,
+  body.abatez-inner-page .product-mobile-media-panel,
+  body.abatez-inner-page .product-detail-thumb,
+  body.abatez-inner-page .product-mobile-thumb,
+  body.abatez-inner-page .product-detail-thumb img,
+  body.abatez-inner-page .product-mobile-thumb img,
+  body.abatez-inner-page .product-info-panel > .bg-white,
+  body.abatez-inner-page .product-info-panel details,
+  body.abatez-inner-page .product-info-panel .mt-12 a,
+  body.abatez-inner-page .product-media-panel button,
+  body.abatez-inner-page .product-media-panel a{
+    animation:none!important;
+    transition-duration:.01ms!important;
+  }
+}
+
+
+/* =========================================================
+   abatez v67 - Hover-out suave
+   La v65/v66 usaba una respiración infinita durante hover.
+   Al retirar el cursor, esa animación se cortaba de golpe.
+   Aquí se reemplaza por transiciones largas y naturales para
+   que la entrada y la salida se sientan igual de fluidas.
+   ========================================================= */
+main article.pro-card,
+main article.pro-card::before,
+main article.pro-card .product-thumb,
+main article.pro-card .product-thumb::after,
+main article.pro-card .product-thumb img,
+main article.pro-card h2,
+main article.pro-card h3,
+main article.pro-card p,
+main article.pro-card .card-actions,
+body.abatez-inner-page .product-media-panel,
+body.abatez-inner-page .product-media-panel::before,
+body.abatez-inner-page .product-mobile-media-panel,
+body.abatez-inner-page .product-mobile-media-panel::before,
+body.abatez-inner-page .product-detail-thumb,
+body.abatez-inner-page .product-detail-thumb::after,
+body.abatez-inner-page .product-mobile-thumb,
+body.abatez-inner-page .product-mobile-thumb::after,
+body.abatez-inner-page .product-detail-thumb img,
+body.abatez-inner-page .product-mobile-thumb img,
+body.abatez-inner-page .product-info-panel > .bg-white,
+body.abatez-inner-page .product-info-panel details,
+body.abatez-inner-page .product-info-panel .mt-12 a{
+  animation:none!important;
+}
+main article.pro-card,
+body.abatez-inner-page .product-media-panel,
+body.abatez-inner-page .product-mobile-media-panel{
+  transition:
+    transform 1.05s cubic-bezier(.16,1,.3,1),
+    box-shadow 1.05s cubic-bezier(.16,1,.3,1),
+    border-color .72s ease,
+    background-color .72s ease,
+    filter .72s ease!important;
+}
+main article.pro-card::before,
+body.abatez-inner-page .product-media-panel::before,
+body.abatez-inner-page .product-mobile-media-panel::before{
+  transition:
+    opacity .95s cubic-bezier(.16,1,.3,1),
+    transform 1.05s cubic-bezier(.16,1,.3,1)!important;
+}
+main article.pro-card .product-thumb,
+body.abatez-inner-page .product-detail-thumb,
+body.abatez-inner-page .product-mobile-thumb{
+  transition:
+    transform 1.08s cubic-bezier(.16,1,.3,1),
+    background-color .9s cubic-bezier(.16,1,.3,1)!important;
+}
+main article.pro-card .product-thumb::after,
+body.abatez-inner-page .product-detail-thumb::after,
+body.abatez-inner-page .product-mobile-thumb::after{
+  transition:
+    opacity .86s ease,
+    transform 1.15s cubic-bezier(.16,1,.3,1)!important;
+}
+main article.pro-card .product-thumb img,
+body.abatez-inner-page .product-detail-thumb img,
+body.abatez-inner-page .product-mobile-thumb img{
+  transition:
+    transform 1.14s cubic-bezier(.16,1,.3,1),
+    filter .95s ease!important;
+}
+main article.pro-card h2,
+main article.pro-card h3,
+main article.pro-card p,
+main article.pro-card .card-actions,
+body.abatez-inner-page .product-info-panel > .bg-white h2,
+body.abatez-inner-page .product-info-panel > .bg-white h3,
+body.abatez-inner-page .product-info-panel details summary,
+body.abatez-inner-page .product-info-panel .mt-12 h4,
+body.abatez-inner-page .product-info-panel .mt-12 p{
+  transition:
+    transform .92s cubic-bezier(.16,1,.3,1),
+    color .56s ease,
+    opacity .56s ease!important;
+}
+body.abatez-inner-page .product-info-panel > .bg-white,
+body.abatez-inner-page .product-info-panel details,
+body.abatez-inner-page .product-info-panel .mt-12 a,
+.mt-12 a.block.bg-white.rounded-2xl{
+  transition:
+    transform .95s cubic-bezier(.16,1,.3,1),
+    box-shadow .95s cubic-bezier(.16,1,.3,1),
+    border-color .68s ease,
+    background-color .68s ease!important;
+}
+@media (hover:hover) and (pointer:fine){
+  main article.pro-card:hover .product-thumb,
+  body.abatez-inner-page .product-media-panel:hover .product-detail-thumb,
+  body.abatez-inner-page .product-mobile-media-panel:hover .product-mobile-thumb{
+    animation:none!important;
+    transform:translate3d(0,-4px,0)!important;
+  }
+  main article.pro-card:hover .product-thumb img{
+    animation:none!important;
+    transform:translate3d(0,-8px,0) scale(1.08)!important;
+  }
+  body.abatez-inner-page .product-media-panel:hover .product-detail-thumb img,
+  body.abatez-inner-page .product-mobile-media-panel:hover .product-mobile-thumb img{
+    animation:none!important;
+    transform:translate3d(0,-9px,0) scale(1.085)!important;
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  main article.pro-card,
+  main article.pro-card::before,
+  main article.pro-card .product-thumb,
+  main article.pro-card .product-thumb::after,
+  main article.pro-card .product-thumb img,
+  body.abatez-inner-page .product-media-panel,
+  body.abatez-inner-page .product-media-panel::before,
+  body.abatez-inner-page .product-detail-thumb,
+  body.abatez-inner-page .product-detail-thumb::after,
+  body.abatez-inner-page .product-detail-thumb img{
+    animation:none!important;
+    transition-duration:.01ms!important;
+  }
+}
