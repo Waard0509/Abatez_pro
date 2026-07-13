@@ -90,9 +90,172 @@
             transition: all 0.3s ease-in-out;
         }
     </style>
-<link href="assets/css/abatez-pro.css" rel="stylesheet"/>
-<link href="assets/css/mac-compat.css" rel="stylesheet"/>
-<link href="assets/css/legacy-static.css" rel="stylesheet"/>
+<link href="assets/css/abatez-pro.css?v=71" rel="stylesheet"/>
+<link href="assets/css/mac-compat.css?v=71" rel="stylesheet"/>
+<link href="assets/css/legacy-static.css?v=71" rel="stylesheet"/>
+<style id="abatez-v71-mobile-hero-fix">
+/* v71: override crítico embebido para iPhone. Si GitHub sirve CSS viejo,
+   este bloque sigue corrigiendo el hero móvil desde index.html. */
+@media (max-width:767px){
+  html body.abatez-home-page{
+    --abatez-mobile-hero-media-h:clamp(218px,58vw,310px);
+  }
+  html body.abatez-home-page .home-hero#inicio{
+    display:block!important;
+    min-height:auto!important;
+    height:auto!important;
+    align-items:initial!important;
+    justify-content:initial!important;
+    padding-top:calc(var(--abatez-nav-height,124px) + env(safe-area-inset-top))!important;
+    padding-bottom:calc(5.9rem + env(safe-area-inset-bottom))!important;
+    background:linear-gradient(180deg,#fffaf1 0%,#fff 100%)!important;
+    overflow:hidden!important;
+  }
+  html body.abatez-home-page #inicio #carrusel-hero{
+    position:relative!important;
+    inset:auto!important;
+    z-index:0!important;
+    width:100%!important;
+    height:var(--abatez-mobile-hero-media-h)!important;
+    min-height:0!important;
+    overflow:hidden!important;
+    background:#183b2a!important;
+    box-shadow:0 18px 38px -32px rgba(15,23,42,.9)!important;
+  }
+  html body.abatez-home-page #inicio #carrusel-hero .diapositiva{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    background-size:cover!important;
+    background-position:center center!important;
+  }
+  html body.abatez-home-page #inicio #carrusel-hero .hero-video{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    max-width:none!important;
+    object-fit:cover!important;
+    object-position:center center!important;
+    display:block!important;
+  }
+  html body.abatez-home-page #inicio .hero-mobile-overlay{
+    position:absolute!important;
+    top:calc(var(--abatez-nav-height,124px) + env(safe-area-inset-top))!important;
+    right:0!important;
+    bottom:auto!important;
+    left:0!important;
+    height:var(--abatez-mobile-hero-media-h)!important;
+    z-index:10!important;
+    pointer-events:none!important;
+    background:
+      linear-gradient(180deg,rgba(0,0,0,.34),rgba(0,0,0,.42)),
+      linear-gradient(90deg,rgba(6,78,59,.64),rgba(0,0,0,.08),rgba(0,0,0,.32))!important;
+  }
+  html body.abatez-home-page #inicio .home-hero-content{
+    position:relative!important;
+    z-index:20!important;
+    width:100%!important;
+    max-width:26rem!important;
+    min-height:var(--abatez-mobile-hero-media-h)!important;
+    margin:calc(var(--abatez-mobile-hero-media-h) * -1) auto 0!important;
+    padding:1rem 1.05rem .9rem!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:center!important;
+  }
+  html body.abatez-home-page #inicio .home-hero-content h1{
+    max-width:21rem!important;
+    margin:.1rem auto .42rem!important;
+    font-size:clamp(1.35rem,6.2vw,1.9rem)!important;
+    line-height:1.05!important;
+    letter-spacing:0!important;
+    text-shadow:0 3px 18px rgba(0,0,0,.52)!important;
+  }
+  html body.abatez-home-page #inicio .home-hero-content h1 .text-marca-light,
+  html body.abatez-home-page #inicio .home-hero-content h1 .text-acento{
+    color:#4ade80!important;
+  }
+  html body.abatez-home-page #inicio .home-hero-content p{
+    max-width:20.8rem!important;
+    margin:0 auto!important;
+    font-size:.75rem!important;
+    line-height:1.32!important;
+    color:rgba(255,255,255,.92)!important;
+    text-shadow:0 2px 12px rgba(0,0,0,.5)!important;
+  }
+  html body.abatez-home-page #inicio .home-hero-content .flex.justify-center.mb-8{
+    display:none!important;
+  }
+  html body.abatez-home-page #inicio .hero-cta{
+    position:absolute!important;
+    left:50%!important;
+    bottom:calc(-4.35rem - env(safe-area-inset-bottom))!important;
+    transform:translateX(-50%)!important;
+    z-index:25!important;
+    display:grid!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:.45rem!important;
+    width:calc(100vw - 1.5rem)!important;
+    max-width:23.5rem!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  html body.abatez-home-page #inicio .hero-cta a,
+  html body.abatez-home-page #inicio .hero-cta button{
+    min-width:0!important;
+    width:auto!important;
+    min-height:2.7rem!important;
+    padding:.56rem .32rem!important;
+    border-radius:999px!important;
+    font-size:.68rem!important;
+    line-height:1.05!important;
+    box-shadow:0 16px 34px -26px rgba(15,23,42,.9)!important;
+    transform:none!important;
+  }
+  html body.abatez-home-page #inicio .hero-cta button:last-child{
+    color:#064e3b!important;
+    background:#ffffff!important;
+    border-color:rgba(215,179,84,.78)!important;
+  }
+  html body.abatez-home-page #inicio .hero-cta button:last-child i,
+  html body.abatez-home-page #inicio .hero-cta button:last-child span{
+    color:#064e3b!important;
+    opacity:1!important;
+  }
+  html body.abatez-home-page #inicio .hero-cta i{
+    margin-right:.2rem!important;
+    font-size:.76rem!important;
+  }
+  html body.abatez-home-page #inicio .hero-proof-grid,
+  html body.abatez-home-page #inicio .hero-carousel-dots,
+  html body.abatez-home-page #inicio .hero-wave{
+    display:none!important;
+  }
+}
+@media (max-width:380px){
+  html body.abatez-home-page{
+    --abatez-mobile-hero-media-h:clamp(206px,58vw,286px);
+  }
+  html body.abatez-home-page #inicio .home-hero-content h1{
+    font-size:clamp(1.22rem,6.5vw,1.62rem)!important;
+  }
+  html body.abatez-home-page #inicio .home-hero-content p{
+    font-size:.7rem!important;
+  }
+  html body.abatez-home-page #inicio .hero-cta{
+    gap:.32rem!important;
+    max-width:21rem!important;
+  }
+  html body.abatez-home-page #inicio .hero-cta a,
+  html body.abatez-home-page #inicio .hero-cta button{
+    font-size:.62rem!important;
+    min-height:2.55rem!important;
+  }
+}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
