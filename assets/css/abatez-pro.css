@@ -2856,6 +2856,182 @@ main article.pro-card .card-actions{
 
 
 /* =========================================================
+   abatez v70 - Hero móvil horizontal y reproducción iOS
+   El video deja de llenar toda la altura del teléfono. En móvil
+   funciona como banner horizontal con texto compacto encima y
+   acciones debajo, para evitar la sensación de imagen estirada.
+   ========================================================= */
+@media (max-width:767px){
+  body.abatez-home-page{
+    --abatez-mobile-hero-media-h:clamp(218px,58vw,310px);
+  }
+
+  body.abatez-home-page .home-hero{
+    display:block!important;
+    min-height:auto!important;
+    height:auto!important;
+    align-items:initial!important;
+    justify-content:initial!important;
+    padding-top:calc(var(--abatez-nav-height,124px) + env(safe-area-inset-top))!important;
+    padding-bottom:calc(5.8rem + env(safe-area-inset-bottom))!important;
+    background:linear-gradient(180deg,#fffaf1 0%,#fff 100%)!important;
+    overflow:hidden!important;
+  }
+
+  body.abatez-home-page #carrusel-hero{
+    position:relative!important;
+    inset:auto!important;
+    z-index:0!important;
+    width:100%!important;
+    height:var(--abatez-mobile-hero-media-h)!important;
+    min-height:0!important;
+    overflow:hidden!important;
+    background:#183b2a!important;
+    box-shadow:0 18px 38px -32px rgba(15,23,42,.9)!important;
+  }
+
+  body.abatez-home-page #carrusel-hero .diapositiva{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    background-size:cover!important;
+    background-position:center center!important;
+  }
+
+  body.abatez-home-page #carrusel-hero .hero-video{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    max-width:none!important;
+    object-fit:cover!important;
+    object-position:center center!important;
+  }
+
+  body.abatez-home-page .hero-video-bovinos,
+  body.abatez-home-page .hero-video-bovinos-campo,
+  body.abatez-home-page .hero-video-becerros,
+  body.abatez-home-page .hero-video-bovinos-corral{
+    object-position:center center!important;
+  }
+
+  body.abatez-home-page .hero-mobile-overlay{
+    position:absolute!important;
+    top:calc(var(--abatez-nav-height,124px) + env(safe-area-inset-top))!important;
+    right:0!important;
+    bottom:auto!important;
+    left:0!important;
+    height:var(--abatez-mobile-hero-media-h)!important;
+    z-index:10!important;
+    background:linear-gradient(180deg,rgba(0,0,0,.36),rgba(0,0,0,.42)),linear-gradient(90deg,rgba(6,78,59,.64),rgba(0,0,0,.08),rgba(0,0,0,.34))!important;
+    pointer-events:none!important;
+  }
+
+  body.abatez-home-page .home-hero-content{
+    position:relative!important;
+    z-index:20!important;
+    width:100%!important;
+    max-width:26rem!important;
+    min-height:var(--abatez-mobile-hero-media-h)!important;
+    margin:calc(var(--abatez-mobile-hero-media-h) * -1) auto 0!important;
+    padding:1.05rem 1.05rem .9rem!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:center!important;
+  }
+
+  body.abatez-home-page .home-hero h1{
+    max-width:21rem!important;
+    margin:.15rem auto .42rem!important;
+    font-size:clamp(1.35rem,6.2vw,1.9rem)!important;
+    line-height:1.05!important;
+    letter-spacing:0!important;
+    text-shadow:0 3px 18px rgba(0,0,0,.52)!important;
+  }
+
+  body.abatez-home-page .home-hero h1 .text-marca-light,
+  body.abatez-home-page .home-hero h1 .text-acento{
+    color:#4ade80!important;
+  }
+
+  body.abatez-home-page .home-hero p{
+    max-width:20.8rem!important;
+    margin:0 auto!important;
+    font-size:.75rem!important;
+    line-height:1.32!important;
+    color:rgba(255,255,255,.92)!important;
+    text-shadow:0 2px 12px rgba(0,0,0,.5)!important;
+  }
+
+  body.abatez-home-page .home-hero .flex.justify-center.mb-8{
+    display:none!important;
+  }
+
+  body.abatez-home-page .hero-cta{
+    position:absolute!important;
+    left:50%!important;
+    bottom:calc(-4.3rem - env(safe-area-inset-bottom))!important;
+    transform:translateX(-50%)!important;
+    z-index:25!important;
+    display:grid!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:.45rem!important;
+    width:calc(100vw - 1.5rem)!important;
+    max-width:23.5rem!important;
+    margin:0!important;
+    padding:0!important;
+  }
+
+  body.abatez-home-page .hero-cta a,
+  body.abatez-home-page .hero-cta button{
+    min-width:0!important;
+    width:auto!important;
+    min-height:2.7rem!important;
+    padding:.56rem .32rem!important;
+    border-radius:999px!important;
+    font-size:.68rem!important;
+    line-height:1.05!important;
+    box-shadow:0 16px 34px -26px rgba(15,23,42,.9)!important;
+    transform:none!important;
+  }
+
+  body.abatez-home-page .hero-cta i{
+    margin-right:.2rem!important;
+    font-size:.76rem!important;
+  }
+
+  body.abatez-home-page .hero-proof-grid,
+  body.abatez-home-page .hero-carousel-dots,
+  body.abatez-home-page .hero-wave{
+    display:none!important;
+  }
+}
+
+@media (max-width:380px){
+  body.abatez-home-page{
+    --abatez-mobile-hero-media-h:clamp(206px,58vw,286px);
+  }
+  body.abatez-home-page .home-hero h1{
+    font-size:clamp(1.22rem,6.5vw,1.62rem)!important;
+  }
+  body.abatez-home-page .home-hero p{
+    font-size:.7rem!important;
+  }
+  body.abatez-home-page .hero-cta{
+    gap:.32rem!important;
+    max-width:21rem!important;
+  }
+  body.abatez-home-page .hero-cta a,
+  body.abatez-home-page .hero-cta button{
+    font-size:.62rem!important;
+    min-height:2.55rem!important;
+  }
+}
+
+
+/* =========================================================
    abatez v66 - Animaciones fluidas en páginas individuales
    Las fichas producto-*.html usan product-media-panel y
    product-info-panel, no article.pro-card como el catálogo.
