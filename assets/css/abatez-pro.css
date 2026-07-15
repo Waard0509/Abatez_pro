@@ -3346,3 +3346,131 @@ body.abatez-inner-page .product-info-panel .mt-12 a,
     transition-duration:.01ms!important;
   }
 }
+
+@media (max-width:767px){
+  /* Menos espacio blanco después del hero/botones */
+  html body.abatez-home-page .home-hero#inicio{
+    padding-bottom:calc(4.15rem + env(safe-area-inset-bottom))!important;
+    margin-bottom:0!important;
+  }
+
+  html body.abatez-home-page #inicio + section{
+    padding-top:1.05rem!important;
+    padding-bottom:1.65rem!important;
+  }
+
+  /* Botones móviles más visibles y con mejor contraste */
+  html body.abatez-home-page #inicio .hero-cta{
+    bottom:calc(-3.65rem - env(safe-area-inset-bottom))!important;
+    gap:.48rem!important;
+    width:calc(100vw - 1.25rem)!important;
+    max-width:24rem!important;
+  }
+
+  html body.abatez-home-page #inicio .hero-cta a,
+  html body.abatez-home-page #inicio .hero-cta button{
+    min-height:2.78rem!important;
+    padding:.58rem .34rem!important;
+    font-size:.72rem!important;
+    font-weight:800!important;
+    border-width:2px!important;
+    box-shadow:
+      0 14px 26px -20px rgba(15,23,42,.72),
+      0 1px 0 rgba(255,255,255,.75) inset!important;
+    filter:none!important;
+    opacity:1!important;
+  }
+
+  html body.abatez-home-page #inicio .hero-cta a:first-child{
+    background:#059669!important;
+    color:#fff!important;
+    border-color:#059669!important;
+  }
+
+  html body.abatez-home-page #inicio .hero-cta button:nth-child(2){
+    background:#fff!important;
+    color:#064e3b!important;
+    border-color:rgba(5,150,105,.28)!important;
+  }
+
+  html body.abatez-home-page #inicio .hero-cta button:last-child{
+    background:#fffdf8!important;
+    color:#064e3b!important;
+    border-color:#d7b354!important;
+  }
+
+  html body.abatez-home-page #inicio .hero-cta i,
+  html body.abatez-home-page #inicio .hero-cta span{
+    opacity:1!important;
+  }
+
+  html body.abatez-home-page #inicio .hero-cta button:nth-child(2) i{
+    color:#d97706!important;
+  }
+
+  html body.abatez-home-page #inicio .hero-cta button:last-child i,
+  html body.abatez-home-page #inicio .hero-cta button:last-child span{
+    color:#064e3b!important;
+  }
+
+  /* Bloque siguiente más compacto en celular */
+  html body.abatez-home-page #inicio + section .client-note{
+    padding:1.05rem!important;
+    border-radius:1.35rem!important;
+    gap:1rem!important;
+  }
+
+  html body.abatez-home-page #inicio + section .client-note h2,
+  html body.abatez-home-page #inicio + section .client-note .premium-section-title{
+    font-size:clamp(1.85rem,8.4vw,2.55rem)!important;
+    line-height:1.06!important;
+    letter-spacing:0!important;
+    margin-bottom:.78rem!important;
+  }
+
+  html body.abatez-home-page #inicio + section .client-note p{
+    font-size:.95rem!important;
+    line-height:1.42!important;
+    margin-bottom:1rem!important;
+  }
+
+  html body.abatez-home-page #inicio + section .client-note .grid{
+    gap:.72rem!important;
+  }
+
+  html body.abatez-home-page #inicio + section .client-note .grid > div{
+    min-height:auto!important;
+    padding:.78rem .5rem!important;
+    border-radius:1rem!important;
+  }
+
+  html body.abatez-home-page #inicio + section .client-note .grid i{
+    font-size:1.45rem!important;
+    margin-bottom:.35rem!important;
+  }
+
+  html body.abatez-home-page #inicio + section .client-note .grid strong{
+    font-size:.9rem!important;
+    line-height:1.15!important;
+  }
+}
+
+@media (max-width:380px){
+  html body.abatez-home-page #inicio .hero-cta{
+    gap:.36rem!important;
+    width:calc(100vw - .95rem)!important;
+  }
+
+  html body.abatez-home-page #inicio .hero-cta a,
+  html body.abatez-home-page #inicio .hero-cta button{
+    min-height:2.55rem!important;
+    font-size:.64rem!important;
+    padding:.5rem .24rem!important;
+  }
+
+  html body.abatez-home-page #inicio + section .client-note h2,
+  html body.abatez-home-page #inicio + section .client-note .premium-section-title{
+    font-size:clamp(1.7rem,8vw,2.25rem)!important;
+  }
+}
+
