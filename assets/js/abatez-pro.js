@@ -92,10 +92,10 @@ var productosDiagnostico = {
   'porcino-cerda-gestante': {nombre:'Cerda Gestante', url:'producto-porcino-cerda-gestante.html', tipo:'Línea porcina', nota:'Alimento para cerdas en gestación, con guía de consumo por días de gestación.'},
   'porcino-cerda-lactante': {nombre:'Cerda Lactante', url:'producto-porcino-cerda-lactante.html', tipo:'Línea porcina', nota:'Alimento para cerdas lactantes, con recomendación según número de lechones.'},
   'porcino-reemplazos': {nombre:'Reemplazos', url:'producto-porcino-reemplazos.html', tipo:'Línea porcina', nota:'Opción para futuras reproductoras. Confirmar recomendación según edad, peso y condición corporal.'},
-  'laika-premium': {nombre:'Laika Premium', url:'producto-laika-premium.html', tipo:'Marca aliada', nota:'Opciones para cachorro, adulto y razas pequeñas.'},
-  'perrazo-cachorro-adulto': {nombre:'Perrazo Cachorro y Adulto', url:'producto-perrazo-cachorro-adulto.html', tipo:'Marca aliada', nota:'Alimento para perro cachorro y adulto, con guía por talla.'},
-  'ringo-adulto': {nombre:'Ringo Adulto', url:'producto-ringo-adulto.html', tipo:'Marca aliada', nota:'Para perros adultos de todas las razas y tamaños.'},
-  'felicette-premium': {nombre:'Félicette Premium', url:'producto-felicette-premium.html', tipo:'Marca aliada', nota:'Alimento premium para gatos adultos.'}
+  'laika-premium': {nombre:'Laika Premium', url:'producto-laika-premium.html', tipo:'Distribución MNA', nota:'Opción de marca aliada para cachorro, adulto y razas pequeñas.'},
+  'perrazo-cachorro-adulto': {nombre:'Perrazo Cachorro y Adulto', url:'producto-perrazo-cachorro-adulto.html', tipo:'Distribución MNA', nota:'Alimento para perro cachorro y adulto, con guía por talla.'},
+  'ringo-adulto': {nombre:'Ringo Adulto', url:'producto-ringo-adulto.html', tipo:'Distribución MNA', nota:'Para perros adultos de todas las razas y tamaños.'},
+  'felicette-premium': {nombre:'Félicette Premium', url:'producto-felicette-premium.html', tipo:'Distribución MNA', nota:'Alimento premium para gatos adultos.'}
 };
 
 function recomendacionDiagnostico(animal, etapa, objetivo){
@@ -131,10 +131,12 @@ function recomendacionDiagnostico(animal, etapa, objetivo){
     } else {
       rec.keys=['porcino-crecimiento','porcino-engorda','porcino-final-10-ppm']; rec.titulo='Ruta porcina sugerida'; rec.resumen='Según la etapa, se puede revisar crecimiento, engorda o finalización.'; rec.siguientePaso='Indicar peso aproximado, objetivo y cantidad de animales.';
     }
+  } else if(a.indexOf('ave')>-1 || a.indexOf('pollo')>-1 || a.indexOf('gallina')>-1){
+    rec.etiqueta='Aves · asesoría personalizada'; rec.titulo='Recomendación para aves bajo consulta'; rec.resumen='Para aves conviene definir especie, edad, etapa productiva y objetivo antes de elegir una opción de alimentación.'; rec.nota='La recomendación se afina con tipo de ave, edad, etapa y número de animales.'; rec.confianza=55; rec.siguientePaso='Confirmar si se trata de engorda, postura, crecimiento o mantenimiento antes de recomendar.';
   } else if(a.indexOf('caballo')>-1 || a.indexOf('equino')>-1){
     rec.etiqueta='Equinos · asesoría personalizada'; rec.titulo='Recomendación equina bajo consulta'; rec.resumen='Para equinos, conviene definir actividad, condición corporal y etapa antes de elegir una opción de alimentación.'; rec.nota='La recomendación se afina con actividad, edad, condición y objetivo del caballo.'; rec.confianza=55; rec.siguientePaso='Confirmar si es mantenimiento, trabajo, gestación o crecimiento antes de recomendar.';
-  } else if(a.indexOf('mascota')>-1 || a.indexOf('perro')>-1 || a.indexOf('gato')>-1){
-    rec.etiqueta='Mascotas · marcas aliadas'; rec.confianza=84;
+  } else if(a.indexOf('mascota')>-1 || a.indexOf('perro')>-1 || a.indexOf('gato')>-1 || a.indexOf('mna')>-1 || a.indexOf('distrib')>-1){
+    rec.etiqueta='Mascotas · distribución MNA'; rec.confianza=84;
     if(o.indexOf('pelaje')>-1 || o.indexOf('salud')>-1 || e.indexOf('mantenimiento')>-1 || e.indexOf('adult')>-1){
       rec.keys=['ringo-adulto','laika-premium','felicette-premium']; rec.titulo='Ruta sugerida para mascota adulta'; rec.resumen='Para mascotas adultas, estas opciones permiten comparar alimento para perro adulto y gato adulto según especie, talla y presentación disponible.';
     } else if(e.indexOf('reci')>-1 || e.indexOf('destete')>-1 || e.indexOf('crecimiento')>-1){
@@ -233,10 +235,12 @@ var productosBusquedaAbatez = [
   {nombre:'Cerda Gestante', linea:'Porcinos', etapa:'Reproducción', objetivo:'Cerdas reproductoras en gestación', url:'producto-porcino-cerda-gestante.html', tags:'cerdo cerdos porcino porcinos puerco puercos cerda cerdas gestante gestacion reproduccion'},
   {nombre:'Cerda Lactante', linea:'Porcinos', etapa:'Reproducción', objetivo:'Cerdas reproductoras en lactancia', url:'producto-porcino-cerda-lactante.html', tags:'cerdo cerdos porcino porcinos puerco puercos cerda cerdas lactante lactancia reproduccion'},
   {nombre:'Reemplazos', linea:'Porcinos', etapa:'Reproducción', objetivo:'Futuras reproductoras', url:'producto-porcino-reemplazos.html', tags:'cerdo cerdos porcino porcinos puerco puercos cerda cerdas reemplazos futuras reproductoras reproduccion'},
-  {nombre:'Laika Premium', linea:'Caninos', etapa:'Cachorro / adulto / razas pequeñas', objetivo:'Alimento para perro', url:'producto-laika-premium.html', tags:'canino caninos perro perros cachorro adulto'},
-  {nombre:'Perrazo Cachorro y Adulto', linea:'Caninos', etapa:'Cachorro / adulto', objetivo:'Alimento para perro', url:'producto-perrazo-cachorro-adulto.html', tags:'canino caninos perro perros cachorro adulto'},
-  {nombre:'Ringo Adulto', linea:'Caninos', etapa:'Adulto', objetivo:'Alimento para perro adulto', url:'producto-ringo-adulto.html', tags:'canino caninos perro perros adulto'},
-  {nombre:'Félicette Premium', linea:'Felinos', etapa:'Adulto', objetivo:'Alimento para gato', url:'producto-felicette-premium.html', tags:'felino felinos gato gatos adulto'}
+  {nombre:'Laika Premium', linea:'Mascotas / Distribución MNA', etapa:'Cachorro / adulto / razas pequeñas', objetivo:'Alimento para perro', url:'producto-laika-premium.html', tags:'canino caninos perro perros cachorro adulto mascota mascotas mna distribucion distribución'},
+  {nombre:'Perrazo Cachorro y Adulto', linea:'Mascotas / Distribución MNA', etapa:'Cachorro / adulto', objetivo:'Alimento para perro', url:'producto-perrazo-cachorro-adulto.html', tags:'canino caninos perro perros cachorro adulto mascota mascotas mna distribucion distribución'},
+  {nombre:'Ringo Adulto', linea:'Mascotas / Distribución MNA', etapa:'Adulto', objetivo:'Alimento para perro adulto', url:'producto-ringo-adulto.html', tags:'canino caninos perro perros adulto mascota mascotas mna distribucion distribución'},
+  {nombre:'Félicette Premium', linea:'Mascotas / Distribución MNA', etapa:'Adulto', objetivo:'Alimento para gato', url:'producto-felicette-premium.html', tags:'felino felinos gato gatos adulto mascota mascotas mna distribucion distribución'},
+  {nombre:'Catálogo de aves', linea:'Aves', etapa:'Consulta por etapa', objetivo:'Revisar opciones y disponibilidad para pollos y gallinas', url:'catalogo-aves.html', tags:'ave aves pollo pollos gallina gallinas postura engorda traspatio'},
+  {nombre:'Materia prima', linea:'Insumos', etapa:'Venta bajo consulta', objetivo:'Revisar granos, insumos, presentaciones y venta por volumen', url:'catalogo-materia-prima.html', tags:'materia prima materias primas insumo insumos grano granos cereal cereales maiz maíz'}
 ];
 function normalizarTextoAbatez(texto){
   var t = String(texto || '');
