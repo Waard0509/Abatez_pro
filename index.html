@@ -90,9 +90,9 @@
             transition: all 0.3s ease-in-out;
         }
     </style>
-<link href="assets/css/abatez-pro.css?v=71" rel="stylesheet"/>
-<link href="assets/css/mac-compat.css?v=71" rel="stylesheet"/>
-<link href="assets/css/legacy-static.css?v=71" rel="stylesheet"/>
+<link href="assets/css/abatez-pro.css?v=92" rel="stylesheet"/>
+<link href="assets/css/mac-compat.css?v=92" rel="stylesheet"/>
+<link href="assets/css/legacy-static.css?v=92" rel="stylesheet"/>
 <style id="abatez-v71-mobile-hero-fix">
 /* v71: override crítico embebido para iPhone. Si GitHub sirve CSS viejo,
    este bloque sigue corrigiendo el hero móvil desde index.html. */
@@ -477,7 +477,7 @@
 <!-- ==========================================
                  CUADRÍCULA DE CATEGORÍAS (EFECTO ENFOQUE)
                  ========================================== -->
-<div class="animal-grid-mobile grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 group/grid">
+<div class="animal-grid-mobile grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 group/grid">
 <!-- 1. PORCINO -->
 <div class="animal-card-premium bg-white rounded-3xl overflow-hidden tarjeta-elegante group relative hover:!opacity-100 group-hover/grid:opacity-70 duration-300" data-aos="fade-up" data-aos-delay="100">
 <a class="absolute inset-0 z-30" href="catalogo-porcino.html"></a>
@@ -563,7 +563,41 @@
 </span>
 </div>
 </div>
-<!-- 6. DISTRIBUCIÓN MNA -->
+<!-- 6. AVES -->
+<div class="animal-card-premium bg-white rounded-3xl overflow-hidden tarjeta-elegante group relative hover:!opacity-100 group-hover/grid:opacity-70 duration-300" data-aos="fade-up" data-aos-delay="300">
+<a class="absolute inset-0 z-30" href="catalogo-aves.html"></a>
+<div class="relative h-52 overflow-hidden">
+<span class="animal-chip rounded-full px-3 py-1 text-xs font-extrabold text-marca-dark">Aves</span>
+<img alt="Alimento para aves" class="w-full h-full object-cover group-hover:scale-110 transicion-suave duration-500" loading="lazy" src="img/aves-categoria.jpg"/>
+<div class="animal-gradient pointer-events-none"></div>
+</div>
+<div class="p-6 relative z-20 pointer-events-none">
+<h3 class="text-xl font-bold text-gray-800 mb-2">Línea de Aves</h3>
+<p class="text-gray-600 text-sm mb-4">Opciones para pollos, gallinas y aves de traspatio. Consulta presentaciones y recomendación según etapa.</p>
+<span class="inline-flex items-center text-marca font-bold group-hover:text-marca-dark transition-colors group-hover:underline">
+                            Entrar al catálogo 
+                            <i class="fas fa-arrow-right ml-2 text-sm transform group-hover:translate-x-1 transition-transform"></i>
+</span>
+</div>
+</div>
+<!-- 7. MATERIA PRIMA -->
+<div class="animal-card-premium bg-white rounded-3xl overflow-hidden tarjeta-elegante group relative hover:!opacity-100 group-hover/grid:opacity-70 duration-300" data-aos="fade-up" data-aos-delay="100">
+<a class="absolute inset-0 z-30" href="catalogo-materia-prima.html"></a>
+<div class="relative h-52 overflow-hidden">
+<span class="animal-chip rounded-full px-3 py-1 text-xs font-extrabold text-marca-dark">Insumos</span>
+<img alt="Materia prima para alimentación animal" class="w-full h-full object-cover group-hover:scale-110 transicion-suave duration-500" loading="lazy" src="img/materia-prima-categoria.jpg"/>
+<div class="animal-gradient pointer-events-none"></div>
+</div>
+<div class="p-6 relative z-20 pointer-events-none">
+<h3 class="text-xl font-bold text-gray-800 mb-2">Materia Prima</h3>
+<p class="text-gray-600 text-sm mb-4">Granos e insumos para alimentación animal. Consulta existencia, presentación y venta por volumen.</p>
+<span class="inline-flex items-center text-marca font-bold group-hover:text-marca-dark transition-colors group-hover:underline">
+                            Entrar al catálogo 
+                            <i class="fas fa-arrow-right ml-2 text-sm transform group-hover:translate-x-1 transition-transform"></i>
+</span>
+</div>
+</div>
+<!-- 8. DISTRIBUCIÓN MNA -->
 <div class="animal-card-premium bg-white rounded-3xl overflow-hidden tarjeta-elegante group relative hover:!opacity-100 group-hover/grid:opacity-70 duration-300" data-aos="fade-up" data-aos-delay="300">
 <a class="absolute inset-0 z-30" href="catalogo-distribucion-mna.html"></a>
 <div class="relative h-52 overflow-hidden bg-white flex items-center justify-center">
@@ -598,6 +632,8 @@
 <button class="quick-finder-tag bg-white border border-gray-100 rounded-full px-3 py-2" data-finder-query="leche" type="button">leche</button>
 <button class="quick-finder-tag bg-white border border-gray-100 rounded-full px-3 py-2" data-finder-query="mascotas" type="button">mascotas</button>
 <button class="quick-finder-tag bg-white border border-gray-100 rounded-full px-3 py-2" data-finder-query="distribucion mna" type="button">MNA</button>
+<button class="quick-finder-tag bg-white border border-gray-100 rounded-full px-3 py-2" data-finder-query="aves" type="button">aves</button>
+<button class="quick-finder-tag bg-white border border-gray-100 rounded-full px-3 py-2" data-finder-query="materia prima" type="button">materia prima</button>
 </div>
 </div>
 <div data-aos="fade-left">
@@ -798,6 +834,8 @@
 <option>Bovinos</option>
 <option>Ovinos</option>
 <option>Equinos</option>
+<option>Aves</option>
+<option>Materia prima</option>
 <option>Mascotas / Distribución MNA</option>
 </select>
 </div>
@@ -896,6 +934,7 @@
 <option value="Vacas/Becerros">Vacas / Becerros (Bovinos)</option>
 <option value="Caballos">Caballos (Equinos)</option>
 <option value="Borregos">Borregos (Ovinos)</option>
+<option value="Aves">Aves (Pollos / Gallinas)</option>
 <option value="Mascotas">Mascotas / Distribución MNA</option>
 </select>
 </div>
@@ -1184,6 +1223,6 @@
             }
         }
     </script>
-<script src="assets/js/abatez-pro.js"></script>
+<script src="assets/js/abatez-pro.js?v=92"></script>
 </body>
 </html>
